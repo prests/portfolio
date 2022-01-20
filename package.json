@@ -15,5 +15,5 @@
     "vite": "^2.7.2",
     "vue-tsc": "^0.29.8"
   },
-  "license": "unlicense"
+  "license": "Unlicense"
 }
