@@ -1,12 +1,18 @@
 <template>
-  <router-view />
+  <NavBar />
+  <router-view :class="$style.view" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+import NavBar from '@components/nav-bar/NavBar.vue'
+
 export default defineComponent({
   name: 'App',
+  components: {
+    NavBar,
+  },
 })
 </script>
 
@@ -17,22 +23,32 @@ export default defineComponent({
 html {
   height: 100%;
   width: 100%;
+  font-size: 62.5%;
 }
 
 body {
+  background-color: colors.$black-corol;
   height: 100%;
   width: 100%;
   margin: 0;
 }
 
 #app {
-  background-color: colors.$black-corol;
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   display: flex;
+  flex-direction: column;
   height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+}
+</style>
+
+<style lang="scss" module>
+
+.view {
   width: 100%;
 }
 </style>
