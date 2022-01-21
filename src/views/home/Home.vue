@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="$style.viewContainer">
     <h1 :class="$style.welcome">Welcome</h1>
     <h2>Shayne Preston</h2>
     <h3>I build Web Apps</h3>
