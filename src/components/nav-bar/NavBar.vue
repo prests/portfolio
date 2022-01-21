@@ -8,21 +8,34 @@
     />
 
     <div :class="$style.routesContainer">
+      
       <div
         v-for="path in paths"
+        :id="`path_${path.name}`"
         :key="path.name"
         :class="$style.route"
+        @mouseover="focusRoute(path.name)"
+        @mouseleave="blurRoute(path.name)"
         @click="changeRoute(path.path)"
       >
         {{ path.name }}
       </div>
 
-      <div :class="$style.resumeButton" @click="openResume()">Resume</div>
+      <div
+        id="resume"
+        :class="$style.resumeButton"
+        @mouseover="focusResume"
+        @mouseleave="blurResume"
+        @click="openResume"
+      >
+        Resume
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import gsap from 'gsap';
 import { defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
 
@@ -59,8 +72,41 @@ export default defineComponent({
       window.open('Shayne Preston Resume.pdf', '_blank')
     };
 
+    function focusRoute(name: string): void {
+      gsap.to(
+        `#path_${name}`,
+        {
+          duration: 0.5,
+          backgroundImage:
+            'linear-gradient(to left, #F7F7FF 0%, #FE5F55 100%)',
+        }
+      );
+    }
+
+    function blurRoute(name: string): void {
+      gsap.to(
+        `#path_${name}`,
+        {
+          duration: 0.5,
+          backgroundImage: 'linear-gradient(to left, #F7F7FF 100%, #FE5F55 0%)',
+        }
+      );
+    }
+
+    function focusResume(): void {
+      gsap.to('#resume', {duration: 0.5, backgroundColor: '#FE5F5515'});
+    }
+
+    function blurResume(): void {
+      gsap.to('#resume', {duration: 0.5, backgroundColor: '#FE5F5500'});
+    }
+
     return {
+      blurResume,
+      blurRoute,
       changeRoute,
+      focusResume,
+      focusRoute,
       logoSrc,
       openResume,
       paths,
@@ -76,7 +122,6 @@ export default defineComponent({
   display: flex;
   flex-wrap: wrap;
   width: calc(100% - 10rem);
-  color: colors.$ghost-white;
   margin: 5rem;
 }
 
@@ -91,6 +136,17 @@ export default defineComponent({
 }
 
 .route {
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: colors.$ghost-white;
+  background-image: linear-gradient(45deg, colors.$ghost-white 100%, colors.$orange-red-crystal 0%);
+
+  background-clip: text;
+  background-size: 100%;
+  
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   cursor: pointer;
   display: flex;
   margin: 2rem;
