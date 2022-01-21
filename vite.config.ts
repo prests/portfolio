@@ -1,10 +1,12 @@
 import vuePlugin from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite';
+import eslintPlugin from 'vite-plugin-eslint';
 import path from 'path';
 
 export default defineConfig({
   plugins: [
-    vuePlugin()
+    eslintPlugin(),
+    vuePlugin(),
   ],
   resolve: {
     alias: {

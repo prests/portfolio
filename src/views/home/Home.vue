@@ -4,18 +4,25 @@
     <h2>Shayne Preston</h2>
     <h3>I build Web Apps</h3>
 
-    <p>
-      I'm a Software Engineer who strives to build clean and inuitive apps for the web. I am currently working at FactSet Research Systems.
-    </p>
+    <p>{{ description }}</p>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Home',
-})
+  name: 'HomeView',
+  setup: () => {
+    const description = `I'm a Software Engineer who strives to build `
+    + `clean and inuitive apps for the web. `
+    + `I am currently working at FactSet Research Systems.`;
+
+    return {
+      description,
+    };
+  },
+});
 </script>
 
 <style lang="scss" module>
