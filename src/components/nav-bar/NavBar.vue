@@ -4,11 +4,12 @@
       :class="$style.homeButton"
       :src="logoSrc"
       alt="my-logo"
-      @click="changeRoute('/')"
+      @click="changeRoute('/', (hamburgerMenu as any).closeMenu)"
     />
 
+    <HamburgerMenu ref="hamburgerMenu" />
+
     <div :class="$style.routesContainer">
-      
       <div
         v-for="path in paths"
         :id="`path_${path.name}`"
@@ -35,71 +36,23 @@
 </template>
 
 <script lang="ts">
-import gsap from 'gsap';
 import { defineComponent, ref } from "vue";
-import { useRouter } from "vue-router";
 
 import logoSrc from '@assets/logo-small.svg';
+import { useNavAnimations } from "@composables/nav-bar/path-animations";
+import { usePaths } from '@composables/nav-bar/paths-service';
 
-const PATHS = [
-  {
-    name: 'About',
-    path: '/about',
-  },
-  {
-    name: 'Work',
-    path: '/work',
-  },
-  {
-    name: 'Contact',
-    path: '/contact',
-  },
-];
+import HamburgerMenu from './HamburgerMenu.vue';
 
 export default defineComponent({
   name: 'NavBar',
+  components: {
+    HamburgerMenu,
+  },
   setup: () => {
-    const router = useRouter();
-    const paths = ref(PATHS);
-
-    function changeRoute(path: string): void {
-      if (path !== router.currentRoute.value.path) {
-        router.push(path);
-      }
-    }
-
-    const openResume = (): void => {
-      window.open('Shayne Preston Resume.pdf', '_blank')
-    };
-
-    function focusRoute(name: string): void {
-      gsap.to(
-        `#path_${name}`,
-        {
-          duration: 0.5,
-          backgroundImage:
-            'linear-gradient(to left, #F7F7FF 0%, #FE5F55 100%)',
-        }
-      );
-    }
-
-    function blurRoute(name: string): void {
-      gsap.to(
-        `#path_${name}`,
-        {
-          duration: 0.5,
-          backgroundImage: 'linear-gradient(to left, #F7F7FF 100%, #FE5F55 0%)',
-        }
-      );
-    }
-
-    function focusResume(): void {
-      gsap.to('#resume', {duration: 0.5, backgroundColor: '#FE5F5515'});
-    }
-
-    function blurResume(): void {
-      gsap.to('#resume', {duration: 0.5, backgroundColor: '#FE5F5500'});
-    }
+    const hamburgerMenu = ref<HTMLDivElement>();
+    const {changeRoute, openResume, paths} = usePaths();
+    const {blurResume, blurRoute, focusResume, focusRoute} = useNavAnimations();
 
     return {
       blurResume,
@@ -107,6 +60,7 @@ export default defineComponent({
       changeRoute,
       focusResume,
       focusRoute,
+      hamburgerMenu,
       logoSrc,
       openResume,
       paths,
@@ -117,6 +71,7 @@ export default defineComponent({
 
 <style lang="scss" module>
 @use '~styles/colors';
+@use '~styles/responsive';
 
 .navbarContainer {
   display: flex;
@@ -127,12 +82,17 @@ export default defineComponent({
 
 .routesContainer {
   display: flex;
+
+  @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
+    display: none;
+  }
 }
 
 .homeButton {
   cursor: pointer;
   height: 6rem;
   margin: 0 auto 0 0;
+  z-index: 10;
 }
 
 .route {

@@ -11,11 +11,12 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "paths": {
-      "~styles/*": ["./src/styles"],
-      "@assets/*": ["./src/assets"],
-      "@components/*": ["./src/components"],
-      "@views/*": ["./src/views"],
-    }
+      "~styles/*": ["./src/styles/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@composables/*": ["./src/composables/*"],
+      "@views/*": ["./src/views/*"],
+    },
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
