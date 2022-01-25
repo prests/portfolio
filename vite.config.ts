@@ -4,6 +4,13 @@ import eslintPlugin from 'vite-plugin-eslint';
 import path from 'path';
 
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        charset: false,
+      },
+    },
+  },
   plugins: [
     eslintPlugin(),
     vuePlugin(),
