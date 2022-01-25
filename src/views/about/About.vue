@@ -176,12 +176,15 @@ export default defineComponent({
 .technologies {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  width: 70%;
 
   ul {
+    display: flex;
+    flex-wrap: wrap;
     margin: 0;
 
     @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
+      display: block;
       margin: 0 auto;
     }
   }

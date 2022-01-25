@@ -9,8 +9,8 @@ export function usePaths() {
       path: '/about',
     },
     {
-      name: 'Work',
-      path: '/work',
+      name: 'Experience',
+      path: '/experience',
     },
     {
       name: 'Contact',
