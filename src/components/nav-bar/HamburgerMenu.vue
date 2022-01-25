@@ -137,6 +137,10 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   text-align: center;
+
+  @include responsive.responsive(map-get(responsive.$breakpoints, xs)) {
+    padding: 15em 2em;
+  }
 }
 
 .route {
@@ -163,6 +167,10 @@ export default defineComponent({
   height: 4rem;
   z-index: 10;
   width: 5em;
+
+  @include responsive.responsive(map-get(responsive.$breakpoints, xs)) {
+    margin: auto 1em auto 0;
+  }
 }
 
 .popUp {
@@ -174,8 +182,8 @@ export default defineComponent({
   display: flex;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
-    -webkit-backdrop-filter: blur(2px) brightness(0.6);
-    backdrop-filter: blur(2px) brightness(0.6);
+    -webkit-backdrop-filter: blur(2px) brightness(0.5);
+    backdrop-filter: blur(2px) brightness(0.5);
   }
 }
 
@@ -187,5 +195,7 @@ export default defineComponent({
   padding: 1rem 1.6rem;
   border: solid 2px colors.$orange-red-crystal;
   border-radius: 5px;
+  align-items: center;
+  margin: 0 auto;
 }
 </style>
