@@ -28,7 +28,7 @@ export default defineComponent({
 
     function routeEnter(_: unknown, done: any): void {
       if (initialLoad) {
-        gsap.to('#body', {duration: 1, opacity: 1, onComplete: done});
+        gsap.to('#body', {duration: 2, opacity: 1, onComplete: done});
         initialLoad = false;
       } else {
         gsap.to('#body', {duration: 0.25, opacity: 1, onComplete: done});
