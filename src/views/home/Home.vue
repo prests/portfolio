@@ -65,6 +65,10 @@ export default defineComponent({
     margin: 2em 1em;
     flex-direction: column;
   }
+
+  @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
+    text-align: center;
+  }
 }
 
 .welcome {
@@ -100,6 +104,9 @@ export default defineComponent({
   border: solid 2px colors.$orange-red-crystal;
   border-radius: 5px;
   align-items: center;
-  margin: 0 auto;
+  
+  @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
+    margin: 0 auto;
+  }
 }
 </style>
