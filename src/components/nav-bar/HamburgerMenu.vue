@@ -34,8 +34,8 @@
               <div
                 id="resume"
                 :class="$style.resumeButton"
-                @mouseover="focusResume"
-                @mouseleave="blurResume"
+                @mouseover="focusButton('#resume')"
+                @mouseleave="blurButton('#resume')"
                 @click.stop="openResume"
               >
                 Resume
@@ -62,7 +62,7 @@ export default defineComponent({
     const navPanelOpen = ref(false);
 
     const {changeRoute, openResume, paths} = usePaths();
-    const {blurResume, blurRoute, focusResume, focusRoute} = useNavAnimations();
+    const {blurButton, blurRoute, focusButton, focusRoute} = useNavAnimations();
 
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) {
@@ -97,11 +97,11 @@ export default defineComponent({
     }
 
     return {
-      blurResume,
+      blurButton,
       blurRoute,
       closeMenu,
       closePopUp,
-      focusResume,
+      focusButton,
       focusRoute,
       hamburgerIconSrc,
       hamburgerRouteSelected,
@@ -130,7 +130,7 @@ export default defineComponent({
 }
 
 .routesContainer {
-  background-color: colors.$blue-yonder;
+  background-color: colors.$light-corol;
   right: -100%;
   padding: 15em 8em;
   margin-left: auto;
@@ -146,8 +146,8 @@ export default defineComponent({
 
   font-size: 2.5rem;
   font-weight: 900;
-  background-color: colors.$ghost-white;
-  background-image: linear-gradient(45deg, colors.$ghost-white 100%, colors.$orange-red-crystal 0%);
+  background-color: colors.$white;
+  background-image: linear-gradient(45deg, colors.$white 100%, colors.$orange-red-crystal 0%);
 
   background-clip: text;
   background-size: 100%;

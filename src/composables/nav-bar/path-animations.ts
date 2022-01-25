@@ -22,18 +22,18 @@ export function useNavAnimations() {
     );
   }
 
-  function focusResume(): void {
-    gsap.to('#resume', {duration: 0.5, backgroundColor: '#FE5F5515'});
+  function focusButton(id: string): void {
+    gsap.to(id, {duration: 0.5, backgroundColor: '#FE5F5540'});
   }
 
-  function blurResume(): void {
-    gsap.to('#resume', {duration: 0.5, backgroundColor: '#FE5F5500'});
+  function blurButton(id: string): void {
+    gsap.to(id, {duration: 0.5, backgroundColor: '#FE5F5500'});
   }
 
   return {
-    blurResume,
+    blurButton,
     blurRoute,
-    focusResume,
+    focusButton,
     focusRoute,
   }
 }

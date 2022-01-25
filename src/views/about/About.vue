@@ -103,7 +103,7 @@ export default defineComponent({
   flex-direction: column;
   margin: 0 5em;
   font-size: 2rem;
-  color: colors.$ghost-white;
+  color: colors.$grey;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, lg)) {
     margin: 0 0 5em 5em;

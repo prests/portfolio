@@ -19,6 +19,11 @@ export function usePaths() {
   ]);
 
   function changeRoute(path: string, animationCallback?: Function): void {
+    if (path === '/contact') {
+      sendEmail();
+      return;
+    }
+
     if (animationCallback) {
       animationCallback();
     }
@@ -29,12 +34,17 @@ export function usePaths() {
   }
 
   const openResume = (): void => {
-    window.open('Shayne Preston Resume.pdf', '_blank')
+    window.open('Shayne Preston Resume.pdf', '_blank');
   };
+
+  const sendEmail = (): void => {
+    window.open('mailto:shayne.preston@protonmail.com');
+  }
 
   return {
     changeRoute,
     openResume,
     paths,
+    sendEmail,
   }
 }
