@@ -22,6 +22,7 @@
             <li>Angular.js</li>
             <li>Node.js</li>
             <li>Express.js</li>
+            <li>Jest</li>
             <li>Swagger.js</li>
           </ul>
         </div>
@@ -89,7 +90,7 @@ export default defineComponent({
   flex-direction: row;
   height: auto;
   width: 80%;
-  margin: 2em auto;
+  margin: 0 auto 1em auto;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, lg)) {
     width: 100%;
@@ -149,6 +150,7 @@ export default defineComponent({
   color: colors.$orange-red-crystal;
   font-size: 5rem;
   font-weight: 900;
+  margin-top: 0;
 }
 
 .historyContainer {

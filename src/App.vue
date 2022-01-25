@@ -6,17 +6,21 @@
       <component :is="Component" :class="$style.view"></component>
     </transition>
   </router-view>
+
+  <FooterList />
 </template>
 
 <script lang="ts">
 import gsap from 'gsap';
 import { defineComponent } from 'vue'
 
+import FooterList from '@components/footer/Footer.vue';
 import NavBar from '@components/nav-bar/NavBar.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
+    FooterList,
     NavBar,
   },
   setup: () => {

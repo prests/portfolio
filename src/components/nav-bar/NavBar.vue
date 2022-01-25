@@ -1,9 +1,7 @@
 <template>
   <div :class="$style.navbarContainer">
-    <img
+    <LogoSVG
       :class="$style.homeButton"
-      :src="logoSrc"
-      alt="my-logo"
       @click="changeRoute('/', (hamburgerMenu as any).closeMenu)"
     />
 
@@ -38,7 +36,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 
-import logoSrc from '@assets/logo-small.svg';
+import LogoSVG from "@assets/LogoSVG.vue";
 import { useNavAnimations } from "@composables/nav-bar/path-animations";
 import { usePaths } from '@composables/nav-bar/paths-service';
 
@@ -48,6 +46,7 @@ export default defineComponent({
   name: 'NavBar',
   components: {
     HamburgerMenu,
+    LogoSVG,
   },
   setup: () => {
     const hamburgerMenu = ref<HTMLDivElement>();
@@ -61,7 +60,6 @@ export default defineComponent({
       focusButton,
       focusRoute,
       hamburgerMenu,
-      logoSrc,
       openResume,
       paths,
     }
@@ -76,8 +74,13 @@ export default defineComponent({
 .navbarContainer {
   display: flex;
   flex-wrap: wrap;
-  width: calc(100% - 10rem);
-  margin: 5rem;
+  width: 90%;
+  margin: 5rem auto;
+
+  @include responsive.responsive(map-get(responsive.$breakpoints, xs)) {
+    width: 100%;
+    margin: 5rem 0;
+  }
 }
 
 .routesContainer {
@@ -92,6 +95,7 @@ export default defineComponent({
   cursor: pointer;
   height: 6rem;
   margin: 0 auto 0 0;
+  width: 5em;
   z-index: 10;
 }
 

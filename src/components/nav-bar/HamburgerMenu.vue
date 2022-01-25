@@ -1,9 +1,7 @@
 <template>
   <div :class="$style.menuContainer">
-    <img
+    <HamburgerSVG
       :class="$style.hamburgerIcon"
-      :src="hamburgerIconSrc"
-      alt="my-logo"
       @click="menuOpen ? closeMenu() : openMenu();"
     />
 
@@ -51,12 +49,15 @@
 import gsap from "gsap";
 import { defineComponent, ref } from "vue";
 
-import hamburgerIconSrc from '@assets/hamburger-icon.svg';
+import HamburgerSVG from "@assets/HamburgerSVG.vue";
 import { useNavAnimations } from "@composables/nav-bar/path-animations";
 import { usePaths } from '@composables/nav-bar/paths-service';
 
 export default defineComponent({
   name: 'HamburgerMenu',
+  components: {
+    HamburgerSVG,
+  },
   setup: () => {
     const menuOpen = ref(false);
     const navPanelOpen = ref(false);
@@ -103,7 +104,6 @@ export default defineComponent({
       closePopUp,
       focusButton,
       focusRoute,
-      hamburgerIconSrc,
       hamburgerRouteSelected,
       menuOpen,
       navPanelOpen,
@@ -162,6 +162,7 @@ export default defineComponent({
   cursor: pointer;
   height: 4rem;
   z-index: 10;
+  width: 5em;
 }
 
 .popUp {
