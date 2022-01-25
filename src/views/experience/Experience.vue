@@ -11,10 +11,26 @@
 
     <div :class="$style.jobDescription">
       <ul>
-        <li>Something</li>
-        <li>About</li>
-        <li>My</li>
-        <li>Job</li>
+        <li>
+          Created and maintained core applications 
+          for FactSet's Research Business Unit. 
+          These apps provided realtime news, events, 
+          and signals to both buyside and sellside clients.
+        </li>
+        <li>
+          Managed a small team to create shareable UI components 
+          to be used across multiple FactSet applications.
+        </li>
+        <li>
+          Created API endpoints to fetch news and events 
+          for internal and external clients.
+        </li>
+        <li>
+          Migrated legacy code from Angular.JS to Vue.JS, 
+          increasing unit test coverage,
+          utilizing Typescript over Javascript,  
+          and creating a new responsive application.
+        </li>
       </ul>
     </div>
   </div>
@@ -77,7 +93,7 @@ export default defineComponent({
 .jobDescription {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  width: 100%;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, md)) {
     margin-right: auto;
