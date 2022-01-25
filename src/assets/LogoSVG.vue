@@ -1,0 +1,153 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="83"
+    height="173.354"
+    viewBox="0 0 83 173.354"
+  >
+    <g id="Group_2" data-name="Group 2" transform="translate(158 436.177)">
+      <line
+        id="Line_1"
+        data-name="Line 1"
+        y2="40"
+        transform="translate(-156.5 -405.5)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+      <line
+        id="Line_2"
+        data-name="Line 2"
+        y2="40"
+        transform="translate(-116.5 -405.5)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+      <line
+        id="Line_3"
+        data-name="Line 3"
+        y2="40"
+        transform="translate(-76.5 -405.5)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+      <line
+        id="Line_4"
+        data-name="Line 4"
+        y2="40"
+        transform="translate(-76.5 -333.5)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+      <line
+        id="Line_5"
+        data-name="Line 5"
+        y2="40"
+        transform="translate(-116.5 -333.5)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+      <line
+        id="Line_6"
+        data-name="Line 6"
+        y2="40"
+        transform="translate(-156.5 -333.5)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+      <line
+        id="Line_9"
+        data-name="Line 9"
+        x1="40"
+        y2="29.469"
+        transform="translate(-116.5 -293.5)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+      <line
+        id="Line_15"
+        data-name="Line 15"
+        x1="40"
+        y2="29.469"
+        transform="translate(-156.5 -434.969)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+      <line
+        id="Line_10"
+        data-name="Line 10"
+        x2="40"
+        y2="29.469"
+        transform="translate(-156.5 -293.5)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+      <line
+        id="Line_16"
+        data-name="Line 16"
+        x2="40"
+        y2="29.469"
+        transform="translate(-116.5 -434.969)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+      <line
+        id="Line_11"
+        data-name="Line 11"
+        x2="40"
+        y2="32"
+        transform="translate(-156.5 -365.5)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+      <line
+        id="Line_12"
+        data-name="Line 12"
+        x2="40"
+        y2="32"
+        transform="translate(-116.5 -365.5)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+      <line
+        id="Line_13"
+        data-name="Line 13"
+        x1="20"
+        y2="16"
+        transform="translate(-96.5 -365.5)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+      <line
+        id="Line_14"
+        data-name="Line 14"
+        x1="20"
+        y2="16"
+        transform="translate(-156.5 -349.5)"
+        fill="none"
+        stroke="#ff4e43"
+        stroke-width="5"
+      />
+    </g>
+  </svg>
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: 'LogoSVG',
+});
+</script>
