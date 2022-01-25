@@ -1,9 +1,15 @@
 <template>
   <NavBar />
-  <router-view :class="$style.view" />
+
+  <router-view v-slot="{ Component }">
+    <transition mode="out-in" @enter="routeEnter" @leave="routeLeave">
+      <component :is="Component" :class="$style.view"></component>
+    </transition>
+  </router-view>
 </template>
 
 <script lang="ts">
+import gsap from 'gsap';
 import { defineComponent } from 'vue'
 
 import NavBar from '@components/nav-bar/NavBar.vue'
@@ -13,7 +19,28 @@ export default defineComponent({
   components: {
     NavBar,
   },
-})
+  setup: () => {
+    let initialLoad = true;
+
+    function routeEnter(_: unknown, done: any): void {
+      if (initialLoad) {
+        gsap.to('#body', {duration: 1, opacity: 1, onComplete: done});
+        initialLoad = false;
+      } else {
+        gsap.to('#body', {duration: 0.25, opacity: 1, onComplete: done});
+      }
+    }
+
+    function routeLeave(_: unknown, done: any): void {
+      gsap.to('#body', {duration: 0.25, opacity: 0, onComplete: done});
+    }
+
+    return {
+      routeEnter,
+      routeLeave,
+    };
+  },
+});
 </script>
 
 <style lang="scss">
@@ -27,6 +54,7 @@ html {
 }
 
 body {
+  opacity: 0;
   background-color: colors.$black-corol;
   height: 100%;
   width: 100%;
