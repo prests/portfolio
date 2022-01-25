@@ -23,10 +23,10 @@
       </div>
 
       <div
-        id="resume"
+        id="navButton"
         :class="$style.resumeButton"
-        @mouseover="focusResume"
-        @mouseleave="blurResume"
+        @mouseover="focusButton('#navButton')"
+        @mouseleave="blurButton('#navButton')"
         @click="openResume"
       >
         Resume
@@ -52,13 +52,13 @@ export default defineComponent({
   setup: () => {
     const hamburgerMenu = ref<HTMLDivElement>();
     const {changeRoute, openResume, paths} = usePaths();
-    const {blurResume, blurRoute, focusResume, focusRoute} = useNavAnimations();
+    const {blurButton, blurRoute, focusButton, focusRoute} = useNavAnimations();
 
     return {
-      blurResume,
+      blurButton,
       blurRoute,
       changeRoute,
-      focusResume,
+      focusButton,
       focusRoute,
       hamburgerMenu,
       logoSrc,
@@ -98,8 +98,8 @@ export default defineComponent({
 .route {
   font-size: 2rem;
   font-weight: 700;
-  background-color: colors.$ghost-white;
-  background-image: linear-gradient(45deg, colors.$ghost-white 100%, colors.$orange-red-crystal 0%);
+  background-color: colors.$white;
+  background-image: linear-gradient(45deg, colors.$white 100%, colors.$orange-red-crystal 0%);
 
   background-clip: text;
   background-size: 100%;
