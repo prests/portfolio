@@ -61,8 +61,8 @@ export default defineComponent({
   font-size: 2rem;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, lg)) {
-    width: 100%;
-    margin: 2em 0;
+    width: 90%;
+    margin: 2em 1em;
     flex-direction: column;
   }
 }
@@ -82,9 +82,15 @@ export default defineComponent({
 }
 
 .buttonContainer {
-  margin-top: 1em;
+  margin: 1em 0;
   display: flex;
-  width: 20%;
+  width: 25%;
+  text-align: center;
+
+  @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
+    width: 90%;
+    margin: 1em auto;
+  }
 }
 
 .contactMe {
@@ -94,5 +100,6 @@ export default defineComponent({
   border: solid 2px colors.$orange-red-crystal;
   border-radius: 5px;
   align-items: center;
+  margin: 0 auto;
 }
 </style>
