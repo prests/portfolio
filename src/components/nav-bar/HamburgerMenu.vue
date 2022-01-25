@@ -11,9 +11,14 @@
         <div
           v-if="menuOpen"
           :class="$style.popUp"
+          @click="closeMenu"
         >
           <Transition appear @enter="openPopUp" @leave="closePopUp">
-            <div v-if="navPanelOpen" :class="$style.routesContainer">
+            <div
+              v-if="navPanelOpen"
+              :class="$style.routesContainer"
+              @click.stop
+            >
               <div
                 v-for="path in paths"
                 :id="`path_${path.name}`"
@@ -21,7 +26,7 @@
                 :class="$style.route"
                 @mouseover="focusRoute(path.name)"
                 @mouseleave="blurRoute(path.name)"
-                @click="hamburgerRouteSelected(path.path)"
+                @click.stop="hamburgerRouteSelected(path.path)"
               >
                 {{ path.name }}
               </div>
@@ -31,7 +36,7 @@
                 :class="$style.resumeButton"
                 @mouseover="focusResume"
                 @mouseleave="blurResume"
-                @click="openResume"
+                @click.stop="openResume"
               >
                 Resume
               </div>
@@ -139,8 +144,8 @@ export default defineComponent({
   margin-bottom: 2em;
   right: 0;
 
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 900;
   background-color: colors.$ghost-white;
   background-image: linear-gradient(45deg, colors.$ghost-white 100%, colors.$orange-red-crystal 0%);
 

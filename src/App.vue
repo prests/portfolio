@@ -44,6 +44,12 @@ body {
   width: 100%;
   font-size: 1.6rem;
 }
+
+#hamburger-target {
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 </style>
 
 <style lang="scss" module>
