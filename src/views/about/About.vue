@@ -8,7 +8,7 @@
         <p>Hey! My name is Shayne, I&#39;m a Software Engineer, and I am obsessed with the web. My passion for web development began in High School where I took an Introduction to Programming class. I learned about HTML and CSS and loved the creativity and possibilities that a webpage could bring.</p>
 
         <!-- eslint-disable-next-line vue/max-len -->
-        <p>With that taste of programming I decided to pursue a degree in Computer and Systems Engineering at Rensselaer Polytechnic Institute. I used my time here to explore different aspects of computer engineering from computer architecture in classes, to mobile app development in <a :class="$style.link" href="https://rcos.io/" target="_blank">RCOS</a>.</p>
+        <p>With that taste of programming I decided to pursue a degree in Computer and Systems Engineering at Rensselaer Polytechnic Institute. I used my time there to explore different aspects of computer engineering from computer architecture in classes, to mobile app development in <a :class="$style.link" href="https://rcos.io/" target="_blank">RCOS</a>.</p>
       
         <!-- eslint-disable-next-line vue/max-len -->
         <p>These days I&#39;m working on web based applications both on the frontend and on the backend at <a :class="$style.link" href="https://www.factset.com/" target="_blank">FactSet Research Systems</a>. These apps cater to thousands of users daily and are a cornerstone to FactSet&#39;s infrastructure.</p>
