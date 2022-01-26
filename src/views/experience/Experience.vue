@@ -14,7 +14,7 @@
         <li>
           Created and maintained core applications 
           for FactSet's Research Business Unit. 
-          These apps provided realtime news, events, 
+          These apps provided real-time news, events, 
           and signals to both buyside and sellside clients.
         </li>
         <li>
@@ -26,7 +26,7 @@
           for internal and external clients.
         </li>
         <li>
-          Migrated legacy code from Angular.JS to Vue.JS, 
+          Migrated legacy code from Angular.js to Vue.js, 
           increasing unit test coverage,
           utilizing Typescript over Javascript,  
           and creating a new responsive application.
