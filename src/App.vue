@@ -65,6 +65,20 @@ body {
   margin: 0;
 }
 
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #F7F7FF80;
+  border: 3px solid colors.$black-corol;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  border: 3px solid colors.$black-corol;
+}
+
 #app {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;

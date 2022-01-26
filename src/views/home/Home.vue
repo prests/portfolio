@@ -3,13 +3,14 @@
     <h1 :class="$style.welcome">Welcome</h1>
     <h2 :class="$style.motto">
       My name is 
-      <span :class="$style.name">Shayne Preston</span>, 
+      <span :class="$style.name">Shayne Preston</span>&#44; 
       and I build web applications
     </h2>
 
     <p>
-      Want to get in touch with me? 
-      Shoot me an email and I'll try my best to get back to you!
+      Want to get in touch with me&#63; 
+      Shoot me an email and I&#39;ll 
+      do my best to get back to you as quickly as possible&#33;
     </p>
 
     <div :class="$style.buttonContainer">
