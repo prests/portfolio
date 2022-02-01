@@ -14,7 +14,7 @@
         <p>These days I&#39;m working on web based applications both on the frontend and on the backend at <a :class="$style.link" href="https://www.factset.com/" target="_blank">FactSet Research Systems</a>&#46; These apps cater to thousands of users daily and are a cornerstone to FactSet&#39;s infrastructure&#46;</p>
 
         <!-- eslint-disable-next-line vue/max-len -->
-        <p>Outside of engineering I love being outdoors&#33; In the summer you can catch me outside camping or at the beach&#44; and in the winter you&#39;ll find me skiing with friends and family&#46;</p>
+        <p>Outside of engineering I have many hobbies&#46; Music has always been a big part of my life&#44; and when Covid-19 kept everyone locked indoors&#44; I decided to teach myself how to play the guitar&#46; I also love being outdoors&#33; In the summer you can catch me outside camping or at the beach&#44; and in the winter you&#39;ll find me skiing with friends and family&#46;</p>
 
         <span>Technologies I&#39;m currently working with&#58;</span>
         <div :class="$style.technologies">
