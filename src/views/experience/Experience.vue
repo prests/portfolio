@@ -12,24 +12,24 @@
     <div :class="$style.jobDescription">
       <ul>
         <li>
-          Created and maintained core applications 
+          Creating and maintaining core applications 
           for FactSet&#39;s Research Business Unit&#46; 
           These apps provided real-time news&#44; events&#44; 
-          and signals to both buyside and sellside clients&#46;
+          and signals to both Buy Side and Sell Side clients&#46;
         </li>
         <li>
-          Managed a small team to create shareable UI components 
-          to be used across multiple FactSet applications&#46;
+          Managing an agile team to create stable and shareable UI components 
+          to improve sustainability across multiple FactSet applications&#46;
         </li>
         <li>
-          Created API endpoints to fetch news and events 
+          Designed API endpoints to fetch news and events 
           for internal and external clients&#46;
         </li>
         <li>
           Migrated legacy code from Angular.js to Vue.js&#44; 
-          increasing unit test coverage&#44;
+          increasing unit test coverage by
           utilizing Typescript over Javascript&#44;  
-          and creating a new responsive application&#46;
+          and creating responsive applications&#46;
         </li>
       </ul>
     </div>
