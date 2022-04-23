@@ -14,22 +14,23 @@
 
 ## Build
 
-`yarn build`
+`pnpm build`
 
 ## Serve Development
 
-`yarn dev`
+`pnpm dev`
 
 ## Serve Production
 
-`yarn preview`
+`pnpm preview`
 
 ## Fix Linting Errors
 
-`yarn lint --fix`
+`pnpm lint --fix`
 
 ## Technologies
 
+- pnpm
 - Vue 3
 - Typescript
 - Vite
