@@ -18,15 +18,15 @@
               @click.stop
             >
               <div
-                v-for="path in paths"
-                :id="`path_${path.name}`"
-                :key="path.name"
+                v-for="(path, index) in paths"
+                :id="`path_${path.id}`"
+                :key="index"
                 :class="$style.route"
-                @mouseover="focusRoute(path.name)"
-                @mouseleave="blurRoute(path.name)"
+                @mouseover="focusRoute(path.id)"
+                @mouseleave="blurRoute(path.id)"
                 @click.stop="hamburgerRouteSelected(path.path)"
               >
-                {{ path.name }}
+                {{ t(`links[${index}]`) }}
               </div>
 
               <div
@@ -36,7 +36,7 @@
                 @mouseleave="blurButton('#resume')"
                 @click.stop="openResume"
               >
-                Resume
+                {{ t('resume') }}
               </div>
             </div>
           </Transition>
@@ -52,6 +52,8 @@ import { defineComponent, ref } from "vue";
 import HamburgerSVG from "@assets/HamburgerSVG.vue";
 import { useNavAnimations } from "@composables/nav-bar/path-animations";
 import { usePaths } from '@composables/nav-bar/paths-service';
+import { useLanguage } from '@language/component-language';
+import navMessages from '@language/messages/nav';
 
 export default defineComponent({
   name: 'HamburgerMenu',
@@ -61,6 +63,8 @@ export default defineComponent({
   setup: () => {
     const menuOpen = ref(false);
     const navPanelOpen = ref(false);
+
+    const { t } = useLanguage(navMessages);
 
     const {changeRoute, openResume, paths} = usePaths();
     const {blurButton, blurRoute, focusButton, focusRoute} = useNavAnimations();
@@ -111,6 +115,7 @@ export default defineComponent({
       openPopUp,
       openResume,
       paths,
+      t,
     };
   },
 })

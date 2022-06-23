@@ -5,15 +5,15 @@ export function usePaths() {
   const router = useRouter();
   const paths = ref([
     {
-      name: 'About',
+      id: 'about',
       path: '/about',
     },
     {
-      name: 'Experience',
+      id: 'experience',
       path: '/experience',
     },
     {
-      name: 'Contact',
+      id: 'contact',
       path: '/contact',
     },
   ]);

@@ -1,16 +1,14 @@
 <template>
   <div :class="$style.homeView">
-    <h1 :class="$style.welcome">Welcome</h1>
+    <h1 :class="$style.welcome">{{ t('welcome') }}</h1>
     <h2 :class="$style.motto">
-      My name is 
+      {{ t('bio.s1') }}
       <span :class="$style.name">Shayne Preston</span>&#44; 
-      and I build web applications
+      {{ t('bio.s2') }}
     </h2>
 
     <p>
-      Want to get in touch with me&#63; 
-      Shoot me an email and I&#39;ll 
-      do my best to get back to you as quickly as possible&#33;
+      {{ t('contact.message') }}
     </p>
 
     <div :class="$style.buttonContainer">
@@ -21,7 +19,7 @@
         @mouseleave="blurButton('#contactButton')"
         @click="sendEmail"
       >
-        Contact Me
+        {{ t('contact.button') }}
       </div>
     </div>
   </div>
@@ -32,10 +30,13 @@ import { defineComponent } from 'vue';
 
 import { useNavAnimations } from '@composables/nav-bar/path-animations';
 import { usePaths } from '@composables/nav-bar/paths-service';
+import { useLanguage } from '@language/component-language';
+import homeMessages from '@language/messages/home';
 
 export default defineComponent({
   name: 'HomeView',
   setup: () => {
+    const { t } = useLanguage(homeMessages);
     const {sendEmail} = usePaths();
     const {blurButton, focusButton} = useNavAnimations();
 
@@ -43,6 +44,7 @@ export default defineComponent({
       blurButton,
       focusButton,
       sendEmail,
+      t,
     };
   },
 });

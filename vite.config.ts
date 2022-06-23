@@ -11,6 +11,11 @@ export default defineConfig({
       },
     },
   },
+  define: {
+    __VUE_I18N_FULL_INSTALL__: true,
+    __VUE_I18N_LEGACY_API__: false,
+    __INTLIFY_PROD_DEVTOOLS__: false,
+  },
   plugins: [
     eslintPlugin(),
     vuePlugin(),
@@ -21,6 +26,8 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
       '@components': path.resolve(__dirname, './src/components'),
       '@composables': path.resolve(__dirname, './src/composables'),
+      '@language': path.resolve(__dirname, './src/language'),
+      '@store': path.resolve(__dirname, './src/store'),
       '@views': path.resolve(__dirname, './src/views'),
     },
   }

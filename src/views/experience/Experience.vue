@@ -1,35 +1,18 @@
 <template>
   <div :class="$style.experienceView">
     <h2 :class="$style.job">
-      Software Engineer III 
+      {{ t('e1.position') }} 
       <a :class="$style.link" href="https://www.factset.com/" target="_blank">
         @ FactSet Research Systems
       </a>
     </h2>
 
-    <p>July 2019 - Present</p>
+    <p>{{ t('e1.duration') }}</p>
 
     <div :class="$style.jobDescription">
       <ul>
-        <li>
-          Creating and maintaining core applications 
-          for FactSet&#39;s Research Business Unit&#46; 
-          These apps provided real-time news&#44; events&#44; 
-          and signals to both Buy Side and Sell Side clients&#46;
-        </li>
-        <li>
-          Managing an agile team to create stable and shareable UI components 
-          to improve sustainability across multiple FactSet applications&#46;
-        </li>
-        <li>
-          Designed API endpoints to fetch news and events 
-          for internal and external clients&#46;
-        </li>
-        <li>
-          Migrated legacy code from Angular.js to Vue.js&#44; 
-          increasing unit test coverage by
-          utilizing Typescript over Javascript&#44;  
-          and creating responsive applications&#46;
+        <li v-for="index in 4" :key="index">
+          {{ t(`e1.events[${index - 1}]`) }}
         </li>
       </ul>
     </div>
@@ -37,10 +20,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
+
+import { useLanguage } from '@language/component-language';
+import experienceMessages from '@language/messages/experience';
 
 export default defineComponent({
   name: 'ExperienceView',
+  setup: () => {
+    const { t } = useLanguage(experienceMessages);
+
+    return {
+      t,
+    };
+  },
 })
 </script>
 
