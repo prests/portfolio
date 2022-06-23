@@ -1,32 +1,44 @@
 <template>
   <div :class="$style.aboutView">
     <div :class="$style.descriptionContainer">
-      <h1 :class="$style.aboutHeader">About Me</h1>
+      <h1 :class="$style.aboutHeader">{{ t('title') }}</h1>
 
       <div :class="$style.historyContainer">
-        <!-- eslint-disable-next-line vue/max-len -->
-        <p>Hey&#33; My name is Shayne&#44; I&#39;m a Software Engineer&#44; and I am obsessed with the web&#46; My passion for web development began in high school where I took an Introduction to Programming class&#46; Through that class I learned about HTML and CSS. I loved the creativity and possibilities that a webpage could bring&#46;</p>
+        <p>{{ t('p1') }}</p>
 
-        <!-- eslint-disable-next-line vue/max-len -->
-        <p>With that taste of programming I decided to pursue a degree in Computer and Systems Engineering at Rensselaer Polytechnic Institute&#46; I used my time there to explore different aspects of computer engineering from computer architecture in classes&#44; to mobile app development in <a :class="$style.link" href="https://rcos.io/" target="_blank">RCOS</a>&#46;</p>
+        <p>
+          {{ t('p2') }}
+          <a :class="$style.link" href="https://rcos.io/" target="_blank">
+            RCOS
+          </a>
+          &#46;
+        </p>
       
         <!-- eslint-disable-next-line vue/max-len -->
-        <p>These days I&#39;m working on web based applications both on the frontend and on the backend at <a :class="$style.link" href="https://www.factset.com/" target="_blank">FactSet Research Systems</a>&#46; These apps cater to thousands of users daily and are a cornerstone to FactSet&#39;s infrastructure&#46;</p>
+        <p>
+          {{ t('p3.s1') }}
+          <a
+            :class="$style.link"
+            href="https://www.factset.com/"
+            target="_blank"
+          >
+            FactSet Research Systems
+          </a>
+          {{ t('p3.s2')}}
+        </p>
 
         <!-- eslint-disable-next-line vue/max-len -->
-        <p>Outside of engineering I have many hobbies&#46; Music has always been a big part of my life&#44; and when Covid-19 kept everyone locked indoors&#44; I decided to teach myself how to play the guitar&#46; I also love being outdoors&#33; In the summer you can catch me outside camping or at the beach&#44; and in the winter you&#39;ll find me skiing with friends and family&#46;</p>
+        <p>{{ t('p4') }}</p>
 
-        <span>Technologies I&#39;m currently working with&#58;</span>
+        <span>{{ t('technologies.header') }}</span>
         <div :class="$style.technologies">
           <ul>
-            <li>Javascript (ES6+)</li>
-            <li>Typescript</li>
-            <li>Vue.js 2/3</li>
-            <li>Angular.js</li>
-            <li>Node.js</li>
-            <li>Express.js</li>
-            <li>Jest</li>
-            <li>Swagger.js</li>
+            <li
+              v-for="index in 8"
+              :key="index"
+            >
+              {{ t(`technologies.techList[${index - 1}]`) }}
+            </li>
           </ul>
         </div>
       </div>
@@ -48,14 +60,18 @@
 </template>
 
 <script lang="ts">
-import gsap from "gsap";
-import { defineComponent } from "vue";
+import gsap from 'gsap';
+import { defineComponent } from 'vue';
 
 import aboutPhotoSrc from '@assets/about-photo.jpg';
+import { useLanguage } from '@language/component-language';
+import aboutMessages from '@language/messages/about';
 
 export default defineComponent({
   name: 'AboutView',
   setup: () => {
+    const { t } = useLanguage(aboutMessages);
+
     function blurImage(): void {
       if (window.innerWidth > 1200) {
         gsap.to(`#aboutPhoto`, {duration: 0.5, rotate: 5});
@@ -79,6 +95,7 @@ export default defineComponent({
       blurImage,
       focusImage,
       loadImage,
+      t,
     }
   },
 })

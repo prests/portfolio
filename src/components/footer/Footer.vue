@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.footerContainer">
     <span :class="$style.copyright">
-      Created by 
+      {{ t('copyright') }}
       <span :class="$style.name">
         Shayne Preston
       </span>
@@ -36,6 +36,8 @@ import { defineComponent } from "vue";
 
 import GithubSvg from '@assets/GithubSVG.vue';
 import LinkedInSVG from "@assets/LinkedInSVG.vue";
+import { useLanguage } from '@language/component-language';
+import footerMessages from '@language/messages/footer';
 
 export default defineComponent({
   name: 'FooterList',
@@ -44,6 +46,8 @@ export default defineComponent({
     LinkedInSVG,
   },
   setup: () => {
+    const { t } = useLanguage(footerMessages)
+
     function blurLink(id: string): void {
       gsap.to(id, {duration: 0.5, y: 0});
     }
@@ -55,6 +59,7 @@ export default defineComponent({
     return {
       blurLink,
       focusLink,
+      t,
     };
   },
 })

@@ -1,36 +1,28 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHistory, createRouter, Router } from "vue-router";
+import { Pinia } from "pinia";
 
-import About from '@views/about/About.vue';
-import Experience from '@views/experience/Experience.vue';
-import Home from "@views/home/Home.vue";
-import PageNotFound from '@views/page-not-found/PageNotFound.vue';
+import {
+  DEFAULT_LOCALE,
+  SUPPORTED_LOCALES,
+} from "@language/index";
+import { useAppStore } from '@store/app-store/app-store';
+import { routes } from "./routes";
 
-const routes = [
-  {
-    name: 'Home',
-    path: '/',
-    component: Home,
-  },
-  {
-    name: 'About',
-    path: '/about',
-    component: About,
-  },
-  {
-    name: 'Experience',
-    path: '/experience',
-    component: Experience,
-  },
-  {
-    name: 'PageNotFound',
-    path: '/:catchall(.*)',
-    component: PageNotFound,
-  }
-];
+export function setupRouter(pinia: Pinia): Router {
+  const appStore = useAppStore(pinia);
+  const router = createRouter({
+    history: createWebHistory(),
+    routes,
+  });
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-});
+  router.beforeEach(async to => {
+    const paramsLocale = to.params.locale as string;
 
-export default router;
+    const locale = SUPPORTED_LOCALES.includes(paramsLocale)
+      ? paramsLocale
+      : DEFAULT_LOCALE;
+    appStore.setLanguage(locale);
+  });
+  
+  return router;
+}

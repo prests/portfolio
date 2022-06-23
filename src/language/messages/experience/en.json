@@ -1,0 +1,12 @@
+{
+  "e1": {
+  "position": "Software Engineer III",
+  "duration": "July 2019 - Present",
+  "events": [
+    "Creating and maintaining core applications for FactSet's Research Business Unit. These apps provided real-time news, events, and signals to both Buy Side and Sell Side clients.",
+    "Managing an agile team to create stable and shareable UI components to improve sustainability across multiple FactSet applications.",
+    "Designed API endpoints to fetch news and events for internal and external clients.",
+    "Migrated legacy code from Angular.js to Vue.js, increasing unit test coverage by utilizing Typescript over Javascript, and creating responsive applications."
+  ]
+}
+}

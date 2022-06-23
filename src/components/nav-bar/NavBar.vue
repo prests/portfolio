@@ -11,15 +11,15 @@
 
     <div :class="$style.routesContainer">
       <div
-        v-for="path in paths"
-        :id="`path_${path.name}`"
-        :key="path.name"
+        v-for="(path, index) in paths"
+        :id="`path_${path.id}`"
+        :key="index"
         :class="$style.route"
-        @mouseover="focusRoute(path.name)"
-        @mouseleave="blurRoute(path.name)"
+        @mouseover="focusRoute(path.id)"
+        @mouseleave="blurRoute(path.id)"
         @click="changeRoute(path.path)"
       >
-        {{ path.name }}
+        {{ t(`links[${index}]`) }}
       </div>
 
       <div
@@ -29,7 +29,7 @@
         @mouseleave="blurButton('#navButton')"
         @click="openResume"
       >
-        Resume
+        {{ t('resume') }}
       </div>
     </div>
   </div>
@@ -42,7 +42,8 @@ import { defineComponent, ref } from "vue";
 import LogoSVG from "@assets/LogoSVG.vue";
 import { useNavAnimations } from "@composables/nav-bar/path-animations";
 import { usePaths } from '@composables/nav-bar/paths-service';
-
+import { useLanguage } from '@language/component-language';
+import navMessages from '@language/messages/nav';
 import HamburgerMenu from './HamburgerMenu.vue';
 
 const LOGO_LINES = [
@@ -72,6 +73,9 @@ export default defineComponent({
   },
   setup: () => {
     const hamburgerMenu = ref<HTMLDivElement>();
+
+    const { t } = useLanguage(navMessages);
+
     const {changeRoute, openResume, paths} = usePaths();
     const {blurButton, blurRoute, focusButton, focusRoute} = useNavAnimations();
 
@@ -94,6 +98,7 @@ export default defineComponent({
       hamburgerMenu,
       openResume,
       paths,
+      t,
     }
   },
 })
