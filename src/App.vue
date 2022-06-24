@@ -66,7 +66,12 @@ body {
 }
 
 body::-webkit-scrollbar {
+  height: 12px;
   width: 12px;
+}
+
+body::-webkit-scrollbar-thumb:horizontal:hover {
+  display: none;
 }
 
 body::-webkit-scrollbar-thumb {
