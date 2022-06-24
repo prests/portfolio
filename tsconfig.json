@@ -16,6 +16,7 @@
       "@components/*": ["./src/components/*"],
       "@composables/*": ["./src/composables/*"],
       "@language/*": ["./src/language/*"],
+      "@models/*": ["./src/models/*"],
       "@store/*": ["./src/store/*"],
       "@views/*": ["./src/views/*"],
     },
