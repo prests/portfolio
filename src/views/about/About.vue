@@ -13,7 +13,7 @@
           </a>
           &#46;
         </p>
-      
+
         <!-- eslint-disable-next-line vue/max-len -->
         <p>
           {{ t('p3.s1') }}
@@ -24,7 +24,7 @@
           >
             FactSet Research Systems
           </a>
-          {{ t('p3.s2')}}
+          {{ t('p3.s2') }}
         </p>
 
         <!-- eslint-disable-next-line vue/max-len -->
@@ -33,10 +33,7 @@
         <span>{{ t('technologies.header') }}</span>
         <div :class="$style.technologies">
           <ul>
-            <li
-              v-for="index in 8"
-              :key="index"
-            >
+            <li v-for="index in 8" :key="index">
               {{ t(`technologies.techList[${index - 1}]`) }}
             </li>
           </ul>
@@ -74,19 +71,19 @@ export default defineComponent({
 
     function blurImage(): void {
       if (window.innerWidth > 1200) {
-        gsap.to(`#aboutPhoto`, {duration: 0.5, rotate: 5});
+        gsap.to(`#aboutPhoto`, { duration: 0.5, rotate: 5 });
       }
     }
 
     function focusImage(): void {
-      gsap.to(`#aboutPhoto`, {duration: 0.5, rotate: 0});
+      gsap.to(`#aboutPhoto`, { duration: 0.5, rotate: 0 });
     }
 
     function loadImage(): void {
       if (window.innerWidth > 1200) {
-        gsap.to(`#aboutPhoto`, {duration: 2, opacity: 1, rotate: 5});
+        gsap.to(`#aboutPhoto`, { duration: 2, opacity: 1, rotate: 5 });
       } else {
-        gsap.to(`#aboutPhoto`, {duration: 2, opacity: 1});
+        gsap.to(`#aboutPhoto`, { duration: 2, opacity: 1 });
       }
     }
 
@@ -96,9 +93,9 @@ export default defineComponent({
       focusImage,
       loadImage,
       t,
-    }
+    };
   },
-})
+});
 </script>
 
 <style lang="scss" module>
@@ -182,16 +179,20 @@ export default defineComponent({
   text-decoration: none;
   color: colors.$orange-red-crystal;
 
-  background: 
-    none,
-    linear-gradient(to right, colors.$orange-red-crystal, colors.$orange-red-crystal);
+  background: none,
+    linear-gradient(
+      to right,
+      colors.$orange-red-crystal,
+      colors.$orange-red-crystal
+    );
   background-size: 100% 0.1em, 0 0.1em;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
   transition: background-size 400ms;
 }
 
-.link:hover, .link:focus {
+.link:hover,
+.link:focus {
   background-size: 0 0.1em, 100% 0.1em;
 }
 

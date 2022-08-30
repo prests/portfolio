@@ -2,9 +2,7 @@
   <div :class="$style.footerContainer">
     <span :class="$style.copyright">
       {{ t('copyright') }}
-      <span :class="$style.name">
-        Shayne Preston
-      </span>
+      <span :class="$style.name"> Shayne Preston </span>
     </span>
 
     <div :class="$style.linksContainer">
@@ -31,11 +29,11 @@
 </template>
 
 <script lang="ts">
-import gsap from "gsap";
-import { defineComponent } from "vue";
+import gsap from 'gsap';
+import { defineComponent } from 'vue';
 
 import GithubSvg from '@assets/GithubSVG.vue';
-import LinkedInSVG from "@assets/LinkedInSVG.vue";
+import LinkedInSVG from '@assets/LinkedInSVG.vue';
 import { useLanguage } from '@language/component-language';
 import footerMessages from '@language/messages/footer';
 
@@ -46,14 +44,14 @@ export default defineComponent({
     LinkedInSVG,
   },
   setup: () => {
-    const { t } = useLanguage(footerMessages)
+    const { t } = useLanguage(footerMessages);
 
     function blurLink(id: string): void {
-      gsap.to(id, {duration: 0.5, y: 0});
+      gsap.to(id, { duration: 0.5, y: 0 });
     }
 
     function focusLink(id: string): void {
-      gsap.to(id, {duration: 0.5, y: -5});
+      gsap.to(id, { duration: 0.5, y: -5 });
     }
 
     return {
@@ -62,7 +60,7 @@ export default defineComponent({
       t,
     };
   },
-})
+});
 </script>
 
 <style lang="scss" module>
@@ -90,6 +88,7 @@ export default defineComponent({
 
 .link {
   cursor: pointer;
-  filter: invert(45%) sepia(75%) saturate(512%) hue-rotate(315deg) brightness(97%) contrast(107%);
+  filter: invert(45%) sepia(75%) saturate(512%) hue-rotate(315deg)
+    brightness(97%) contrast(107%);
 }
 </style>

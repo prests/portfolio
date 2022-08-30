@@ -4,15 +4,14 @@
 
     <h2>This is not a valid page</h2>
   </div>
-  
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'PageNotFound',
-})
+});
 </script>
 
 <style lang="scss" module>

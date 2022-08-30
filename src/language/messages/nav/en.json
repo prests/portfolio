@@ -1,8 +1,4 @@
 {
-  "links": [
-    "About",
-    "Experience",
-    "Contact"
-  ],
+  "links": ["About", "Experience", "Contact"],
   "resume": "Resume"
 }

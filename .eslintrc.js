@@ -5,11 +5,9 @@ module.exports = {
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: "@typescript-eslint/parser",
+    parser: '@typescript-eslint/parser',
   },
-  plugins: [
-    '@typescript-eslint',
-  ],
+  plugins: ['@typescript-eslint'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
@@ -18,21 +16,25 @@ module.exports = {
     'prettier',
   ],
   rules: {
-    "vue/max-len": ["error", {
-      "code": 80,
-      "template": 80,
-      "tabWidth": 2,
-      "comments": 120,
-      "ignorePattern": "",
-      "ignoreComments": false,
-      "ignoreTrailingComments": false,
-      "ignoreUrls": false,
-      "ignoreStrings": false,
-      "ignoreTemplateLiterals": true,
-      "ignoreRegExpLiterals": false,
-      "ignoreHTMLAttributeValues": false,
-      "ignoreHTMLTextContents": false,
-    }],
+    'vue/max-len': [
+      'error',
+      {
+        code: 80,
+        import: 120,
+        template: 80,
+        tabWidth: 2,
+        comments: 120,
+        ignorePattern: '^import\\s.+\\sfrom\\s.+;$',
+        ignoreComments: false,
+        ignoreTrailingComments: false,
+        ignoreUrls: false,
+        ignoreStrings: false,
+        ignoreTemplateLiterals: true,
+        ignoreRegExpLiterals: false,
+        ignoreHTMLAttributeValues: false,
+        ignoreHTMLTextContents: false,
+      },
+    ],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-unused-vars': 'off',
@@ -42,9 +44,9 @@ module.exports = {
         argsIgnorePattern: '^_',
         varsIgnorePattern: '^_',
         caughtErrorsIgnorePattern: '^_',
-      }
+      },
     ],
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-types': 'off',
   },
-}
+};

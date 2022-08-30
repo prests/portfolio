@@ -18,8 +18,8 @@
       "@language/*": ["./src/language/*"],
       "@models/*": ["./src/models/*"],
       "@store/*": ["./src/store/*"],
-      "@views/*": ["./src/views/*"],
-    },
+      "@views/*": ["./src/views/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/max-len -->
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -5,11 +6,7 @@
     height="173.354"
     viewBox="0 0 83 173.354"
   >
-    <g
-      id="Group_2"
-      data-name="Group 2"
-      transform="translate(158 436.177)"
-    >
+    <g id="Group_2" data-name="Group 2" transform="translate(158 436.177)">
       <line
         id="Logo_Line_1"
         data-name="Line 1"
@@ -149,7 +146,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'LogoSVG',

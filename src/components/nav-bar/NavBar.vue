@@ -36,11 +36,11 @@
 </template>
 
 <script lang="ts">
-import gsap from "gsap";
-import { defineComponent, ref } from "vue";
+import gsap from 'gsap';
+import { defineComponent, ref } from 'vue';
 
-import LogoSVG from "@assets/LogoSVG.vue";
-import { useNavAnimations } from "@composables/nav-bar/path-animations";
+import LogoSVG from '@assets/LogoSVG.vue';
+import { useNavAnimations } from '@composables/nav-bar/path-animations';
 import { usePaths } from '@composables/nav-bar/paths-service';
 import { useLanguage } from '@language/component-language';
 import navMessages from '@language/messages/nav';
@@ -76,15 +76,16 @@ export default defineComponent({
 
     const { t } = useLanguage(navMessages);
 
-    const {changeRoute, openResume, paths} = usePaths();
-    const {blurButton, blurRoute, focusButton, focusRoute} = useNavAnimations();
+    const { changeRoute, openResume, paths } = usePaths();
+    const { blurButton, blurRoute, focusButton, focusRoute } =
+      useNavAnimations();
 
     function blurHomeButton(): void {
-      gsap.to(LOGO_LINES, {duration: 0.5, stroke: '#FE5F55'});
+      gsap.to(LOGO_LINES, { duration: 0.5, stroke: '#FE5F55' });
     }
 
     function focusHomeButton(): void {
-      gsap.to(LOGO_LINES, {duration: 0.5, stroke: '#F7F7FF'});
+      gsap.to(LOGO_LINES, { duration: 0.5, stroke: '#F7F7FF' });
     }
 
     return {
@@ -99,9 +100,9 @@ export default defineComponent({
       openResume,
       paths,
       t,
-    }
+    };
   },
-})
+});
 </script>
 
 <style lang="scss" module>
@@ -140,11 +141,14 @@ export default defineComponent({
   font-size: 2rem;
   font-weight: 700;
   background-color: colors.$white;
-  background-image: linear-gradient(45deg, colors.$white 100%, colors.$orange-red-crystal 0%);
+  background-image: linear-gradient(
+    45deg,
+    colors.$white 100%,
+    colors.$orange-red-crystal 0%
+  );
 
   background-clip: text;
   background-size: 100%;
-  
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

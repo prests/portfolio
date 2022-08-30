@@ -7,16 +7,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import {
-  default as ExperienceWrapper
-} from '@components/experience-card/ExperienceWrapper.vue';
+import ExperienceWrapper from '@components/experience-card/ExperienceWrapper.vue';
 
 export default defineComponent({
   name: 'ExperienceView',
   components: {
     ExperienceWrapper,
   },
-})
+});
 </script>
 
 <style lang="scss" module>

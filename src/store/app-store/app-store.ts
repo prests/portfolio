@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
 export const useAppStore = defineStore('appStore', {
   state: () => ({
@@ -8,5 +8,5 @@ export const useAppStore = defineStore('appStore', {
     setLanguage(newLanguage: string): void {
       this.language = newLanguage;
     },
-  }, 
-})
+  },
+});

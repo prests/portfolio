@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/max-len -->
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -14,8 +15,8 @@
         stroke="#ff4e43"
         stroke-width="1"
       >
-        <rect width="163" height="18" rx="8" stroke="none"/>
-        <rect x="0.5" y="0.5" width="162" height="17" rx="7.5" fill="none"/>
+        <rect width="163" height="18" rx="8" stroke="none" />
+        <rect x="0.5" y="0.5" width="162" height="17" rx="7.5" fill="none" />
       </g>
       <g
         id="Rectangle_3"
@@ -25,8 +26,8 @@
         stroke="#ff4e43"
         stroke-width="1"
       >
-        <rect width="216" height="18" rx="8" stroke="none"/>
-        <rect x="0.5" y="0.5" width="215" height="17" rx="7.5" fill="none"/>
+        <rect width="216" height="18" rx="8" stroke="none" />
+        <rect x="0.5" y="0.5" width="215" height="17" rx="7.5" fill="none" />
       </g>
       <g
         id="Rectangle_4"
@@ -36,15 +37,15 @@
         stroke="#ff4e43"
         stroke-width="1"
       >
-        <rect width="129" height="18" rx="8" stroke="none"/>
-        <rect x="0.5" y="0.5" width="128" height="17" rx="7.5" fill="none"/>
+        <rect width="129" height="18" rx="8" stroke="none" />
+        <rect x="0.5" y="0.5" width="128" height="17" rx="7.5" fill="none" />
       </g>
     </g>
   </svg>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'HamburgerSVG',
