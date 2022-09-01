@@ -15,13 +15,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
   name: 'HorizontalMenu',
   props: {
-    items: {type: Object as PropType<string[]>, default: () => [] as string[]},
-    selected: {type: String, required: true},
+    items: {
+      type: Object as PropType<string[]>,
+      default: () => [] as string[],
+    },
+    selected: { type: String, required: true },
   },
   emits: {
     'update:selected': (payload: string) => typeof payload === 'string',

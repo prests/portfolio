@@ -1,7 +1,7 @@
 <template>
   <ExperienceCard>
     <template #title>
-      {{ t('position') }} 
+      {{ t('position') }}
       <a :class="$style.link" href="https://www.factset.com/" target="_blank">
         @ FactSet Research Systems
       </a>
@@ -22,11 +22,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
-import { useLanguage } from "@language/component-language";
-import factSetMessage from "@language/messages/experiences/factset"
-import ExperienceCard from "../ExperienceCard.vue";
+import { useLanguage } from '@language/component-language';
+import factSetMessage from '@language/messages/experiences/factset';
+import ExperienceCard from '../ExperienceCard.vue';
 
 export default defineComponent({
   name: 'FactSetExperience',
@@ -40,11 +40,10 @@ export default defineComponent({
       t,
     };
   },
-})
+});
 </script>
 
 <style lang="scss" module>
-@use "../styles/experiences.scss";
+@use '../styles/experiences.scss';
 @include experiences.link;
-
 </style>

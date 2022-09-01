@@ -14,15 +14,15 @@
 </template>
 
 <script lang="ts">
-import gsap from "gsap";
-import { defineComponent, ref } from "vue";
+import gsap from 'gsap';
+import { defineComponent, ref } from 'vue';
 
 import {
   DraftKingsExperience,
   FactSetExperience,
-} from '@components/experience-card/experiences'
-import HorizontalMenu from "@components/horizontal-menu/HorizontalMenu.vue";
-import { ExperiencesMap } from "@models/experiences";
+} from '@components/experience-card/experiences';
+import HorizontalMenu from '@components/horizontal-menu/HorizontalMenu.vue';
+import { ExperiencesMap } from '@models/experiences';
 
 export default defineComponent({
   name: 'ExperienceWrapper',
@@ -40,11 +40,11 @@ export default defineComponent({
 
     function experienceEnter(el: any, done: any) {
       gsap.set(el, { opacity: 0 });
-      gsap.to(el, {duration: 0.25, opacity: 1, onComplete: done});
+      gsap.to(el, { duration: 0.25, opacity: 1, onComplete: done });
     }
 
     function experienceLeave(el: any, done: any) {
-      gsap.to(el, {duration: 0.25, opacity: 0, onComplete: done});
+      gsap.to(el, { duration: 0.25, opacity: 0, onComplete: done });
     }
 
     return {
@@ -53,9 +53,9 @@ export default defineComponent({
       experiencesMap,
       companiesList: Object.keys(experiencesMap),
       selected,
-    }
+    };
   },
-})
+});
 </script>
 
 <style lang="scss" module>

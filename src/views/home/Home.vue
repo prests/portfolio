@@ -3,7 +3,7 @@
     <h1 :class="$style.welcome">{{ t('welcome') }}</h1>
     <h2 :class="$style.motto">
       {{ t('bio.s1') }}
-      <span :class="$style.name">Shayne Preston</span>&#44; 
+      <span :class="$style.name">Shayne Preston</span>&#44;
       {{ t('bio.s2') }}
     </h2>
 
@@ -37,8 +37,8 @@ export default defineComponent({
   name: 'HomeView',
   setup: () => {
     const { t } = useLanguage(homeMessages);
-    const {sendEmail} = usePaths();
-    const {blurButton, focusButton} = useNavAnimations();
+    const { sendEmail } = usePaths();
+    const { blurButton, focusButton } = useNavAnimations();
 
     return {
       blurButton,
@@ -107,7 +107,7 @@ export default defineComponent({
   border: solid 2px colors.$orange-red-crystal;
   border-radius: 5px;
   align-items: center;
-  
+
   @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
     margin: 0 auto;
   }

@@ -1,5 +1,5 @@
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 export function usePaths() {
   const router = useRouter();
@@ -39,12 +39,12 @@ export function usePaths() {
 
   const sendEmail = (): void => {
     window.open('mailto:shayne.preston@protonmail.com');
-  }
+  };
 
   return {
     changeRoute,
     openResume,
     paths,
     sendEmail,
-  }
+  };
 }

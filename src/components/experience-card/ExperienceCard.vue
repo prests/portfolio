@@ -15,11 +15,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'ExperienceCard',
-})
+});
 </script>
 
 <style lang="scss" module>
@@ -33,7 +33,7 @@ export default defineComponent({
 .experienceContainer {
   display: flex;
   flex-direction: column;
-  color: co
+  color: co;
 }
 
 .content {

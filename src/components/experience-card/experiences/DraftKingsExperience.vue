@@ -1,7 +1,7 @@
 <template>
   <ExperienceCard>
     <template #title>
-      {{ t('position') }} 
+      {{ t('position') }}
       <a
         :class="$style.link"
         href="https://www.draftkings.com/about/"
@@ -26,11 +26,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
-import { useLanguage } from "@language/component-language";
-import draftkingsMessages from "@language/messages/experiences/draftkings"
-import ExperienceCard from "../ExperienceCard.vue";
+import { useLanguage } from '@language/component-language';
+import draftkingsMessages from '@language/messages/experiences/draftkings';
+import ExperienceCard from '../ExperienceCard.vue';
 
 export default defineComponent({
   name: 'DraftKingsExperience',
@@ -44,11 +44,10 @@ export default defineComponent({
       t,
     };
   },
-})
+});
 </script>
 
 <style lang="scss" module>
-@use "../styles/experiences.scss";
+@use '../styles/experiences.scss';
 @include experiences.link;
-
 </style>

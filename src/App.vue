@@ -12,10 +12,10 @@
 
 <script lang="ts">
 import gsap from 'gsap';
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 import FooterList from '@components/footer/Footer.vue';
-import NavBar from '@components/nav-bar/NavBar.vue'
+import NavBar from '@components/nav-bar/NavBar.vue';
 
 export default defineComponent({
   name: 'App',
@@ -28,15 +28,15 @@ export default defineComponent({
 
     function routeEnter(_: unknown, done: any): void {
       if (initialLoad) {
-        gsap.to('#body', {duration: 2, opacity: 1, onComplete: done});
+        gsap.to('#body', { duration: 2, opacity: 1, onComplete: done });
         initialLoad = false;
       } else {
-        gsap.to('#body', {duration: 0.25, opacity: 1, onComplete: done});
+        gsap.to('#body', { duration: 0.25, opacity: 1, onComplete: done });
       }
     }
 
     function routeLeave(_: unknown, done: any): void {
-      gsap.to('#body', {duration: 0.25, opacity: 0, onComplete: done});
+      gsap.to('#body', { duration: 0.25, opacity: 0, onComplete: done });
     }
 
     return {
@@ -75,7 +75,7 @@ body::-webkit-scrollbar-thumb:horizontal:hover {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #F7F7FF80;
+  background-color: #f7f7ff80;
   border: 3px solid colors.$black-corol;
   border-radius: 10px;
 }
@@ -104,7 +104,6 @@ body::-webkit-scrollbar-track {
 </style>
 
 <style lang="scss" module>
-
 .view {
   width: 100%;
 }

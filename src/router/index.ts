@@ -1,12 +1,9 @@
-import { createWebHistory, createRouter, Router } from "vue-router";
-import { Pinia } from "pinia";
+import { createWebHistory, createRouter, Router } from 'vue-router';
+import { Pinia } from 'pinia';
 
-import {
-  DEFAULT_LOCALE,
-  SUPPORTED_LOCALES,
-} from "@language/index";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from '@language/index';
 import { useAppStore } from '@store/app-store/app-store';
-import { routes } from "./routes";
+import { routes } from './routes';
 
 export function setupRouter(pinia: Pinia): Router {
   const appStore = useAppStore(pinia);
@@ -15,7 +12,7 @@ export function setupRouter(pinia: Pinia): Router {
     routes,
   });
 
-  router.beforeEach(async to => {
+  router.beforeEach(async (to) => {
     const paramsLocale = to.params.locale as string;
 
     const locale = SUPPORTED_LOCALES.includes(paramsLocale)
@@ -23,6 +20,6 @@ export function setupRouter(pinia: Pinia): Router {
       : DEFAULT_LOCALE;
     appStore.setLanguage(locale);
   });
-  
+
   return router;
 }

@@ -2,55 +2,47 @@
   <div :class="$style.menuContainer">
     <HamburgerSVG
       :class="$style.hamburgerIcon"
-      @click="menuOpen ? closeMenu() : openMenu();"
+      @click="menuOpen ? closeMenu() : openMenu()"
     />
 
     <Teleport to="#hamburger-target">
-        <div
-          v-if="menuOpen"
-          :class="$style.popUp"
-          @click="closeMenu"
-        >
-          <Transition appear @enter="openPopUp" @leave="closePopUp">
+      <div v-if="menuOpen" :class="$style.popUp" @click="closeMenu">
+        <Transition appear @enter="openPopUp" @leave="closePopUp">
+          <div v-if="navPanelOpen" :class="$style.routesContainer" @click.stop>
             <div
-              v-if="navPanelOpen"
-              :class="$style.routesContainer"
-              @click.stop
+              v-for="(path, index) in paths"
+              :id="`path_${path.id}`"
+              :key="index"
+              :class="$style.route"
+              @mouseover="focusRoute(path.id)"
+              @mouseleave="blurRoute(path.id)"
+              @click.stop="hamburgerRouteSelected(path.path)"
             >
-              <div
-                v-for="(path, index) in paths"
-                :id="`path_${path.id}`"
-                :key="index"
-                :class="$style.route"
-                @mouseover="focusRoute(path.id)"
-                @mouseleave="blurRoute(path.id)"
-                @click.stop="hamburgerRouteSelected(path.path)"
-              >
-                {{ t(`links[${index}]`) }}
-              </div>
-
-              <div
-                id="resume"
-                :class="$style.resumeButton"
-                @mouseover="focusButton('#resume')"
-                @mouseleave="blurButton('#resume')"
-                @click.stop="openResume"
-              >
-                {{ t('resume') }}
-              </div>
+              {{ t(`links[${index}]`) }}
             </div>
-          </Transition>
-        </div>
+
+            <div
+              id="resume"
+              :class="$style.resumeButton"
+              @mouseover="focusButton('#resume')"
+              @mouseleave="blurButton('#resume')"
+              @click.stop="openResume"
+            >
+              {{ t('resume') }}
+            </div>
+          </div>
+        </Transition>
+      </div>
     </Teleport>
   </div>
 </template>
 
 <script lang="ts">
-import gsap from "gsap";
-import { defineComponent, ref } from "vue";
+import gsap from 'gsap';
+import { defineComponent, ref } from 'vue';
 
-import HamburgerSVG from "@assets/HamburgerSVG.vue";
-import { useNavAnimations } from "@composables/nav-bar/path-animations";
+import HamburgerSVG from '@assets/HamburgerSVG.vue';
+import { useNavAnimations } from '@composables/nav-bar/path-animations';
 import { usePaths } from '@composables/nav-bar/paths-service';
 import { useLanguage } from '@language/component-language';
 import navMessages from '@language/messages/nav';
@@ -66,8 +58,9 @@ export default defineComponent({
 
     const { t } = useLanguage(navMessages);
 
-    const {changeRoute, openResume, paths} = usePaths();
-    const {blurButton, blurRoute, focusButton, focusRoute} = useNavAnimations();
+    const { changeRoute, openResume, paths } = usePaths();
+    const { blurButton, blurRoute, focusButton, focusRoute } =
+      useNavAnimations();
 
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) {
@@ -94,11 +87,11 @@ export default defineComponent({
 
     function openPopUp(el: any, done: any) {
       gsap.set(el, { xPercent: 100 });
-      gsap.to(el, {duration: 0.5, xPercent: 0, onComplete: done});
+      gsap.to(el, { duration: 0.5, xPercent: 0, onComplete: done });
     }
 
     function closePopUp(el: any, done: any) {
-      gsap.to(el, {duration: 0.1, xPercent: 100, onComplete: done});
+      gsap.to(el, { duration: 0.1, xPercent: 100, onComplete: done });
     }
 
     return {
@@ -118,7 +111,7 @@ export default defineComponent({
       t,
     };
   },
-})
+});
 </script>
 
 <style lang="scss" module>
@@ -156,11 +149,15 @@ export default defineComponent({
   font-size: 2.5rem;
   font-weight: 900;
   background-color: colors.$white;
-  background-image: linear-gradient(45deg, colors.$white 100%, colors.$orange-red-crystal 0%);
+  background-image: linear-gradient(
+    45deg,
+    colors.$white 100%,
+    colors.$orange-red-crystal 0%
+  );
 
   background-clip: text;
   background-size: 100%;
-  
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
