@@ -20,7 +20,6 @@ module.exports = {
       'error',
       {
         code: 80,
-        import: 120,
         template: 80,
         tabWidth: 2,
         comments: 120,
