@@ -1,7 +1,8 @@
 [build]
   functions = "netlify/functions"
   publish = "packages/app/dist"
-  command = "RUSH_PNPM_STORE_PATH=\"common/temp/pnpm-store\" && node common/scripts/install-run-rush.js install && rush install --no-link && rush link && rush rebuild"
+  environment = { RUSH_PNPM_STORE_PATH = "common/tempt/pnpm-store" }
+  command = "node common/scripts/install-run-rush.js install && rush install --no-link && rush link && rush rebuild"
 [[redirects]]
   from = "/*"
   to = "/index.html"

@@ -7,7 +7,6 @@
   "rushVersion": "5.77.3",
   "pnpmVersion": "6.7.1",
   "pnpmOptions": {
-    "pnpmStore": "local",
     "useWorkspaces": true
   },
 
