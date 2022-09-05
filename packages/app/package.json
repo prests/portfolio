@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --port 8080",
-    "build": "pnpm lint && vue-tsc -p ./tsconfig.json --noEmit && vite build",
+    "build": "rush-pnpm lint && vue-tsc -p ./tsconfig.json --noEmit && vite build",
     "lint": "eslint --ext .ts,.vue src",
     "preview": "vite preview"
   },
