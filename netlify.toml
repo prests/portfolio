@@ -1,7 +1,7 @@
 [build]
   functions = "netlify/functions"
   publish = "packages/app/dist"
-  command = "node common/scripts/install-run-rush.js install --no-link && node common/scripts/install-run-rush.js link && node common/scripts/install-run-rush.js rebuild"
+  command = "node common/scripts/install-run-rush.js install && node common/scripts/install-run-rush.js rebuild"
 [[redirects]]
   from = "/*"
   to = "/index.html"
