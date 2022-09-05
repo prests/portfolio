@@ -1,3 +1,5 @@
+# Gitignore
+
 node_modules
 .DS_Store
 dist
@@ -69,14 +71,29 @@ jspm_packages/
 
 # Rush temporary files
 common/deploy/
-common/temp
-common/temp/**
+common/temp/
 common/autoinstallers/*/.npmrc
 **/.rush/temp/
-**/.rush/temp/**
 
 # Heft
 .heft
 
-# Local Netlify folder
-.netlify
+
+# Rush files
+common/changes/
+common/scripts/
+common/config/
+CHANGELOG.*
+
+# Package manager files
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+shrinkwrap.json
+
+# Build outputs
+dist
+lib
+
+# Prettier reformats code blocks inside Markdown, which affects rendered output
+*.md

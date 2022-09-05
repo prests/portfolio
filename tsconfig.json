@@ -10,16 +10,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "paths": {
-      "~styles/*": ["./src/styles/*"],
-      "@assets/*": ["./src/assets/*"],
-      "@components/*": ["./src/components/*"],
-      "@composables/*": ["./src/composables/*"],
-      "@language/*": ["./src/language/*"],
-      "@models/*": ["./src/models/*"],
-      "@store/*": ["./src/store/*"],
-      "@views/*": ["./src/views/*"]
-    }
+    "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "exclude": ["dist", "node_modules", "common"]
 }
