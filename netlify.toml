@@ -1,5 +1,7 @@
 [build]
-  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
+  functions = "netlify/functions"
+  publish = "packages/app/dist"
+  command = "node common/scripts/install-run-rush.js install && rush build"
 [[redirects]]
   from = "/*"
   to = "/index.html"
