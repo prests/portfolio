@@ -29,7 +29,7 @@
   },
 
   "eventHooks": {
-    "preRushInstall": ["common/scripts/set-environment.sh"],
+    "preRushInstall": [],
     "postRushInstall": [],
     "preRushBuild": [],
     "postRushBuild": []
