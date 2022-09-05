@@ -1,8 +1,0 @@
-{
-  "node": "16.13.0",
-  "packageManager": "pnpm",
-  "packageManagerVersion": "6.7.1",
-  "rushJsonFolder": "/Users/shaynepreston/Documents/Projects/shayne-website-frontend",
-  "storePath": "/Users/shaynepreston/Documents/Projects/shayne-website-frontend/common/temp/pnpm-store",
-  "workspaces": true
-}
