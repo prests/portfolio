@@ -1,5 +1,5 @@
 {
-  "name": "vue3-testing",
+  "name": "shayne-frontend",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --port 8080",
