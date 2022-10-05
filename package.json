@@ -19,5 +19,8 @@
   "scripts": {
     "build": "pnpm -r build"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@changesets/cli": "^2.25.0"
+  }
 }
