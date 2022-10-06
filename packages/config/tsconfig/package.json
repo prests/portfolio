@@ -7,11 +7,13 @@
   },
   "version": "1.0.1",
   "description": "A package for all things tsconfig",
-  "private": true,
   "main": "tsconfig.json",
   "keywords": [
     "prettier",
     "prettierconfig"
+  ],
+  "files": [
+    "tsconfig.json"
   ],
   "license": "UNLICENSED"
 }

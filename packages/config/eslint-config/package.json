@@ -7,11 +7,16 @@
   },
   "version": "1.0.1",
   "description": "A package for all things eslint",
-  "private": true,
   "main": "index.js",
+  "publishConfig": {
+    "registry": "https://shayne.jfrog.io/artifactory/api/npm/shayne-npm/"
+  },
   "scripts": {
     "lint": "eslint . --no-error-on-unmatched-pattern --config index.js"
   },
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "eslint",
     "eslintconfig"

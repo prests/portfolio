@@ -7,11 +7,13 @@
   },
   "version": "1.0.1",
   "description": "A package for all things prettier",
-  "private": true,
   "main": "index.json",
   "keywords": [
     "prettier",
     "prettierconfig"
+  ],
+  "files": [
+    "index.json"
   ],
   "license": "UNLICENSED"
 }
