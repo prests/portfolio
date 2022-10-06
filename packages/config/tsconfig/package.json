@@ -1,0 +1,17 @@
+{
+  "name": "@shayne/tsconfig",
+  "author": {
+    "name": "Shayne Preston",
+    "email": "shayne.preston@protonmail.com",
+    "url": "https://www.shaynepreston.com/"
+  },
+  "version": "1.0.0",
+  "description": "A package for all things tsconfig",
+  "private": true,
+  "main": "tsconfig.json",
+  "keywords": [
+    "prettier",
+    "prettierconfig"
+  ],
+  "license": "UNLICENSED"
+}

@@ -1,7 +1,3 @@
 module.exports = {
-  printWidht: 80,
-  trailingComma: 'es5',
-  tabWidth: 2,
-  semi: true,
-  singleQuote: true,
+  ...require('@shayne/prettier-config/index.json'),
 };

@@ -1,5 +1,5 @@
 {
-  "name": "shayne-website-frontend",
+  "name": "@shayne/website-frontend",
   "author": {
     "name": "Shayne Preston",
     "email": "shayne.preston@protonmail.com",
@@ -30,13 +30,11 @@
     "vue-router": "^4.0.16"
   },
   "devDependencies": {
+    "@shayne/eslint-config": "workspace:*",
+    "@shayne/tsconfig": "workspace:*",
     "@types/node": "^17.0.45",
-    "@typescript-eslint/eslint-plugin": "^5.28.0",
-    "@typescript-eslint/parser": "^5.28.0",
     "@vitejs/plugin-vue": "^2.3.3",
     "eslint": "^8.18.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-vue": "^8.7.1",
     "path": "^0.12.7",
     "prettier": "2.5.1",
     "sass": "^1.52.3",
