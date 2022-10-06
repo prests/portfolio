@@ -24,6 +24,6 @@
     "@changesets/cli": "^2.25.0"
   },
   "devDependencies": {
-    "@shayne/prettier-config": "workspace:*"
+    "@shayne/prettier-config": "latest"
   }
 }
