@@ -5,7 +5,7 @@
     "email": "shayne.preston@protonmail.com",
     "url": "https://www.shaynepreston.com/"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A package for all things tsconfig",
   "private": true,
   "main": "tsconfig.json",
