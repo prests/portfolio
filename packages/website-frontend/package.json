@@ -18,7 +18,7 @@
   "private": true,
   "scripts": {
     "dev": "vite --port 8080",
-    "build": "pnpm lint && vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --noEmit && vite build",
     "lint": "eslint --ext .ts,.vue --ignore-path ../../.gitignore src",
     "preview": "vite preview"
   },
@@ -26,22 +26,21 @@
     "gsap": "^3.10.4",
     "pinia": "^2.0.14",
     "vue": "^3.2.37",
-    "vue-i18n": "9.2.0-beta.36",
+    "vue-i18n": "^9.2.2",
     "vue-router": "^4.0.16"
   },
   "devDependencies": {
     "@shayne/eslint-config": "latest",
     "@shayne/tsconfig": "latest",
-    "@types/node": "^17.0.45",
-    "@vitejs/plugin-vue": "^2.3.3",
+    "@types/node": "^18.8.3",
+    "@vitejs/plugin-vue": "^3.1.0",
     "eslint": "^8.18.0",
     "path": "^0.12.7",
-    "prettier": "2.5.1",
     "sass": "^1.52.3",
     "typescript": "^4.7.4",
-    "vite": "^2.9.12",
+    "vite": "^3.1.0",
     "vite-plugin-eslint": "^1.6.1",
-    "vue-tsc": "^0.29.8"
+    "vue-tsc": "^1.0.0"
   },
   "license": "UNLICENSED"
 }

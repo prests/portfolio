@@ -1,3 +1,17 @@
 {
-  "extends": "@shayne/tsconfig"
+  "extends": "@shayne/tsconfig",
+  "compilerOptions": {
+    "paths": {
+      "~styles/*": ["./src/styles/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@composables/*": ["./src/composables/*"],
+      "@language/*": ["./src/language/*"],
+      "@models/*": ["./src/models/*"],
+      "@store/*": ["./src/store/*"],
+      "@views/*": ["./src/views/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
