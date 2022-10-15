@@ -2,10 +2,9 @@
 <template>
   <div :class="$style.container">
     <button
-      :class="{ [$style.menu]: true, [$style.opened]: value }"
+      :class="{ [$style.menu]: true, [$style.opened]: modelValue }"
       aria-label="Main Menu"
-      :aria-expanded="value"
-      @click="$emit('toggle', !value)"
+      :aria-expanded="modelValue"
     >
       <svg width="100" height="100" viewBox="0 0 100 100">
         <path
@@ -28,10 +27,10 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'HamburgerSVG',
   props: {
-    value: { type: Boolean, default: false },
+    modelValue: { type: Boolean, default: false },
   },
   emits: {
-    toggle: (payload: Boolean) => typeof payload === 'boolean',
+    'update:modelValue': (payload: Boolean) => typeof payload === 'boolean',
   },
 });
 </script>

@@ -69,6 +69,10 @@ html {
 }
 
 body {
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   background-color: colors.$black-corol;
   height: 100%;
   width: 100%;
@@ -103,21 +107,11 @@ body::-webkit-scrollbar-track {
 }
 
 #app {
-  font-family: 'Lato', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
   font-size: 1.6rem;
-}
-
-#hamburger-target {
-  font-family: 'Lato', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 </style>
 

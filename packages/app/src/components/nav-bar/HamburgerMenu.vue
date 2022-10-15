@@ -6,7 +6,7 @@
       @click="menuOpen ? closeMenu() : openMenu()"
     />
 
-    <Teleport to="#hamburger-target">
+    <Teleport to="body">
       <div v-if="menuOpen" :class="$style.popUp" @click="closeMenu">
         <Transition appear @enter="openPopUp" @leave="closePopUp">
           <div v-if="navPanelOpen" :class="$style.routesContainer" @click.stop>
