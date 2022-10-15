@@ -1,47 +1,24 @@
 <!-- eslint-disable vue/max-len -->
 <template>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="216"
-    height="114"
-    viewBox="0 0 216 114"
-  >
-    <g id="Group_3" data-name="Group 3" transform="translate(-472 460)">
-      <g
-        id="Rectangle_2"
-        data-name="Rectangle 2"
-        transform="translate(525 -460)"
-        fill="#ff4e43"
-        stroke="#ff4e43"
-        stroke-width="1"
-      >
-        <rect width="163" height="18" rx="8" stroke="none" />
-        <rect x="0.5" y="0.5" width="162" height="17" rx="7.5" fill="none" />
-      </g>
-      <g
-        id="Rectangle_3"
-        data-name="Rectangle 3"
-        transform="translate(472 -412)"
-        fill="#ff4e43"
-        stroke="#ff4e43"
-        stroke-width="1"
-      >
-        <rect width="216" height="18" rx="8" stroke="none" />
-        <rect x="0.5" y="0.5" width="215" height="17" rx="7.5" fill="none" />
-      </g>
-      <g
-        id="Rectangle_4"
-        data-name="Rectangle 4"
-        transform="translate(559 -364)"
-        fill="#ff4e43"
-        stroke="#ff4e43"
-        stroke-width="1"
-      >
-        <rect width="129" height="18" rx="8" stroke="none" />
-        <rect x="0.5" y="0.5" width="128" height="17" rx="7.5" fill="none" />
-      </g>
-    </g>
-  </svg>
+  <div :class="$style.container">
+    <button
+      :class="{ [$style.menu]: true, [$style.opened]: modelValue }"
+      aria-label="Main Menu"
+      :aria-expanded="modelValue"
+    >
+      <svg width="100" height="100" viewBox="0 0 100 100">
+        <path
+          :class="[$style.line, $style.line1]"
+          d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+        />
+        <path :class="[$style.line, $style.line2]" d="M 20,50 H 80" />
+        <path
+          :class="[$style.line, $style.line3]"
+          d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+        />
+      </svg>
+    </button>
+  </div>
 </template>
 
 <script lang="ts">
@@ -49,5 +26,64 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'HamburgerSVG',
+  props: {
+    modelValue: { type: Boolean, default: false },
+  },
+  emits: {
+    'update:modelValue': (payload: Boolean) => typeof payload === 'boolean',
+  },
 });
 </script>
+
+<style lang="scss" module>
+@use '~styles/colors';
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+}
+.line {
+  fill: none;
+  stroke: colors.$orange-red-crystal;
+  stroke-width: 4;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 4;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 4;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 4;
+}
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 4;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 4;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 4;
+}
+</style>

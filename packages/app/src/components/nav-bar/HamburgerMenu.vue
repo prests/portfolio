@@ -1,11 +1,12 @@
 <template>
   <div :class="$style.menuContainer">
     <HamburgerSVG
+      v-model="menuOpen"
       :class="$style.hamburgerIcon"
       @click="menuOpen ? closeMenu() : openMenu()"
     />
 
-    <Teleport to="#hamburger-target">
+    <Teleport to="body">
       <div v-if="menuOpen" :class="$style.popUp" @click="closeMenu">
         <Transition appear @enter="openPopUp" @leave="closePopUp">
           <div v-if="navPanelOpen" :class="$style.routesContainer" @click.stop>
@@ -77,7 +78,7 @@ export default defineComponent({
       navPanelOpen.value = false;
       setTimeout(() => {
         menuOpen.value = false;
-      }, 100);
+      }, 250);
     }
 
     function openMenu(): void {
@@ -93,7 +94,7 @@ export default defineComponent({
     }
 
     function closePopUp(el: any, done: any) {
-      animate(el, { x: '100%' }, { duration: 0.1 }).finished.then(done);
+      animate(el, { x: '100%' }, { duration: 0.25 }).finished.then(done);
     }
 
     return {
