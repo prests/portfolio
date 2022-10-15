@@ -28,8 +28,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import { useNavAnimations } from '@composables/nav-bar/path-animations';
-import { usePaths } from '@composables/nav-bar/paths-service';
+import { useNavAnimations } from '@composables/animations/nav-bar/path-animations';
+import { usePaths } from '@composables/routing/paths-service';
 import { useLanguage } from '@language/component-language';
 import homeMessages from '@language/messages/home';
 

@@ -38,12 +38,12 @@
 </template>
 
 <script lang="ts">
-import gsap from 'gsap';
+import { animate, timeline } from 'motion';
 import { defineComponent, ref } from 'vue';
 
 import HamburgerSVG from '@assets/HamburgerSVG.vue';
-import { useNavAnimations } from '@composables/nav-bar/path-animations';
-import { usePaths } from '@composables/nav-bar/paths-service';
+import { useNavAnimations } from '@composables/animations/nav-bar/path-animations';
+import { usePaths } from '@composables/routing/paths-service';
 import { useLanguage } from '@language/component-language';
 import navMessages from '@language/messages/nav';
 
@@ -86,12 +86,14 @@ export default defineComponent({
     }
 
     function openPopUp(el: any, done: any) {
-      gsap.set(el, { xPercent: 100 });
-      gsap.to(el, { duration: 0.5, xPercent: 0, onComplete: done });
+      timeline([
+        [el, { x: '100%' }, { duration: 0 }],
+        [el, { x: '0%' }, { duration: 0.5 }],
+      ]).finished.then(done);
     }
 
     function closePopUp(el: any, done: any) {
-      gsap.to(el, { duration: 0.1, xPercent: 100, onComplete: done });
+      animate(el, { x: '100%' }, { duration: 0.1 }).finished.then(done);
     }
 
     return {

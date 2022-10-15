@@ -1,45 +1,56 @@
 <template>
-  <NavBar />
+  <div :class="$style.appContainer">
+    <SplashScreen
+      v-if="splashScreenRunning"
+      @animation-finished="splashScreenRunning = false"
+    />
 
-  <router-view v-slot="{ Component }">
-    <transition mode="out-in" @enter="routeEnter" @leave="routeLeave">
-      <component :is="Component" :class="$style.view"></component>
-    </transition>
-  </router-view>
+    <div v-show="!splashScreenRunning" class="main">
+      <NavBar />
 
-  <FooterList />
+      <router-view v-slot="{ Component }">
+        <transition mode="out-in" @enter="routeEnter" @leave="routeLeave">
+          <component
+            :is="Component"
+            v-if="!splashScreenRunning"
+            :class="$style.view"
+          />
+        </transition>
+      </router-view>
+
+      <FooterList />
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
-import gsap from 'gsap';
-import { defineComponent } from 'vue';
+import { animate } from 'motion';
+import { defineComponent, ref } from 'vue';
 
 import FooterList from '@components/footer/Footer.vue';
 import NavBar from '@components/nav-bar/NavBar.vue';
+import SplashScreen from '@components/splash-screen/SplashScreen.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     FooterList,
     NavBar,
+    SplashScreen,
   },
   setup: () => {
-    let initialLoad = true;
+    const splashScreenRunning = ref(true);
 
-    function routeEnter(_: unknown, done: any): void {
-      if (initialLoad) {
-        gsap.to('#body', { duration: 2, opacity: 1, onComplete: done });
-        initialLoad = false;
-      } else {
-        gsap.to('#body', { duration: 0.25, opacity: 1, onComplete: done });
-      }
+    function routeEnter(_: undefined, done?: any): void {
+      animate('.main', { opacity: 1 }, { duration: 0.25 }).finished.then(done);
     }
 
-    function routeLeave(_: unknown, done: any): void {
-      gsap.to('#body', { duration: 0.25, opacity: 0, onComplete: done });
+    function routeLeave(_: undefined, done: any): void {
+      animate('.main', { opacity: 0 }, { duration: 0.25 }).finished.then(done);
     }
 
     return {
+      splashScreenRunning,
       routeEnter,
       routeLeave,
     };
@@ -58,7 +69,6 @@ html {
 }
 
 body {
-  opacity: 0;
   background-color: colors.$black-corol;
   height: 100%;
   width: 100%;
@@ -84,6 +94,14 @@ body::-webkit-scrollbar-track {
   border: 3px solid colors.$black-corol;
 }
 
+.main {
+  height: inherit;
+  width: inherit;
+  display: inherit;
+  flex-direction: inherit;
+  opacity: 0;
+}
+
 #app {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -104,6 +122,13 @@ body::-webkit-scrollbar-track {
 </style>
 
 <style lang="scss" module>
+.appContainer {
+  height: inherit;
+  width: inherit;
+  display: inherit;
+  flex-direction: inherit;
+}
+
 .view {
   width: 100%;
 }

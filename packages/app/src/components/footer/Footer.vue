@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts">
-import gsap from 'gsap';
+import { animate } from 'motion';
 import { defineComponent } from 'vue';
 
 import GithubSvg from '@assets/GithubSVG.vue';
@@ -47,11 +47,11 @@ export default defineComponent({
     const { t } = useLanguage(footerMessages);
 
     function blurLink(id: string): void {
-      gsap.to(id, { duration: 0.5, y: 0 });
+      animate(id, { y: 0 }, { duration: 0.5 });
     }
 
     function focusLink(id: string): void {
-      gsap.to(id, { duration: 0.5, y: -5 });
+      animate(id, { y: -5 }, { duration: 0.5 });
     }
 
     return {
