@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import gsap from 'gsap';
+import { animate, timeline } from 'motion';
 import { defineComponent, ref } from 'vue';
 
 import {
@@ -39,12 +39,14 @@ export default defineComponent({
     };
 
     function experienceEnter(el: any, done: any) {
-      gsap.set(el, { opacity: 0 });
-      gsap.to(el, { duration: 0.25, opacity: 1, onComplete: done });
+      timeline([
+        [el, { opacity: 0 }, { duration: 0 }],
+        [el, { opacity: 1 }, { duration: 0.25 }],
+      ]).finished.then(done);
     }
 
     function experienceLeave(el: any, done: any) {
-      gsap.to(el, { duration: 0.25, opacity: 0, onComplete: done });
+      animate(el, { opacity: 0 }, { duration: 0.25 }).finished.then(done);
     }
 
     return {

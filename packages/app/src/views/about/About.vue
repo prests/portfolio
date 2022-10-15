@@ -57,7 +57,7 @@
 </template>
 
 <script lang="ts">
-import gsap from 'gsap';
+import { animate } from 'motion';
 import { defineComponent } from 'vue';
 
 import aboutPhotoSrc from '@assets/about-photo.jpg';
@@ -71,19 +71,19 @@ export default defineComponent({
 
     function blurImage(): void {
       if (window.innerWidth > 1200) {
-        gsap.to(`#aboutPhoto`, { duration: 0.5, rotate: 5 });
+        animate(`#aboutPhoto`, { rotate: 5 }, { duration: 0.5 });
       }
     }
 
     function focusImage(): void {
-      gsap.to(`#aboutPhoto`, { duration: 0.5, rotate: 0 });
+      animate(`#aboutPhoto`, { rotate: 0 }, { duration: 0.5 });
     }
 
     function loadImage(): void {
       if (window.innerWidth > 1200) {
-        gsap.to(`#aboutPhoto`, { duration: 2, opacity: 1, rotate: 5 });
+        animate(`#aboutPhoto`, { opacity: 1, rotate: 5 }, { duration: 2 });
       } else {
-        gsap.to(`#aboutPhoto`, { duration: 2, opacity: 1 });
+        animate(`#aboutPhoto`, { opacity: 1 }, { duration: 2 });
       }
     }
 
