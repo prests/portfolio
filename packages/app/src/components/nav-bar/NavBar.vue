@@ -7,7 +7,7 @@
       @click="changeRoute('/', (hamburgerMenu as any).closeMenu)"
     />
 
-    <HamburgerMenu ref="hamburgerMenu" />
+    <HamburgerMenu ref="hamburgerMenu" :class="$style.hamburgerButton" />
 
     <div :class="$style.routesContainer">
       <div
@@ -109,6 +109,11 @@ export default defineComponent({
   margin: 0 auto 0 0;
   width: 5em;
   z-index: 10;
+}
+
+.hamburgerButton {
+  height: 6rem;
+  width: 5em;
 }
 
 .route {
