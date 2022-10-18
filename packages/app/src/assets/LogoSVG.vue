@@ -228,6 +228,7 @@ export default defineComponent({
 <style lang="scss" module>
 .container {
   height: 100%;
+  padding: 0 1em;
 }
 
 .showLine {
