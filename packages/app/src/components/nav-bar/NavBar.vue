@@ -86,12 +86,13 @@ export default defineComponent({
 .navbarContainer {
   display: flex;
   flex-wrap: wrap;
+  height: 10%;
   width: 90%;
   margin: 5rem auto;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, xs)) {
-    width: 100%;
-    margin: 5rem 0;
+    width: 90%;
+    margin: 5rem auto;
   }
 }
 
@@ -106,14 +107,13 @@ export default defineComponent({
 .homeButton {
   cursor: pointer;
   height: 6rem;
-  margin: 0 auto 0 0;
-  width: 5em;
+  margin: auto auto auto 0;
   z-index: 10;
 }
 
 .hamburgerButton {
-  height: 6rem;
-  width: 5em;
+  height: 9rem;
+  margin: auto 0;
 }
 
 .route {
@@ -133,14 +133,14 @@ export default defineComponent({
   -webkit-text-fill-color: transparent;
   cursor: pointer;
   display: flex;
-  margin: 2rem;
+  margin: auto 2rem auto auto;
 }
 
 .resumeButton {
   display: flex;
   cursor: pointer;
   color: colors.$orange-red-crystal;
-  margin: auto 0 auto 2rem;
+  margin: auto;
   padding: 1rem 1.6rem;
   border: solid 2px colors.$orange-red-crystal;
   border-radius: 5px;
