@@ -1,9 +1,8 @@
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="83"
-    height="173.354"
     viewBox="0 0 83 173.354"
+    :class="$style.container"
   >
     <g id="Group_2" data-name="Group 2" transform="translate(158 436.177)">
       <line
@@ -227,6 +226,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss" module>
+.container {
+  height: 100%;
+  padding: 0 1em;
+}
+
 .showLine {
   opacity: 1;
 }

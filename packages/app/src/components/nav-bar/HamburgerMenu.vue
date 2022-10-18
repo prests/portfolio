@@ -169,13 +169,7 @@ export default defineComponent({
 .hamburgerIcon {
   margin: auto 0;
   cursor: pointer;
-  height: 4rem;
   z-index: 10;
-  width: 5em;
-
-  @include responsive.responsive(map-get(responsive.$breakpoints, xs)) {
-    margin: auto 1em auto 0;
-  }
 }
 
 .popUp {
