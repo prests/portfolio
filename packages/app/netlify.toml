@@ -1,5 +1,5 @@
 [build]
-  command = "(pnpm i -g pnpm && pnpm build) || (npm install -g pnpm && pnpm build)"
+  command = "(pnpm i -g pnpm && pnpm install --frozen-lockfile=false && pnpm build) || (npm install -g pnpm && pnpm install --frozen-lockfile=false && pnpm build)"
 [[redirects]]
   from = "/*"
   to = "/index.html"
