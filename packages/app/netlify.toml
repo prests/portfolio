@@ -1,5 +1,5 @@
 [build]
-  command = "pnpm i -g pnpm || (npm install -g pnpm && pnpm build)"
+  command = "(pnpm i -g pnpm && pnpm build) || (npm install -g pnpm && pnpm build)"
 [[redirects]]
   from = "/*"
   to = "/index.html"
