@@ -26,11 +26,14 @@ export default defineComponent({
 
     function runSplashScreen() {
       if (logo.value) {
-        const { opacityOnSegments, opacityOffSegments } = getSplashScreen(
-          logo.value
-        );
+        const { opacityInitialOff, opacityOnSegments, opacityOffSegments } =
+          getSplashScreen(logo.value);
 
-        return timeline([...opacityOnSegments, ...opacityOffSegments]).finished;
+        return timeline([
+          ...opacityInitialOff,
+          ...opacityOnSegments,
+          ...opacityOffSegments,
+        ]).finished;
       }
 
       // Failed to load splashscreen
