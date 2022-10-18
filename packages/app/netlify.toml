@@ -1,5 +1,5 @@
 [build]
-  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
+  command = "npm install -g pnpm && pnpm install --frozen-lockfile=false && npx pnpm run build"
 [[redirects]]
   from = "/*"
   to = "/index.html"
