@@ -2,20 +2,26 @@ import { animate } from 'motion';
 
 export function useNavAnimations() {
   function focusRoute(name: string): void {
+    const el = document.getElementById(`path_${name}`) as HTMLElement;
+
     animate(
-      `#path_${name}`,
-      {
-        backgroundImage: 'linear-gradient(to left, #F7F7FF 0%, #FE5F55 100%)',
+      (progress) => {
+        el.style.backgroundImage = `linear-gradient(to left, #575755 ${
+          100 - progress * 100
+        }%, #FE5F55 ${progress * 100}%)`;
       },
       { duration: 0.5 }
     );
   }
 
   function blurRoute(name: string): void {
+    const el = document.getElementById(`path_${name}`) as HTMLElement;
+
     animate(
-      `#path_${name}`,
-      {
-        backgroundImage: 'linear-gradient(to left, #F7F7FF 100%, #FE5F55 0%)',
+      (progress) => {
+        el.style.backgroundImage = `linear-gradient(to left, #F7F7FF ${
+          progress * 100
+        }%, #FE5F55 ${100 - progress * 100}%)`;
       },
       { duration: 0.5 }
     );
