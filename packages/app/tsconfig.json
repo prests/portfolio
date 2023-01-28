@@ -1,5 +1,5 @@
 {
-  "extends": "@shayne/tsconfig",
+  "extends": "shayne-tsconfig",
   "compilerOptions": {
     "paths": {
       "~styles/*": ["./src/styles/*"],

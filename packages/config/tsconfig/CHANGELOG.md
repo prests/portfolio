@@ -1,4 +1,4 @@
-# @shayne/tsconfig
+# shayne-tsconfig
 
 ## 1.1.0
 
