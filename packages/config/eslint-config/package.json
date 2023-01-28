@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-shayne",
+  "name": "@shayne/eslint-config",
   "author": {
     "name": "Shayne Preston",
     "email": "shayne.preston@protonmail.com",
@@ -9,7 +9,7 @@
   "description": "A package for all things eslint",
   "main": "index.js",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://shayne.jfrog.io/artifactory/api/npm/shayne-npm/"
   },
   "scripts": {
     "lint": "eslint . --no-error-on-unmatched-pattern --config index.js"
