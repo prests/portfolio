@@ -1,4 +1,4 @@
-# @shayne/prettier-config
+# shayne-prettier-config
 
 ## 1.0.2
 

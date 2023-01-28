@@ -1,4 +1,4 @@
-# @shayne/eslint-config
+# eslint-config-shayne
 
 ## 1.0.2
 
