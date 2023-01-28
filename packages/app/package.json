@@ -1,5 +1,5 @@
 {
-  "name": "@shayne/app",
+  "name": "shayne-portfolio-frontend",
   "author": {
     "name": "Shayne Preston",
     "email": "shayne.preston@protonmail.com",
@@ -26,8 +26,8 @@
     "vue-router": "^4.0.16"
   },
   "devDependencies": {
-    "@shayne/eslint-config": "latest",
-    "@shayne/tsconfig": "latest",
+    "eslint-config-shayne": "latest",
+    "shayne-tsconfig": "latest",
     "@types/node": "^18.8.3",
     "@vitejs/plugin-vue": "^3.1.0",
     "eslint": "^8.18.0",

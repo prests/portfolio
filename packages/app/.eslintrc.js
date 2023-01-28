@@ -1,3 +1,3 @@
 module.exports = {
-  extends: '@shayne',
+  extends: 'eslint-config-shayne',
 };

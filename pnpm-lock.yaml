@@ -5,29 +5,29 @@ importers:
   .:
     specifiers:
       '@changesets/cli': ^2.25.0
-      '@shayne/prettier-config': latest
       husky: ^8.0.1
       npm-check-updates: ^16.3.8
       prettier: ^2.7.1
+      shayne-prettier-config: latest
     dependencies:
       '@changesets/cli': 2.25.0
     devDependencies:
-      '@shayne/prettier-config': link:packages/config/prettier-config
       husky: 8.0.1
       npm-check-updates: 16.3.8
       prettier: 2.7.1
+      shayne-prettier-config: link:packages/config/prettier-config
 
   packages/app:
     specifiers:
-      '@shayne/eslint-config': latest
-      '@shayne/tsconfig': latest
       '@types/node': ^18.8.3
       '@vitejs/plugin-vue': ^3.1.0
       eslint: ^8.18.0
+      eslint-config-shayne: latest
       motion: ^10.14.2
       path: ^0.12.7
       pinia: ^2.0.14
       sass: ^1.52.3
+      shayne-tsconfig: latest
       typescript: ^4.7.4
       vite: ^3.1.0
       vite-plugin-eslint: ^1.6.1
@@ -42,13 +42,13 @@ importers:
       vue-i18n: 9.2.2_vue@3.2.40
       vue-router: 4.1.5_vue@3.2.40
     devDependencies:
-      '@shayne/eslint-config': link:../config/eslint-config
-      '@shayne/tsconfig': link:../config/tsconfig
       '@types/node': 18.8.3
       '@vitejs/plugin-vue': 3.1.2_vite@3.1.6+vue@3.2.40
       eslint: 8.24.0
+      eslint-config-shayne: link:../config/eslint-config
       path: 0.12.7
       sass: 1.55.0
+      shayne-tsconfig: link:../config/tsconfig
       typescript: 4.8.4
       vite: 3.1.6_sass@1.55.0
       vite-plugin-eslint: 1.8.1_eslint@8.24.0+vite@3.1.6
