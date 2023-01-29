@@ -1,0 +1,17 @@
+name: CI Setup
+description: Setup Project
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout Branch
+      uses: actions/checkout@v3
+    - name: Setup PNPM
+      uses: pnpm/action-setup@v2
+        with:
+          pnpmversion: 7
+    - name: Setup Node.js 16
+      uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'pnpm'
+    - run: pnpm install --frozen-lockfile
