@@ -3,13 +3,13 @@ description: Setup Project
 runs:
   using: 'composite'
   steps:
-    - name: Setup PNPM
-      uses: pnpm/action-setup@v2
-        with:
-          pnpmversion: 7
-    - name: Setup Node.js 16
-      uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: 'pnpm'
+    - uses: pnpm/action-setup@v2
+      name: 'Setup PNPM'
+      with:
+        version: 7
+    - uses: actions/setup-node@v3
+      name: 'Setup Node'
+      with:
+        node-version: 16
+        cache: 'pnpm'
     - run: pnpm install --frozen-lockfile
