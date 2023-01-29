@@ -1,13 +1,16 @@
 <template>
   <div :class="$style.contactCardView">
-    {{ t('info') }}
-    <a
-      ref="contactCardLink"
-      :class="$style.link"
-      href="shayne-contact-card.vcf"
-      download="shayne-contact-card.vcf"
-      >{{ t('link') }}</a
-    >.
+    <p>
+      {{ t('info') }}
+      <a
+        ref="contactCardLink"
+        :class="$style.link"
+        href="shayne-contact-card.vcf"
+        download="shayne-contact-card.vcf"
+        >{{ t('link') }}</a
+      >.
+    </p>
+    <p>{{ t('tip') }}</p>
   </div>
 </template>
 
