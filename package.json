@@ -17,7 +17,8 @@
     "lint": "pnpm -r lint",
     "test": "pnpm -r test",
     "health": "ncu --deep",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "version-packages": "changeset"
   },
   "license": "UNLICENSED",
   "dependencies": {
