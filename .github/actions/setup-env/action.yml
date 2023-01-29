@@ -13,3 +13,4 @@ runs:
         node-version: 16
         cache: 'pnpm'
     - run: pnpm install --frozen-lockfile
+      shell: bash
