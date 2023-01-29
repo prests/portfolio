@@ -1,0 +1,29 @@
+name: Shayne CI
+
+on: push
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout Branch
+      - uses: ./.github/actions/setup-env
+        name: Setup Environment
+
+      - run: pnpm lint
+        shell: bash
+
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout Branch
+      - uses: ./.github/actions/setup-env
+        name: Setup Environment
+
+      - run: pnpm test
+        shell: bash
