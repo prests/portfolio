@@ -12,6 +12,7 @@
     "url": "git@github.com:prests/shayne-website-frontend.git"
   },
   "private": true,
+  "version": "0.0.1",
   "scripts": {
     "clean:build": "rimraf ./dist",
     "clean:test": "rimraf ./coverage",
