@@ -1,7 +1,15 @@
-import vuePlugin from '@vitejs/plugin-vue';
+/// <reference types="vitest" />
+import path from 'path';
 import { defineConfig } from 'vite';
 import eslintPlugin from 'vite-plugin-eslint';
-import path from 'path';
+import { configDefaults } from 'vitest/config';
+import vuePlugin from '@vitejs/plugin-vue';
+
+const testPathsToExclude = [
+  ...configDefaults.exclude,
+  '**/coverage/**',
+  '**/e2e/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
+];
 
 export default defineConfig({
   css: {
@@ -28,5 +36,17 @@ export default defineConfig({
       '@store': path.resolve(__dirname, './src/store'),
       '@views': path.resolve(__dirname, './src/views'),
     },
+  },
+  test: {
+    exclude: testPathsToExclude,
+    coverage: {
+      provider: 'c8',
+      exclude: [
+        ...testPathsToExclude,
+        '**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
+      ],
+      reporter: ['html', 'lcov'],
+    },
+    environment: 'jsdom',
   },
 });
