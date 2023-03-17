@@ -17,7 +17,7 @@
     "clean:test": "rimraf ./coverage",
     "dev": "vite --port 8080",
     "build": "pnpm run clean:build && vite build",
-    "lint": "eslint --ext .ts,.vue --ignore-path ../../.gitignore src && vue-tsc --noEmit",
+    "lint": "eslint --ext .ts,.vue --ignore-path ../../.gitignore src e2e && vue-tsc --noEmit",
     "test": "vitest run",
     "test:ci": "vitest run --coverage",
     "playwright": "playwright test",
