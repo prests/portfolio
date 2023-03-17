@@ -17,7 +17,7 @@ jobs:
       - run: pnpm lint
         shell: bash
 
-  Unit Tests:
+  Unit-Tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -28,7 +28,7 @@ jobs:
       - run: pnpm test
         shell: bash
 
-  Integration Tests:
+  Integration-Tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
