@@ -17,7 +17,7 @@ jobs:
       - run: pnpm lint
         shell: bash
 
-  Test:
+  Unit Tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -26,4 +26,15 @@ jobs:
         name: Setup Environment
 
       - run: pnpm test
+        shell: bash
+
+  Integration Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout Branch
+      - uses: ./.github/actions/setup-env
+        name: Setup Environment
+
+      - run: pnpm -F shayne-portfolio-frontend playwright:ci
         shell: bash
