@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.wrapperContainer">
+  <div :class="$style['wrapper-container']">
     <HorizontalMenu v-model:selected="selected" :items="companiesList" />
     <div :class="$style.separator">
       <transition
@@ -63,7 +63,7 @@ export default defineComponent({
 <style lang="scss" module>
 @use '~styles/colors';
 
-.wrapperContainer {
+.wrapper-container {
   display: flex;
   flex-direction: column;
 }

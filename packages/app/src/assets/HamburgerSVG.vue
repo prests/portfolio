@@ -39,53 +39,60 @@ export default defineComponent({
 @use '~styles/colors';
 
 .container {
-  height: 100%;
-  width: 100%;
-  align-items: center;
   display: flex;
+  align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
   margin: 0;
 }
 
 .menu {
-  height: 100%;
+  display: flex;
   width: 100%;
+  height: 100%;
+  padding: 0;
+  cursor: pointer;
   background-color: transparent;
   border: none;
-  cursor: pointer;
-  display: flex;
-  padding: 0;
 }
+
 .line {
+  width: 100%;
   fill: none;
   stroke: colors.$orange-red-crystal;
   stroke-width: 4;
-  width: 100%;
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .line1 {
   stroke-dasharray: 60 207;
   stroke-width: 4;
 }
+
 .line2 {
   stroke-dasharray: 60 60;
   stroke-width: 4;
 }
+
 .line3 {
   stroke-dasharray: 60 207;
   stroke-width: 4;
 }
+
 .opened .line1 {
   stroke-dasharray: 90 207;
   stroke-dashoffset: -134;
   stroke-width: 4;
 }
+
 .opened .line2 {
   stroke-dasharray: 1 60;
   stroke-dashoffset: -30;
   stroke-width: 4;
 }
+
 .opened .line3 {
   stroke-dasharray: 90 207;
   stroke-dashoffset: -134;

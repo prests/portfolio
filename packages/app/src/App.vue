@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.appContainer">
+  <div :class="$style['app-container']">
     <NavBar />
 
     <router-view v-slot="{ Component }">
@@ -51,38 +51,37 @@ export default defineComponent({
 
 <style lang="scss">
 @use '~styles/colors';
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap';
 
 html {
-  height: 100%;
   width: 100%;
+  height: 100%;
   font-size: 62.5%;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: Lato, sans-serif;
+  background-color: colors.$black-corol;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background-color: colors.$black-corol;
-  height: 100%;
-  width: 100%;
-  margin: 0;
 }
 
 body::-webkit-scrollbar {
-  height: 12px;
   width: 12px;
-}
-
-body::-webkit-scrollbar-thumb:horizontal:hover {
-  display: none;
+  height: 12px;
 }
 
 body::-webkit-scrollbar-thumb {
   background-color: #f7f7ff80;
   border: 3px solid colors.$black-corol;
   border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:horizontal:hover {
+  display: none;
 }
 
 body::-webkit-scrollbar-track {
@@ -92,18 +91,18 @@ body::-webkit-scrollbar-track {
 #app {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
+  height: 100%;
   font-size: 1.6rem;
 }
 </style>
 
 <style lang="scss" module>
-.appContainer {
-  height: inherit;
-  width: inherit;
+.app-container {
   display: inherit;
   flex-direction: inherit;
+  width: inherit;
+  height: inherit;
 }
 
 .view {

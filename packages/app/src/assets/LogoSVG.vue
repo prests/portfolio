@@ -183,10 +183,10 @@ export default defineComponent({
     },
   },
   setup: (props) => {
-    const { hideLine, showLine } = useCssModule();
+    const $style = useCssModule();
 
     const lineOpacity = computed(() =>
-      props.isSplashScreen ? hideLine : showLine
+      props.isSplashScreen ? $style['hide-line'] : $style['show-line']
     );
 
     const line1 = ref<SVGLineElement>();
@@ -231,11 +231,11 @@ export default defineComponent({
   padding: 0 1em;
 }
 
-.showLine {
+.show-line {
   opacity: 1;
 }
 
-.hideLine {
+.hide-line {
   opacity: 0;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <div :class="$style.aboutView">
-    <div :class="$style.descriptionContainer">
-      <h1 :class="$style.aboutHeader">{{ t('title') }}</h1>
+  <div :class="$style['about-view']">
+    <div :class="$style['description-container']">
+      <h1 :class="$style['about-header']">{{ t('title') }}</h1>
 
-      <div :class="$style.historyContainer">
+      <div :class="$style['history-container']">
         <p>{{ t('p1') }}</p>
 
         <p>
@@ -41,11 +41,11 @@
       </div>
     </div>
 
-    <div :class="$style.imageContainer">
+    <div :class="$style['image-container']">
       <transition appear @enter="loadImage">
         <img
           id="aboutPhoto"
-          :class="$style.aboutImage"
+          :class="$style['about-image']"
           :src="aboutPhotoSrc"
           alt="photo-of-me"
           @mouseover="focusImage"
@@ -102,21 +102,21 @@ export default defineComponent({
 @use '~styles/colors';
 @use '~styles/responsive';
 
-.aboutView {
+.about-view {
   display: flex;
   flex-direction: row;
-  height: auto;
   width: 80%;
-  margin: 0 auto 1em auto;
+  height: auto;
+  margin: 0 auto 1em;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, lg)) {
+    flex-direction: column;
     width: 100%;
     margin: 2em 0;
-    flex-direction: column;
   }
 }
 
-.descriptionContainer {
+.description-container {
   display: flex;
   flex-direction: column;
   margin: 0 5em;
@@ -128,7 +128,7 @@ export default defineComponent({
   }
 
   @include responsive.responsive(map-get(responsive.$breakpoints, md)) {
-    margin: 0 1em 5em 1em;
+    margin: 0 1em 5em;
   }
 
   @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
@@ -136,11 +136,11 @@ export default defineComponent({
   }
 
   @include responsive.responsive(map-get(responsive.$breakpoints, xs)) {
-    margin: 0 0 5em 0;
+    margin: 0 0 5em;
   }
 }
 
-.imageContainer {
+.image-container {
   width: 80%;
   margin: 6em 5em auto auto;
 
@@ -150,44 +150,43 @@ export default defineComponent({
   }
 }
 
-.aboutImage {
-  opacity: 0;
+.about-image {
+  width: calc(100% - 20px);
+  height: auto;
   border: 10px solid colors.$orange-red-crystal;
   border-radius: 12px;
-  box-shadow: 0px 0px 30px 5px #fe605571;
-  height: auto;
-  width: calc(100% - 20px);
+  box-shadow: 0 0 30px 5px #fe605571;
+  opacity: 0;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, lg)) {
     transform: rotate(0deg) !important;
   }
 }
 
-.aboutHeader {
-  color: colors.$orange-red-crystal;
+.about-header {
+  margin: 0;
   font-size: 5rem;
   font-weight: 900;
-  margin: 0;
+  color: colors.$orange-red-crystal;
 }
 
-.historyContainer {
+.history-container {
   display: flex;
   flex-direction: column;
 }
 
 .link {
-  text-decoration: none;
   color: colors.$orange-red-crystal;
-
+  text-decoration: none;
   background: none,
     linear-gradient(
       to right,
       colors.$orange-red-crystal,
       colors.$orange-red-crystal
     );
-  background-size: 100% 0.1em, 0 0.1em;
-  background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
+  background-position: 100% 100%, 0 100%;
+  background-size: 100% 0.1em, 0 0.1em;
   transition: background-size 400ms;
 }
 
@@ -213,15 +212,15 @@ export default defineComponent({
   }
 
   @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
-    margin: 0 auto;
     padding: 0 auto;
+    margin: 0 auto;
   }
 
   li {
-    text-align: left;
+    flex-basis: 45%;
     padding-left: 0.5em;
     margin-right: 0.5em;
-    flex-basis: 45%;
+    text-align: left;
 
     @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
       flex-basis: 100%;
@@ -231,10 +230,10 @@ export default defineComponent({
   }
 
   li::marker {
-    content: '\21A0';
-    color: colors.$orange-red-crystal;
-    font-size: 3rem;
     padding-right: 10em;
+    font-size: 3rem;
+    color: colors.$orange-red-crystal;
+    content: '\21A0';
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.notFoundContainer">
+  <div :class="$style['not-found-container']">
     <h1>404 <span>Page Not Found</span></h1>
 
     <h2>This is not a valid page</h2>
@@ -18,14 +18,14 @@ export default defineComponent({
 @use '~styles/colors';
 @use '~styles/responsive';
 
-.notFoundContainer {
+.not-found-container {
   display: flex;
   flex-direction: column;
-  color: colors.$grey;
-  height: auto;
   width: 55%;
+  height: auto;
   margin: 2em auto;
   font-size: 2rem;
+  color: colors.$grey;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
     text-align: center;

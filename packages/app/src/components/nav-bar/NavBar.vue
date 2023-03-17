@@ -1,15 +1,15 @@
 <template>
-  <div :class="$style.navbarContainer">
+  <div :class="$style['navbar-container']">
     <LogoSVG
-      :class="$style.homeButton"
+      :class="$style['home-button']"
       @mouseover="focusLogo"
       @mouseleave="blurLogo"
       @click="changeRoute('/', (hamburgerMenu as any).closeMenu)"
     />
 
-    <HamburgerMenu ref="hamburgerMenu" :class="$style.hamburgerButton" />
+    <HamburgerMenu ref="hamburgerMenu" :class="$style['hamburger-button']" />
 
-    <div :class="$style.routesContainer">
+    <div :class="$style['routes-container']">
       <div
         v-for="(path, index) in paths"
         :id="`path_${path.id}`"
@@ -24,7 +24,7 @@
 
       <div
         id="navButton"
-        :class="$style.resumeButton"
+        :class="$style['resume-button']"
         @mouseover="focusButton('#navButton')"
         @mouseleave="blurButton('#navButton')"
         @click="openResume"
@@ -83,11 +83,11 @@ export default defineComponent({
 @use '~styles/colors';
 @use '~styles/responsive';
 
-.navbarContainer {
+.navbar-container {
   display: flex;
   flex-wrap: wrap;
-  height: 10%;
   width: 90%;
+  height: 10%;
   margin: 5rem auto;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, xs)) {
@@ -96,7 +96,7 @@ export default defineComponent({
   }
 }
 
-.routesContainer {
+.routes-container {
   display: flex;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
@@ -104,44 +104,42 @@ export default defineComponent({
   }
 }
 
-.homeButton {
-  cursor: pointer;
+.home-button {
+  z-index: 10;
   height: 6rem;
   margin: auto auto auto 0;
-  z-index: 10;
+  cursor: pointer;
 }
 
-.hamburgerButton {
+.hamburger-button {
   height: 9rem;
   margin: auto 0;
 }
 
 .route {
+  display: flex;
+  margin: auto 2rem auto auto;
   font-size: 2rem;
   font-weight: 700;
+  cursor: pointer;
   background-color: colors.$white;
   background-image: linear-gradient(
     45deg,
     colors.$white 100%,
     colors.$orange-red-crystal 0%
   );
-
+  -webkit-background-clip: text;
   background-clip: text;
   background-size: 100%;
-
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  cursor: pointer;
-  display: flex;
-  margin: auto 2rem auto auto;
 }
 
-.resumeButton {
+.resume-button {
   display: flex;
-  cursor: pointer;
-  color: colors.$orange-red-crystal;
-  margin: auto;
   padding: 1rem 1.6rem;
+  margin: auto;
+  color: colors.$orange-red-crystal;
+  cursor: pointer;
   border: solid 2px colors.$orange-red-crystal;
   border-radius: 5px;
 }

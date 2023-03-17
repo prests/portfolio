@@ -1,11 +1,11 @@
 <template>
-  <div :class="$style.footerContainer">
+  <div :class="$style['footer-container']">
     <span :class="$style.copyright">
       {{ t('copyright') }}
       <span :class="$style.name"> Shayne Preston </span>
     </span>
 
-    <div :class="$style.linksContainer">
+    <div :class="$style['links-container']">
       <a
         href="https://www.github.com/prests"
         aria-label="GitHub"
@@ -66,10 +66,10 @@ export default defineComponent({
 <style lang="scss" module>
 @use '~styles/colors';
 
-.footerContainer {
+.footer-container {
   display: flex;
   flex-direction: column;
-  margin: auto auto 1.5em auto;
+  margin: auto auto 1.5em;
   text-align: center;
 }
 
@@ -81,9 +81,9 @@ export default defineComponent({
   color: colors.$white;
 }
 
-.linksContainer {
+.links-container {
   display: flex;
-  margin: 0.5em auto 0 auto;
+  margin: 0.5em auto 0;
 }
 
 .link {

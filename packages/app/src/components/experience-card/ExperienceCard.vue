@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.experienceContainer">
+  <div :class="$style['experience-container']">
     <h2 :class="$style.title">
       <slot name="title" />
     </h2>
@@ -26,11 +26,11 @@ export default defineComponent({
 @use '~styles/colors';
 
 .title {
+  margin-bottom: 0;
   color: colors.$white;
-  margin-bottom: 0em;
 }
 
-.experienceContainer {
+.experience-container {
   display: flex;
   flex-direction: column;
   color: co;
@@ -41,30 +41,30 @@ export default defineComponent({
   flex-wrap: wrap;
   width: 100%;
 
-  /*@include responsive.responsive(map-get(responsive.$breakpoints, md)) {
+  /* @include responsive.responsive(map-get(responsive.$breakpoints, md)) {
     margin-right: auto;
-  }*/
+  } */
 
   ul {
     margin: 0;
   }
 
   li {
-    text-align: left;
+    flex-basis: 45%;
     padding: 0.1em 0 0.1em 0.5em;
     margin-right: 0.5em;
-    flex-basis: 45%;
+    text-align: left;
 
-    /*@include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
+    /* @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
       flex-basis: 100%;
       margin: 0 auto;
-    }*/
+    } */
   }
 
   li::marker {
-    content: '\21A0';
-    color: colors.$orange-red-crystal;
     font-size: 2.5rem;
+    color: colors.$orange-red-crystal;
+    content: '\21A0';
   }
 }
 </style>

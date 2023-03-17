@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.contactCardView">
+  <div :class="$style['contact-card-view']">
     <p>
       {{ t('info') }}
       <a
@@ -40,10 +40,10 @@ export default defineComponent({
 @use '~styles/links.scss';
 @include links.link;
 
-.contactCardView {
-  text-align: center;
-  color: colors.$grey;
-  margin: 2em auto;
+.contact-card-view {
   width: 50%;
+  margin: 2em auto;
+  color: colors.$grey;
+  text-align: center;
 }
 </style>
