@@ -20,8 +20,8 @@
     "lint": "eslint --ext .ts,.vue --ignore-path ../../.gitignore src e2e && vue-tsc --noEmit",
     "test": "vitest run",
     "test:ci": "vitest run --coverage",
-    "playwright": "playwright test",
-    "playwright:ci": "playwright test --quiet",
+    "e2e": "playwright test",
+    "e2e:ci": "playwright test --quiet",
     "preview": "vite preview --port 8080"
   },
   "dependencies": {
