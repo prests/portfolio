@@ -35,7 +35,7 @@ jobs:
         name: Checkout Branch
       - uses: ./.github/actions/setup-env
         name: Setup Environment
-      - run: pnpm -F shayne-portfolio-frontend playwright install --with-deps
+      - run: pnpm -F shayne-portfolio-frontend exec playwright install --with-deps
         name: Install Playwright Browsers
 
       - run: pnpm -F shayne-portfolio-frontend playwright:ci
