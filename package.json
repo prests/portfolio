@@ -18,15 +18,14 @@
     "test": "pnpm -r test",
     "test:ci": "pnpm -r test:ci",
     "health": "ncu --deep",
-    "prepare": "husky install",
-    "version-packages": "changeset"
+    "version-packages": "changeset",
+    "postinstall": "git config core.hooksPath ./git-hooks"
   },
   "license": "UNLICENSED",
   "dependencies": {
     "@changesets/cli": "^2.25.0"
   },
   "devDependencies": {
-    "husky": "^8.0.1",
     "npm-check-updates": "^16.3.8",
     "prettier": "^2.7.1",
     "rimraf": "^4.4.0",
