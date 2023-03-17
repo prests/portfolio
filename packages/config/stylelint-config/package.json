@@ -1,0 +1,43 @@
+{
+  "name": "shayne-stylelint-config",
+  "author": {
+    "name": "Shayne Preston",
+    "email": "shayne.preston@protonmail.com",
+    "url": "https://www.shaynepreston.com/"
+  },
+  "version": "1.0.0",
+  "description": "config for stylelint",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "lint": "eslint . --no-error-on-unmatched-pattern index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "stylelint",
+    "stylelintconfig"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "stylelint-config-css-modules": "^4.2.0",
+    "stylelint-config-recess-order": "^4.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard-scss": "^7.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-shayne": "latest",
+    "postcss": "^8.4.21",
+    "postcss-html": "^1.5.0",
+    "stylelint": "^15.3.0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.4.21",
+    "postcss-html": "^1.5.0",
+    "stylelint": "^15.3.0"
+  }
+}
