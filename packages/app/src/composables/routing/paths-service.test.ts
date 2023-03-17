@@ -2,6 +2,14 @@ import { describe, expect, it, vi } from 'vitest';
 
 import { usePaths } from '@composables/routing/paths-service';
 
+vi.mock('vue', () => ({
+  ref: vi.fn(),
+}));
+
+vi.mock('vue-router', () => ({
+  useRouter: vi.fn(),
+}));
+
 describe('Paths Services', () => {
   it('should open resume', () => {
     const windowSpy = vi
