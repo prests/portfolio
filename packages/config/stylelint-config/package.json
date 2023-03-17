@@ -12,7 +12,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "lint": "eslint . --no-error-on-unmatched-pattern --config index.js"
+    "lint": "eslint . --no-error-on-unmatched-pattern index.js"
   },
   "files": [
     "index.js"
