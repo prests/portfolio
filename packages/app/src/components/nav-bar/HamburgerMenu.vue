@@ -1,15 +1,19 @@
 <template>
-  <div :class="$style.menuContainer">
+  <div :class="$style['menu-container']">
     <HamburgerSVG
       v-model="menuOpen"
-      :class="$style.hamburgerIcon"
+      :class="$style['hamburger-icon']"
       @click="menuOpen ? closeMenu() : openMenu()"
     />
 
     <Teleport to="body">
-      <div v-if="menuOpen" :class="$style.popUp" @click="closeMenu">
+      <div v-if="menuOpen" :class="$style['pop-up']" @click="closeMenu">
         <Transition appear @enter="openPopUp" @leave="closePopUp">
-          <div v-if="navPanelOpen" :class="$style.routesContainer" @click.stop>
+          <div
+            v-if="navPanelOpen"
+            :class="$style['routes-container']"
+            @click.stop
+          >
             <div
               v-for="(path, index) in paths"
               :id="`path_${path.id}`"
@@ -24,7 +28,7 @@
 
             <div
               id="resume"
-              :class="$style.resumeButton"
+              :class="$style['resume-button']"
               @mouseover="focusButton('#resume')"
               @mouseleave="blurButton('#resume')"
               @click.stop="openResume"
@@ -121,7 +125,7 @@ export default defineComponent({
 @use '~styles/colors';
 @use '~styles/responsive';
 
-.menuContainer {
+.menu-container {
   display: none;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
@@ -130,14 +134,14 @@ export default defineComponent({
   }
 }
 
-.routesContainer {
-  background-color: colors.$light-corol;
+.routes-container {
   right: -100%;
-  padding: 15em 8em;
-  margin-left: auto;
   display: flex;
   flex-direction: column;
+  padding: 15em 8em;
+  margin-left: auto;
   text-align: center;
+  background-color: colors.$light-corol;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, xs)) {
     padding: 15em 2em;
@@ -145,56 +149,51 @@ export default defineComponent({
 }
 
 .route {
-  cursor: pointer;
-  margin-bottom: 2em;
   right: 0;
-
+  margin-bottom: 2em;
   font-size: 2.5rem;
   font-weight: 900;
+  cursor: pointer;
   background-color: colors.$white;
   background-image: linear-gradient(
     45deg,
     colors.$white 100%,
     colors.$orange-red-crystal 0%
   );
-
+  -webkit-background-clip: text;
   background-clip: text;
   background-size: 100%;
-
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  cursor: pointer;
 }
 
-.hamburgerIcon {
+.hamburger-icon {
+  z-index: 10;
   margin: auto 0;
   cursor: pointer;
-  z-index: 10;
 }
 
-.popUp {
+.pop-up {
+  position: fixed;
   top: 0;
   left: 0;
-  position: fixed;
+  display: flex;
   width: 100%;
   height: 100%;
-  display: flex;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
-    -webkit-backdrop-filter: blur(2px) brightness(0.5);
     backdrop-filter: blur(2px) brightness(0.5);
   }
 }
 
-.resumeButton {
-  font-size: 2rem;
+.resume-button {
   display: flex;
-  cursor: pointer;
-  color: colors.$orange-red-crystal;
+  align-items: center;
   padding: 1rem 1.6rem;
+  margin: 0 auto;
+  font-size: 2rem;
+  color: colors.$orange-red-crystal;
+  cursor: pointer;
   border: solid 2px colors.$orange-red-crystal;
   border-radius: 5px;
-  align-items: center;
-  margin: 0 auto;
 }
 </style>

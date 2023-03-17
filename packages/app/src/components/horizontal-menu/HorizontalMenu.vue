@@ -1,11 +1,11 @@
 <template>
-  <div :class="$style.menuContainer">
+  <div :class="$style['menu-container']">
     <div
       v-for="(item, index) in items"
       :key="index"
       :class="[
         $style.item,
-        item === selected ? $style.selected : $style.notSelected,
+        item === selected ? $style.selected : $style['not-selected'],
       ]"
       @click="$emit('update:selected', item)"
     >
@@ -35,19 +35,19 @@ export default defineComponent({
 <style lang="scss" module>
 @use '~styles/colors';
 
-.menuContainer {
+.menu-container {
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
-  height: 2.5em;
   max-width: 100%;
+  height: 2.5em;
+  margin: 0 auto;
   overflow-x: auto;
 }
 
 .item {
-  font-weight: 600;
-  font-size: 2rem;
   margin: auto 1em;
+  font-size: 2rem;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -55,23 +55,23 @@ export default defineComponent({
   color: colors.$orange-red-crystal;
 }
 
-.notSelected {
+.not-selected {
   position: relative;
 }
 
-.notSelected::after {
-  content: '';
+.not-selected::after {
   position: absolute;
-  left: 0;
   bottom: 0;
+  left: 0;
   width: 100%;
   height: 0.175rem;
+  content: '';
   background: colors.$orange-red-crystal;
-  transform: scale(0, 1.25);
   transition: transform 0.3s ease;
+  transform: scale(0, 1.25);
 }
 
-.notSelected:hover::after {
+.not-selected:hover::after {
   transform: scale(1, 1.25);
 }
 </style>

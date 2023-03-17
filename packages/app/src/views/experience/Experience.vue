@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.experienceView">
+  <div :class="$style['experience-view']">
     <ExperienceWrapper />
   </div>
 </template>
@@ -21,23 +21,23 @@ export default defineComponent({
 @use '~styles/colors';
 @use '~styles/responsive';
 
-.experienceView {
+.experience-view {
   display: flex;
   flex-direction: column;
-  color: colors.$grey;
-  height: auto;
   width: 55%;
+  height: auto;
   margin: 2em auto;
   font-size: 2rem;
+  color: colors.$grey;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, lg)) {
     font-size: 1.6rem;
   }
 
   @include responsive.responsive(map-get(responsive.$breakpoints, md)) {
+    flex-direction: column;
     width: 90%;
     margin: 2em auto;
-    flex-direction: column;
   }
 }
 </style>

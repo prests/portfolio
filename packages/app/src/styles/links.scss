@@ -2,18 +2,17 @@
 
 @mixin link() {
   .link {
-    text-decoration: none;
     color: colors.$orange-red-crystal;
-
+    text-decoration: none;
     background: none,
       linear-gradient(
         to right,
         colors.$orange-red-crystal,
         colors.$orange-red-crystal
       );
-    background-size: 100% 0.1em, 0 0.1em;
-    background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
+    background-position: 100% 100%, 0 100%;
+    background-size: 100% 0.1em, 0 0.1em;
     transition: background-size 400ms;
   }
 

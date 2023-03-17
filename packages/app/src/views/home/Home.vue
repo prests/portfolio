@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.homeView">
+  <div :class="$style['home-view']">
     <h1 :class="$style.welcome">{{ t('welcome') }}</h1>
     <h2 :class="$style.motto">
       {{ t('bio.s1') }}
@@ -11,10 +11,10 @@
       {{ t('contact.message') }}
     </p>
 
-    <div :class="$style.buttonContainer">
+    <div :class="$style['button-container']">
       <div
         id="contactButton"
-        :class="$style.contactMe"
+        :class="$style['contact-me']"
         @mouseover="focusButton('#contactButton')"
         @mouseleave="blurButton('#contactButton')"
         @click="sendEmail"
@@ -54,19 +54,19 @@ export default defineComponent({
 @use '~styles/colors';
 @use '~styles/responsive';
 
-.homeView {
+.home-view {
   display: flex;
   flex-direction: column;
-  color: colors.$grey;
-  height: auto;
   width: 55%;
+  height: auto;
   margin: 2em auto;
   font-size: 2rem;
+  color: colors.$grey;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, lg)) {
+    flex-direction: column;
     width: 90%;
     margin: 2em 1em;
-    flex-direction: column;
   }
 
   @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
@@ -75,11 +75,12 @@ export default defineComponent({
 }
 
 .welcome {
-  color: colors.$orange-red-crystal;
+  margin-bottom: 0.5em;
   font-size: 5rem;
   font-weight: 900;
-  margin-bottom: 0.5em;
+  color: colors.$orange-red-crystal;
 }
+
 .name {
   color: colors.$white;
 }
@@ -88,10 +89,10 @@ export default defineComponent({
   margin-bottom: 0.5em;
 }
 
-.buttonContainer {
-  margin: 1em 0;
+.button-container {
   display: flex;
   width: 25%;
+  margin: 1em 0;
   text-align: center;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
@@ -100,13 +101,13 @@ export default defineComponent({
   }
 }
 
-.contactMe {
-  cursor: pointer;
-  color: colors.$orange-red-crystal;
+.contact-me {
+  align-items: center;
   padding: 1rem 1.6rem;
+  color: colors.$orange-red-crystal;
+  cursor: pointer;
   border: solid 2px colors.$orange-red-crystal;
   border-radius: 5px;
-  align-items: center;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
     margin: 0 auto;
