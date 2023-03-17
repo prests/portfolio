@@ -23,6 +23,7 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
+    "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.25.0"
   },
   "devDependencies": {
