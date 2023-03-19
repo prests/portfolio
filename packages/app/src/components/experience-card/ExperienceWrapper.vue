@@ -32,7 +32,6 @@ export default defineComponent({
     HorizontalMenu,
   },
   setup: () => {
-    console.log('test');
     const selected = ref('DraftKings');
     const experiencesMap: ExperiencesMap = {
       DraftKings: DraftKingsExperience.name,

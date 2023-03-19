@@ -1,0 +1,24 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1,
+    "workspacePrefix": "/Users/shaynepreston/Documents/Projects/portfolio"
+  },
+  "1 info pnpm": {
+    "err": {
+      "name": "Error",
+      "message": "not found: stylelint",
+      "code": "ENOENT",
+      "stack": "Error: not found: stylelint\n    at getNotFoundError (/Users/shaynepreston/.nvm/versions/node/v17.8.0/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:21148:51)\n    at Function.whichSync [as sync] (/Users/shaynepreston/.nvm/versions/node/v17.8.0/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:21225:13)\n    at getCommandAbsolutePathSync (/Users/shaynepreston/.nvm/versions/node/v17.8.0/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:22903:44)\n    at default_1 (/Users/shaynepreston/.nvm/versions/node/v17.8.0/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:22912:32)\n    at /Users/shaynepreston/.nvm/versions/node/v17.8.0/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:179918:39"
+    }
+  },
+  "2 error pnpm": {
+    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+    "prefix": "/Users/shaynepreston/Documents/Projects/portfolio",
+    "err": {
+      "name": "pnpm",
+      "message": "not found: stylelint",
+      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+      "stack": "Error: not found: stylelint\n    at getNotFoundError (/Users/shaynepreston/.nvm/versions/node/v17.8.0/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:21148:51)\n    at Function.whichSync [as sync] (/Users/shaynepreston/.nvm/versions/node/v17.8.0/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:21225:13)\n    at getCommandAbsolutePathSync (/Users/shaynepreston/.nvm/versions/node/v17.8.0/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:22903:44)\n    at default_1 (/Users/shaynepreston/.nvm/versions/node/v17.8.0/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:22912:32)\n    at /Users/shaynepreston/.nvm/versions/node/v17.8.0/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:179918:39"
+    }
+  }
+}
