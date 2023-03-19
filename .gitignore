@@ -8,3 +8,4 @@ yarn-error.log
 .history
 target
 coverage
+.pnpm-debug.log
