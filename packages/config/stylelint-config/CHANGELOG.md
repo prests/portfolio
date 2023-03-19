@@ -1,5 +1,11 @@
 # shayne-stylelint-config
 
+## 1.1.1
+
+### Patch Changes
+
+- [#78](https://github.com/prests/portfolio/pull/78) [`39a60f6`](https://github.com/prests/portfolio/commit/39a60f6227137adcf491d33ccece56b73dab2899) Thanks [@prests](https://github.com/prests)! - updating CI
+
 ## 1.1.0
 
 ### Minor Changes
