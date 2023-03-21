@@ -4,6 +4,7 @@ import { defineConfig } from 'vite';
 import eslintPlugin from 'vite-plugin-eslint';
 import { configDefaults } from 'vitest/config';
 import vuePlugin from '@vitejs/plugin-vue';
+import istanbul from 'vite-plugin-istanbul';
 
 const testPathsToExclude = [
   ...configDefaults.exclude,
@@ -24,7 +25,17 @@ export default defineConfig({
     __VUE_I18N_LEGACY_API__: false,
     __INTLIFY_PROD_DEVTOOLS__: false,
   },
-  plugins: [eslintPlugin(), vuePlugin()],
+  plugins: [
+    eslintPlugin(),
+    vuePlugin(),
+    process.env.VITE_COVERAGE &&
+      istanbul({
+        include: 'src/*',
+        exclude: ['node_modules', 'coverage'],
+        extension: ['.ts', '.vue'],
+        requireEnv: true,
+      }),
+  ],
   resolve: {
     alias: {
       '~styles': path.resolve(__dirname, './src/styles'),
@@ -36,6 +47,9 @@ export default defineConfig({
       '@store': path.resolve(__dirname, './src/store'),
       '@views': path.resolve(__dirname, './src/views'),
     },
+  },
+  build: {
+    sourcemap: !!process.env.VITE_COVERAGE,
   },
   test: {
     exclude: testPathsToExclude,
