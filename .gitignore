@@ -8,4 +8,6 @@ yarn-error.log
 .history
 target
 coverage
+.e2e-coverage
 .pnpm-debug.log
+.nyc_output
