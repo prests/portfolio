@@ -8,6 +8,7 @@ importers:
       '@changesets/cli': ^2.25.0
       lint-staged: ^13.2.0
       npm-check-updates: ^16.3.8
+      nyc: ^15.1.0
       prettier: ^2.7.1
       rimraf: ^4.4.0
       shayne-prettier-config: workspace:*
@@ -17,6 +18,7 @@ importers:
     devDependencies:
       lint-staged: 13.2.0
       npm-check-updates: 16.3.8
+      nyc: 15.1.0
       prettier: 2.7.1
       rimraf: 4.4.0
       shayne-prettier-config: link:packages/config/prettier-config

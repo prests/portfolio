@@ -7,6 +7,7 @@ env:
 
 jobs:
   Unit-Tests:
+    name: Unit Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,10 +15,17 @@ jobs:
       - uses: ./.github/actions/setup-env
         name: Setup Environment
 
-      - run: pnpm test
+      - run: pnpm test:ci
         shell: bash
+        name: Run Unit Tests
+      - name: Save Unit Test Coverage Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: jest-coverage-report
+          path: packages/app/coverage/coverage-final.json
 
   Integration-Tests:
+    name: Integration Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -29,3 +37,40 @@ jobs:
 
       - run: pnpm -F shayne-portfolio-frontend e2e:ci
         shell: bash
+        name: Run Integration Tests
+      - name: Save Integration Test Coverage Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: e2e-coverage-report
+          path: packages/app/.e2e-coverage/coverage-final.json
+
+  Merge-Coverage-Reports:
+    needs: [Unit-Tests, Integration-Tests]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout Branch
+      - uses: ./.github/actions/setup-env
+        name: Setup Environment
+      - name: Download Unit Test Coverage Report
+        uses: actions/download-artifact@v3
+        with:
+          name: jest-coverage-report
+          path: merge-coverage
+      - name: Download Integration Test Coverage Report
+        uses: actions/download-artifact@v3
+        with:
+          name: e2e-coverage-report
+          path: merge-coverage
+      - name: Merge Reports
+        run: pnpm nyc merge ./merge-coverage ./.nyc_output/merge-coverage.json
+        shell: bash
+      - name: Convert Merged Report to LCOV
+        run: pnpm nyc report --report-dir=merge-coverage --reporter=lcov
+      - name: Publish Report
+        uses: romeovs/lcov-reporter-action@v0.2.16
+        with:
+          lcov-file: ./merge-coverage/lcov.info
+          filter-changed-files: true
+          delete-old-comments: true
+          title: Coverage Report

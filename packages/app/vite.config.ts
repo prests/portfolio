@@ -59,7 +59,7 @@ export default defineConfig({
         ...testPathsToExclude,
         '**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
       ],
-      reporter: ['html', 'lcov'],
+      reporter: ['json'],
     },
     environment: 'jsdom',
   },
