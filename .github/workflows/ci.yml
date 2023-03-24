@@ -68,8 +68,7 @@ jobs:
       - name: Convert Merged Report to LCOV
         run: pnpm nyc report --report-dir=merge-coverage --reporter=lcov
       - name: Publish Report
-        # Use hash because latest version with filter-changed-files and delete-old-comments never was published
-        uses: romeovs/lcov-reporter-action@2a28ec3e25fb7eae9cb537e9141603486f810d1a
+        uses: osmind-development-org/lcov-reporter-action@v0.3.2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           lcov-file: ./merge-coverage/lcov.info
