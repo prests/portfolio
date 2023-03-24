@@ -69,6 +69,7 @@ jobs:
         run: pnpm nyc report --report-dir=merge-coverage --reporter=lcov
       - name: Publish Report
         uses: romeovs/lcov-reporter-action@71d9e79612490aedf5977ebd5c08e3f8a869e0ca
+        if: github.event_name == 'pull_request'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           lcov-file: ./merge-coverage/lcov.info
