@@ -16,7 +16,7 @@
     "build": "pnpm -r build",
     "test": "pnpm -r test",
     "test:ci": "pnpm -r test:ci",
-    "health": "ncu --deep",
+    "health": "ncu --deep --dep prod,dev,bundle,optional,peer",
     "version-packages": "changeset",
     "postinstall": "git config core.hooksPath ./git-hooks"
   },
