@@ -6,7 +6,7 @@ runs:
     - uses: pnpm/action-setup@v2
       name: 'Setup PNPM'
       with:
-        version: 7
+        version: 8
     - uses: actions/setup-node@v3
       name: 'Setup Node'
       with:
