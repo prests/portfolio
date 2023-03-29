@@ -1,20 +1,20 @@
 <template>
   <ExperienceCard>
     <template #title>
-      {{ t('position') }}
+      {{ t('experience.factset.position') }}
       <a :class="$style.link" href="https://www.factset.com/" target="_blank">
         @ FactSet Research Systems
       </a>
     </template>
 
     <template #duration>
-      {{ t('duration') }}
+      {{ t('experience.factset.duration') }}
     </template>
 
     <template #content>
       <ul>
         <li v-for="index in 4" :key="index">
-          {{ t(`events[${index - 1}]`) }}
+          {{ t(`experience.factset.events[${index - 1}]`) }}
         </li>
       </ul>
     </template>
@@ -24,8 +24,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import { useLanguage } from '@language/component-language';
-import factSetMessage from '@language/messages/experiences/factset';
+import { useLanguage } from '@language/language-service';
 import ExperienceCard from '../ExperienceCard.vue';
 
 export default defineComponent({
@@ -34,7 +33,7 @@ export default defineComponent({
     ExperienceCard,
   },
   setup: () => {
-    const { t } = useLanguage(factSetMessage);
+    const { t } = useLanguage();
 
     return {
       t,

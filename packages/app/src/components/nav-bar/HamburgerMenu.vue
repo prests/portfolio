@@ -23,7 +23,7 @@
               @mouseleave="blurRoute(path.id)"
               @click.stop="hamburgerRouteSelected(path.path)"
             >
-              {{ t(`links[${index}]`) }}
+              {{ t(`nav.links[${index}]`) }}
             </div>
 
             <div
@@ -33,7 +33,7 @@
               @mouseleave="blurButton('#resume')"
               @click.stop="openResume"
             >
-              {{ t('resume') }}
+              {{ t('nav.resume') }}
             </div>
           </div>
         </Transition>
@@ -49,8 +49,7 @@ import { defineComponent, ref } from 'vue';
 import HamburgerSVG from '@assets/HamburgerSVG.vue';
 import { useNavAnimations } from '@composables/animations/nav-bar/path-animations';
 import { usePaths } from '@composables/routing/paths-service';
-import { useLanguage } from '@language/component-language';
-import navMessages from '@language/messages/nav';
+import { useLanguage } from '@language/language-service';
 
 export default defineComponent({
   name: 'HamburgerMenu',
@@ -61,7 +60,7 @@ export default defineComponent({
     const menuOpen = ref(false);
     const navPanelOpen = ref(false);
 
-    const { t } = useLanguage(navMessages);
+    const { t } = useLanguage();
 
     const { changeRoute, openResume, paths } = usePaths();
     const { blurButton, blurRoute, focusButton, focusRoute } =

@@ -1,13 +1,13 @@
 <template>
   <div :class="$style['about-view']">
     <div :class="$style['description-container']">
-      <h1 :class="$style['about-header']">{{ t('title') }}</h1>
+      <h1 :class="$style['about-header']">{{ t('about.title') }}</h1>
 
       <div :class="$style['history-container']">
-        <p>{{ t('p1') }}</p>
+        <p>{{ t('about.p1') }}</p>
 
         <p>
-          {{ t('p2') }}
+          {{ t('about.p2') }}
           <a :class="$style.link" href="https://rcos.io/" target="_blank">
             RCOS
           </a>
@@ -16,7 +16,7 @@
 
         <!-- eslint-disable-next-line vue/max-len -->
         <p>
-          {{ t('p3.s1') }}
+          {{ t('about.p3.s1') }}
           <a
             :class="$style.link"
             href="https://www.factset.com/"
@@ -24,17 +24,17 @@
           >
             FactSet Research Systems
           </a>
-          {{ t('p3.s2') }}
+          {{ t('about.p3.s2') }}
         </p>
 
         <!-- eslint-disable-next-line vue/max-len -->
-        <p>{{ t('p4') }}</p>
+        <p>{{ t('about.p4') }}</p>
 
-        <span>{{ t('technologies.header') }}</span>
+        <span>{{ t('about.technologies.header') }}</span>
         <div :class="$style.technologies">
           <ul>
             <li v-for="index in 8" :key="index">
-              {{ t(`technologies.techList[${index - 1}]`) }}
+              {{ t(`about.technologies.techList[${index - 1}]`) }}
             </li>
           </ul>
         </div>
@@ -61,13 +61,12 @@ import { animate } from 'motion';
 import { defineComponent } from 'vue';
 
 import aboutPhotoSrc from '@assets/about-photo.jpg';
-import { useLanguage } from '@language/component-language';
-import aboutMessages from '@language/messages/about';
+import { useLanguage } from '@language/language-service';
 
 export default defineComponent({
   name: 'AboutView',
   setup: () => {
-    const { t } = useLanguage(aboutMessages);
+    const { t } = useLanguage();
 
     function blurImage(): void {
       if (window.innerWidth > 1200) {

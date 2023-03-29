@@ -1,24 +1,30 @@
 import { createWebHistory, createRouter, Router } from 'vue-router';
-import { Pinia } from 'pinia';
+import { I18n } from 'vue-i18n';
 
-import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from '@language/index';
-import { useAppStore } from '@store/app-store/app-store';
+import { SUPPORTED_LOCALES } from '@language/language-constants';
 import { routes } from './routes';
+import { getLocale, loadLocaleMessages, setI18nLanguage } from '@language/i18n';
+import { SupportedLocales } from '@language/language-models';
 
-export function setupRouter(pinia: Pinia): Router {
-  const appStore = useAppStore(pinia);
+export function setupRouter(i18n: I18n): Router {
+  const fallbackLocale = getLocale(i18n);
   const router = createRouter({
     history: createWebHistory(),
     routes,
   });
 
   router.beforeEach(async (to) => {
-    const paramsLocale = to.params.locale as string;
+    const paramsLocale = (to.params.locale as string) ?? 'en_US';
 
-    const locale = SUPPORTED_LOCALES.includes(paramsLocale)
-      ? paramsLocale
-      : DEFAULT_LOCALE;
-    appStore.setLanguage(locale);
+    if (!SUPPORTED_LOCALES.includes(paramsLocale as SupportedLocales)) {
+      return `/${fallbackLocale}`;
+    }
+
+    if (!i18n.global.availableLocales.includes(paramsLocale)) {
+      await loadLocaleMessages(i18n, paramsLocale);
+    }
+
+    setI18nLanguage(i18n, paramsLocale);
   });
 
   return router;

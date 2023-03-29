@@ -19,7 +19,7 @@
         @mouseleave="blurRoute(path.id)"
         @click="changeRoute(path.path)"
       >
-        {{ t(`links[${index}]`) }}
+        {{ t(`nav.links[${index}]`) }}
       </div>
 
       <div
@@ -29,7 +29,7 @@
         @mouseleave="blurButton('#navButton')"
         @click="openResume"
       >
-        {{ t('resume') }}
+        {{ t('nav.resume') }}
       </div>
     </div>
   </div>
@@ -42,8 +42,7 @@ import LogoSVG from '@assets/LogoSVG.vue';
 import { useNavAnimations } from '@composables/animations/nav-bar/path-animations';
 import { useLogoAnimations } from '@composables/animations/nav-bar/logo';
 import { usePaths } from '@composables/routing/paths-service';
-import { useLanguage } from '@language/component-language';
-import navMessages from '@language/messages/nav';
+import { useLanguage } from '@language/language-service';
 import HamburgerMenu from './HamburgerMenu.vue';
 
 export default defineComponent({
@@ -55,7 +54,7 @@ export default defineComponent({
   setup: () => {
     const hamburgerMenu = ref<HTMLDivElement>();
 
-    const { t } = useLanguage(navMessages);
+    const { t } = useLanguage();
 
     const { changeRoute, openResume, paths } = usePaths();
     const { blurButton, blurRoute, focusButton, focusRoute } =
