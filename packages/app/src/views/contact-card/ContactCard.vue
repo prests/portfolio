@@ -1,30 +1,29 @@
 <template>
   <div :class="$style['contact-card-view']">
     <p>
-      {{ t('info') }}
+      {{ t('contactCard.info') }}
       <a
         ref="contactCardLink"
         :class="$style.link"
         href="shayne-contact-card.vcf"
         download="shayne-contact-card.vcf"
-        >{{ t('link') }}</a
+        >{{ t('contactCard.link') }}</a
       >.
     </p>
-    <p>{{ t('tip') }}</p>
+    <p>{{ t('contactCard.tip') }}</p>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue';
 
-import { useLanguage } from '@language/component-language';
-import contactMessages from '@language/messages/contact-card';
+import { useLanguage } from '@language/language-service';
 
 export default defineComponent({
   name: 'ContactCard',
   setup: () => {
     const contactCardLink = ref<HTMLAnchorElement>();
-    const { t } = useLanguage(contactMessages);
+    const { t } = useLanguage();
 
     onMounted(() => {
       contactCardLink.value?.click();

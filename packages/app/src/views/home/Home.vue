@@ -1,14 +1,14 @@
 <template>
   <div :class="$style['home-view']">
-    <h1 :class="$style.welcome">{{ t('welcome') }}</h1>
+    <h1 :class="$style.welcome">{{ t('home.welcome') }}</h1>
     <h2 :class="$style.motto">
-      {{ t('bio.s1') }}
+      {{ t('home.bio.s1') }}
       <span :class="$style.name">Shayne Preston</span>&#44;
-      {{ t('bio.s2') }}
+      {{ t('home.bio.s2') }}
     </h2>
 
     <p>
-      {{ t('contact.message') }}
+      {{ t('home.contact.message') }}
     </p>
 
     <div :class="$style['button-container']">
@@ -19,7 +19,7 @@
         @mouseleave="blurButton('#contactButton')"
         @click="sendEmail"
       >
-        {{ t('contact.button') }}
+        {{ t('home.contact.button') }}
       </div>
     </div>
   </div>
@@ -30,13 +30,12 @@ import { defineComponent } from 'vue';
 
 import { useNavAnimations } from '@composables/animations/nav-bar/path-animations';
 import { usePaths } from '@composables/routing/paths-service';
-import { useLanguage } from '@language/component-language';
-import homeMessages from '@language/messages/home';
+import { useLanguage } from '@language/language-service';
 
 export default defineComponent({
   name: 'HomeView',
   setup: () => {
-    const { t } = useLanguage(homeMessages);
+    const { t } = useLanguage();
     const { sendEmail } = usePaths();
     const { blurButton, focusButton } = useNavAnimations();
 

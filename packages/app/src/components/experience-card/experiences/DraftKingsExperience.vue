@@ -1,7 +1,7 @@
 <template>
   <ExperienceCard>
     <template #title>
-      {{ t('position') }}
+      {{ t('experience.draftkings.position') }}
       <a
         :class="$style.link"
         href="https://www.draftkings.com/about/"
@@ -12,13 +12,13 @@
     </template>
 
     <template #duration>
-      {{ t('duration') }}
+      {{ t('experience.draftkings.duration') }}
     </template>
 
     <template #content>
       <ul>
         <li v-for="index in 4" :key="index">
-          {{ t(`events[${index - 1}]`) }}
+          {{ t(`experience.draftkings.events[${index - 1}]`) }}
         </li>
       </ul>
     </template>
@@ -28,9 +28,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import { useLanguage } from '@language/component-language';
-import draftkingsMessages from '@language/messages/experiences/draftkings';
 import ExperienceCard from '../ExperienceCard.vue';
+import { useLanguage } from '@language/language-service';
 
 export default defineComponent({
   name: 'DraftKingsExperience',
@@ -38,7 +37,7 @@ export default defineComponent({
     ExperienceCard,
   },
   setup: () => {
-    const { t } = useLanguage(draftkingsMessages);
+    const { t } = useLanguage();
 
     return {
       t,
