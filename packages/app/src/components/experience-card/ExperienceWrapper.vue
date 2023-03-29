@@ -1,63 +1,45 @@
 <template>
   <div :class="$style['wrapper-container']">
-    <HorizontalMenu v-model:selected="selected" :items="companiesList" />
+    <HorizontalMenu v-model:selected="selected" :items="experiences" />
     <div :class="$style.separator">
       <transition
         mode="out-in"
         @enter="experienceEnter"
         @leave="experienceLeave"
       >
-        <component :is="experiencesMap[selected]" />
+        <component :is="experienceComponentMap[selected]" />
       </transition>
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { animate, timeline } from 'motion';
-import { defineComponent, ref } from 'vue';
+import { ref, type Component } from 'vue';
 
-import {
-  DraftKingsExperience,
-  FactSetExperience,
-} from '@components/experience-card/experiences';
+import DraftKingsExperience from './experiences/DraftKingsExperience.vue';
+import FactSetExperience from './experiences/FactSetExperience.vue';
 import HorizontalMenu from '@components/horizontal-menu/HorizontalMenu.vue';
-import { ExperiencesMap } from '@models/experiences';
 
-export default defineComponent({
-  name: 'ExperienceWrapper',
-  components: {
-    DraftKingsExperience,
-    FactSetExperience,
-    HorizontalMenu,
-  },
-  setup: () => {
-    const selected = ref('DraftKings');
-    const experiencesMap: ExperiencesMap = {
-      DraftKings: DraftKingsExperience.name,
-      FactSet: FactSetExperience.name,
-    };
+const experienceComponentMap: {
+  [key: string]: Component;
+} = {
+  DraftKings: DraftKingsExperience,
+  FactSet: FactSetExperience,
+};
+const experiences = Object.keys(experienceComponentMap);
+const selected = ref(experiences[0]);
 
-    function experienceEnter(el: any, done: any) {
-      timeline([
-        [el, { opacity: 0 }, { duration: 0 }],
-        [el, { opacity: 1 }, { duration: 0.25 }],
-      ]).finished.then(done);
-    }
+function experienceEnter(el: any, done: any) {
+  timeline([
+    [el, { opacity: 0 }, { duration: 0 }],
+    [el, { opacity: 1 }, { duration: 0.25 }],
+  ]).finished.then(done);
+}
 
-    function experienceLeave(el: any, done: any) {
-      animate(el, { opacity: 0 }, { duration: 0.25 }).finished.then(done);
-    }
-
-    return {
-      experienceEnter,
-      experienceLeave,
-      experiencesMap,
-      companiesList: Object.keys(experiencesMap),
-      selected,
-    };
-  },
-});
+function experienceLeave(el: any, done: any) {
+  animate(el, { opacity: 0 }, { duration: 0.25 }).finished.then(done);
+}
 </script>
 
 <style lang="scss" module>

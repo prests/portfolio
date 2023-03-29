@@ -45,7 +45,7 @@ export default defineConfig({
       '@language': path.resolve(__dirname, './src/language'),
       '@models': path.resolve(__dirname, './src/models'),
       '@store': path.resolve(__dirname, './src/store'),
-      '@views': path.resolve(__dirname, './src/views'),
+      '@pages': path.resolve(__dirname, './src/pages'),
     },
   },
   build: {

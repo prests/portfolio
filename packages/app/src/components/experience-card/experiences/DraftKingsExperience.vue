@@ -25,25 +25,11 @@
   </ExperienceCard>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
+<script setup lang="ts">
 import ExperienceCard from '../ExperienceCard.vue';
 import { useLanguage } from '@language/language-service';
 
-export default defineComponent({
-  name: 'DraftKingsExperience',
-  components: {
-    ExperienceCard,
-  },
-  setup: () => {
-    const { t } = useLanguage();
-
-    return {
-      t,
-    };
-  },
-});
+const { t } = useLanguage();
 </script>
 
 <style lang="scss" module>

@@ -6,14 +6,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'PageNotFound',
-});
-</script>
-
 <style lang="scss" module>
 @use '~styles/colors';
 @use '~styles/responsive';

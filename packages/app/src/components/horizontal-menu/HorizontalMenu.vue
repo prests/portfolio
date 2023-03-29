@@ -1,11 +1,11 @@
 <template>
   <div :class="$style['menu-container']">
     <div
-      v-for="(item, index) in items"
+      v-for="(item, index) in props.items"
       :key="index"
       :class="[
         $style.item,
-        item === selected ? $style.selected : $style['not-selected'],
+        item === props.selected ? $style.selected : $style['not-selected'],
       ]"
       @click="$emit('update:selected', item)"
     >
@@ -14,22 +14,14 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue';
-
-export default defineComponent({
-  name: 'HorizontalMenu',
-  props: {
-    items: {
-      type: Object as PropType<string[]>,
-      default: () => [] as string[],
-    },
-    selected: { type: String, required: true },
-  },
-  emits: {
-    'update:selected': (payload: string) => typeof payload === 'string',
-  },
-});
+<script setup lang="ts">
+const props = withDefaults(
+  defineProps<{ items?: string[]; selected: string }>(),
+  {
+    items: () => [],
+  }
+);
+defineEmits<{ (e: 'update:selected', value: string): void }>();
 </script>
 
 <style lang="scss" module>

@@ -14,14 +14,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'ExperienceCard',
-});
-</script>
-
 <style lang="scss" module>
 @use '~styles/colors';
 

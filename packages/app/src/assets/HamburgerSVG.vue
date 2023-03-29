@@ -2,9 +2,9 @@
 <template>
   <div :class="$style.container">
     <button
-      :class="{ [$style.menu]: true, [$style.opened]: modelValue }"
+      :class="{ [$style.menu]: true, [$style.opened]: props.modelValue }"
       aria-label="Main Menu"
-      :aria-expanded="modelValue"
+      :aria-expanded="props.modelValue"
     >
       <svg height="100%" viewBox="0 0 100 100">
         <path
@@ -21,18 +21,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'HamburgerSVG',
-  props: {
-    modelValue: { type: Boolean, default: false },
-  },
-  emits: {
-    'update:modelValue': (payload: Boolean) => typeof payload === 'boolean',
-  },
+<script setup lang="ts">
+const props = withDefaults(defineProps<{ modelValue?: boolean }>(), {
+  modelValue: false,
 });
+
+defineEmits<{ (e: 'update:modelValue', value: boolean): void }>();
 </script>
 
 <style lang="scss" module>

@@ -10,7 +10,7 @@
       "@language/*": ["./src/language/*"],
       "@models/*": ["./src/models/*"],
       "@store/*": ["./src/store/*"],
-      "@views/*": ["./src/views/*"]
+      "@pages/*": ["./src/pages/*"]
     }
   },
   "include": ["**/*.ts", "**/*.d.ts", "**/*.tsx", "**/*.vue"],

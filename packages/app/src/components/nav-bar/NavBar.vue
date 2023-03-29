@@ -35,8 +35,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
+<script setup lang="ts">
+import { ref } from 'vue';
 
 import LogoSVG from '@assets/LogoSVG.vue';
 import { useNavAnimations } from '@composables/animations/nav-bar/path-animations';
@@ -45,37 +45,13 @@ import { usePaths } from '@composables/routing/paths-service';
 import { useLanguage } from '@language/language-service';
 import HamburgerMenu from './HamburgerMenu.vue';
 
-export default defineComponent({
-  name: 'NavBar',
-  components: {
-    HamburgerMenu,
-    LogoSVG,
-  },
-  setup: () => {
-    const hamburgerMenu = ref<HTMLDivElement>();
+const hamburgerMenu = ref<HTMLDivElement>();
 
-    const { t } = useLanguage();
+const { t } = useLanguage();
 
-    const { changeRoute, openResume, paths } = usePaths();
-    const { blurButton, blurRoute, focusButton, focusRoute } =
-      useNavAnimations();
-    const { focusLogo, blurLogo } = useLogoAnimations();
-
-    return {
-      blurButton,
-      blurLogo,
-      blurRoute,
-      changeRoute,
-      focusButton,
-      focusLogo,
-      focusRoute,
-      hamburgerMenu,
-      openResume,
-      paths,
-      t,
-    };
-  },
-});
+const { changeRoute, openResume, paths } = usePaths();
+const { blurButton, blurRoute, focusButton, focusRoute } = useNavAnimations();
+const { focusLogo, blurLogo } = useLogoAnimations();
 </script>
 
 <style lang="scss" module>

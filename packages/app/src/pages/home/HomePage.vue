@@ -25,28 +25,14 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
+<script setup lang="ts">
 import { useNavAnimations } from '@composables/animations/nav-bar/path-animations';
 import { usePaths } from '@composables/routing/paths-service';
 import { useLanguage } from '@language/language-service';
 
-export default defineComponent({
-  name: 'HomeView',
-  setup: () => {
-    const { t } = useLanguage();
-    const { sendEmail } = usePaths();
-    const { blurButton, focusButton } = useNavAnimations();
-
-    return {
-      blurButton,
-      focusButton,
-      sendEmail,
-      t,
-    };
-  },
-});
+const { t } = useLanguage();
+const { sendEmail } = usePaths();
+const { blurButton, focusButton } = useNavAnimations();
 </script>
 
 <style lang="scss" module>
