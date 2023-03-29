@@ -1,5 +1,11 @@
 # eslint-config-shayne
 
+## 2.0.0
+
+### Major Changes
+
+- [#88](https://github.com/prests/portfolio/pull/88) [`a8672a7`](https://github.com/prests/portfolio/commit/a8672a7a79b5ea27ae5ee324133f138c0da648fe) Thanks [@prests](https://github.com/prests)! - upgrade typescript to ^5.0.2
+
 ## 1.0.4
 
 ### Patch Changes
