@@ -1,5 +1,13 @@
 # shayne-portfolio-frontend
 
+## 4.0.0
+
+### Major Changes
+
+- [#90](https://github.com/prests/portfolio/pull/90) [`1285ba1`](https://github.com/prests/portfolio/commit/1285ba1117766388c3961238e1412aa0f91f221c) Thanks [@prests](https://github.com/prests)! - Add support for lazy loading locale messages
+
+- [#97](https://github.com/prests/portfolio/pull/97) [`d1e5880`](https://github.com/prests/portfolio/commit/d1e5880fe6a41b45d94f9398ff6f3ab39ab1f989) Thanks [@prests](https://github.com/prests)! - Switch from Vue's Options API to using script setup in components
+
 ## 3.0.0
 
 ### Major Changes
