@@ -21,25 +21,11 @@
   </ExperienceCard>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
+<script setup lang="ts">
 import { useLanguage } from '@language/language-service';
 import ExperienceCard from '../ExperienceCard.vue';
 
-export default defineComponent({
-  name: 'FactSetExperience',
-  components: {
-    ExperienceCard,
-  },
-  setup: () => {
-    const { t } = useLanguage();
-
-    return {
-      t,
-    };
-  },
-});
+const { t } = useLanguage();
 </script>
 
 <style lang="scss" module>

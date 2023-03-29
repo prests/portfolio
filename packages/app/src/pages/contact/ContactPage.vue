@@ -14,23 +14,16 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, onMounted } from 'vue';
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
 
 import { useLanguage } from '@language/language-service';
 
-export default defineComponent({
-  name: 'ContactCard',
-  setup: () => {
-    const contactCardLink = ref<HTMLAnchorElement>();
-    const { t } = useLanguage();
+const { t } = useLanguage();
+const contactCardLink = ref<HTMLAnchorElement>();
 
-    onMounted(() => {
-      contactCardLink.value?.click();
-    });
-
-    return { contactCardLink, t };
-  },
+onMounted(() => {
+  contactCardLink.value?.click();
 });
 </script>
 

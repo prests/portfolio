@@ -28,38 +28,22 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { animate } from 'motion';
-import { defineComponent } from 'vue';
 
 import GithubSvg from '@assets/GithubSVG.vue';
 import LinkedInSVG from '@assets/LinkedInSVG.vue';
 import { useLanguage } from '@language/language-service';
 
-export default defineComponent({
-  name: 'FooterList',
-  components: {
-    GithubSvg,
-    LinkedInSVG,
-  },
-  setup: () => {
-    const { t } = useLanguage();
+const { t } = useLanguage();
 
-    function blurLink(id: string): void {
-      animate(id, { y: 0 }, { duration: 0.5 });
-    }
+function blurLink(id: string): void {
+  animate(id, { y: 0 }, { duration: 0.5 });
+}
 
-    function focusLink(id: string): void {
-      animate(id, { y: -5 }, { duration: 0.5 });
-    }
-
-    return {
-      blurLink,
-      focusLink,
-      t,
-    };
-  },
-});
+function focusLink(id: string): void {
+  animate(id, { y: -5 }, { duration: 0.5 });
+}
 </script>
 
 <style lang="scss" module>

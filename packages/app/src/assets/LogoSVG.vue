@@ -171,58 +171,33 @@
   </svg>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, ref, useCssModule } from 'vue';
+<script setup lang="ts">
+import { computed, ref, useCssModule } from 'vue';
 
-export default defineComponent({
-  name: 'LogoSVG',
-  props: {
-    isSplashScreen: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  setup: (props) => {
-    const $style = useCssModule();
-
-    const lineOpacity = computed(() =>
-      props.isSplashScreen ? $style['hide-line'] : $style['show-line']
-    );
-
-    const line1 = ref<SVGLineElement>();
-    const line2 = ref<SVGLineElement>();
-    const line3 = ref<SVGLineElement>();
-    const line4 = ref<SVGLineElement>();
-    const line5 = ref<SVGLineElement>();
-    const line6 = ref<SVGLineElement>();
-    const line7 = ref<SVGLineElement>();
-    const line8 = ref<SVGLineElement>();
-    const line9 = ref<SVGLineElement>();
-    const line10 = ref<SVGLineElement>();
-    const line11 = ref<SVGLineElement>();
-    const line12 = ref<SVGLineElement>();
-    const line13 = ref<SVGLineElement>();
-    const line14 = ref<SVGLineElement>();
-
-    return {
-      line1,
-      line2,
-      line3,
-      line4,
-      line5,
-      line6,
-      line7,
-      line8,
-      line9,
-      line10,
-      line11,
-      line12,
-      line13,
-      line14,
-      lineOpacity,
-    };
-  },
+const props = withDefaults(defineProps<{ isSplashScreen?: boolean }>(), {
+  isSplashScreen: false,
 });
+
+const $style = useCssModule();
+
+const lineOpacity = computed(() =>
+  props.isSplashScreen ? $style['hide-line'] : $style['show-line']
+);
+
+const line1 = ref<SVGLineElement>();
+const line2 = ref<SVGLineElement>();
+const line3 = ref<SVGLineElement>();
+const line4 = ref<SVGLineElement>();
+const line5 = ref<SVGLineElement>();
+const line6 = ref<SVGLineElement>();
+const line7 = ref<SVGLineElement>();
+const line8 = ref<SVGLineElement>();
+const line9 = ref<SVGLineElement>();
+const line10 = ref<SVGLineElement>();
+const line11 = ref<SVGLineElement>();
+const line12 = ref<SVGLineElement>();
+const line13 = ref<SVGLineElement>();
+const line14 = ref<SVGLineElement>();
 </script>
 
 <style lang="scss" module>

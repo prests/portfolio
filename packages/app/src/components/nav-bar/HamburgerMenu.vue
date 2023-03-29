@@ -42,82 +42,56 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { animate, timeline } from 'motion';
-import { defineComponent, ref } from 'vue';
+import { ref } from 'vue';
 
 import HamburgerSVG from '@assets/HamburgerSVG.vue';
 import { useNavAnimations } from '@composables/animations/nav-bar/path-animations';
 import { usePaths } from '@composables/routing/paths-service';
 import { useLanguage } from '@language/language-service';
 
-export default defineComponent({
-  name: 'HamburgerMenu',
-  components: {
-    HamburgerSVG,
-  },
-  setup: () => {
-    const menuOpen = ref(false);
-    const navPanelOpen = ref(false);
+const menuOpen = ref(false);
+const navPanelOpen = ref(false);
 
-    const { t } = useLanguage();
+const { t } = useLanguage();
 
-    const { changeRoute, openResume, paths } = usePaths();
-    const { blurButton, blurRoute, focusButton, focusRoute } =
-      useNavAnimations();
+const { changeRoute, openResume, paths } = usePaths();
+const { blurButton, blurRoute, focusButton, focusRoute } = useNavAnimations();
 
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        menuOpen.value = false;
-      }
-    });
-
-    function hamburgerRouteSelected(path: string): void {
-      closeMenu();
-      changeRoute(path);
-    }
-
-    function closeMenu(): void {
-      navPanelOpen.value = false;
-      setTimeout(() => {
-        menuOpen.value = false;
-      }, 250);
-    }
-
-    function openMenu(): void {
-      menuOpen.value = true;
-      navPanelOpen.value = true;
-    }
-
-    function openPopUp(el: any, done: any) {
-      timeline([
-        [el, { x: '100%' }, { duration: 0 }],
-        [el, { x: '0%' }, { duration: 0.5 }],
-      ]).finished.then(done);
-    }
-
-    function closePopUp(el: any, done: any) {
-      animate(el, { x: '100%' }, { duration: 0.25 }).finished.then(done);
-    }
-
-    return {
-      blurButton,
-      blurRoute,
-      closeMenu,
-      closePopUp,
-      focusButton,
-      focusRoute,
-      hamburgerRouteSelected,
-      menuOpen,
-      navPanelOpen,
-      openMenu,
-      openPopUp,
-      openResume,
-      paths,
-      t,
-    };
-  },
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    menuOpen.value = false;
+  }
 });
+
+function hamburgerRouteSelected(path: string): void {
+  closeMenu();
+  changeRoute(path);
+}
+
+function closeMenu(): void {
+  navPanelOpen.value = false;
+  setTimeout(() => {
+    menuOpen.value = false;
+  }, 250);
+}
+
+function openMenu(): void {
+  menuOpen.value = true;
+  navPanelOpen.value = true;
+}
+
+function openPopUp(el: any, done: any) {
+  timeline([
+    [el, { x: '100%' }, { duration: 0 }],
+    [el, { x: '0%' }, { duration: 0.5 }],
+  ]).finished.then(done);
+}
+
+function closePopUp(el: any, done: any) {
+  animate(el, { x: '100%' }, { duration: 0.25 }).finished.then(done);
+}
 </script>
 
 <style lang="scss" module>

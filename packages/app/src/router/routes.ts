@@ -1,8 +1,8 @@
-import About from '@views/about/About.vue';
-import ContactCard from '@views/contact-card/ContactCard.vue';
-import Experience from '@views/experience/Experience.vue';
-import Home from '@views/home/Home.vue';
-import PageNotFound from '@views/page-not-found/PageNotFound.vue';
+import About from '@pages/about/AboutPage.vue';
+import ContactCard from '@pages/contact/ContactPage.vue';
+import Experience from '@pages/experience/ExperiencePage.vue';
+import Home from '@pages/home/HomePage.vue';
+import PageNotFound from '@pages/page-not-found/PageNotFound.vue';
 
 export const routes = [
   {
@@ -21,8 +21,8 @@ export const routes = [
     component: Experience,
   },
   {
-    name: 'Contact Card',
-    path: '/contact-card',
+    name: 'Contact Page',
+    path: '/contact',
     component: ContactCard,
   },
   {

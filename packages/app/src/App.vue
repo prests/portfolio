@@ -8,45 +8,29 @@
       </transition>
     </router-view>
 
-    <FooterList />
+    <AppFooter />
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { animate } from 'motion';
-import { defineComponent } from 'vue';
 
-import FooterList from '@components/footer/Footer.vue';
+import AppFooter from '@components/footer/AppFooter.vue';
 import NavBar from '@components/nav-bar/NavBar.vue';
+let isFirstLoad = true;
 
-export default defineComponent({
-  name: 'App',
-  components: {
-    FooterList,
-    NavBar,
-  },
-  setup: () => {
-    let firstload = true;
+function routeEnter(el: any, done: any): void {
+  if (isFirstLoad) {
+    isFirstLoad = false;
+    animate(el, { opacity: 1 }, { duration: 1 }).finished.then(done);
+  } else {
+    animate(el, { opacity: 1 }, { duration: 0.25 }).finished.then(done);
+  }
+}
 
-    function routeEnter(el: any, done: any): void {
-      if (firstload) {
-        firstload = false;
-        animate(el, { opacity: 1 }, { duration: 1 }).finished.then(done);
-      } else {
-        animate(el, { opacity: 1 }, { duration: 0.25 }).finished.then(done);
-      }
-    }
-
-    function routeLeave(el: any, done: any): void {
-      animate(el, { opacity: 0 }, { duration: 0.25 }).finished.then(done);
-    }
-
-    return {
-      routeEnter,
-      routeLeave,
-    };
-  },
-});
+function routeLeave(el: any, done: any): void {
+  animate(el, { opacity: 0 }, { duration: 0.25 }).finished.then(done);
+}
 </script>
 
 <style lang="scss">

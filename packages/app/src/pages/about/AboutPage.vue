@@ -56,45 +56,31 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { animate } from 'motion';
-import { defineComponent } from 'vue';
 
 import aboutPhotoSrc from '@assets/about-photo.jpg';
 import { useLanguage } from '@language/language-service';
 
-export default defineComponent({
-  name: 'AboutView',
-  setup: () => {
-    const { t } = useLanguage();
+const { t } = useLanguage();
 
-    function blurImage(): void {
-      if (window.innerWidth > 1200) {
-        animate(`#aboutPhoto`, { rotate: 5 }, { duration: 0.5 });
-      }
-    }
+function blurImage(): void {
+  if (window.innerWidth > 1200) {
+    animate(`#aboutPhoto`, { rotate: 5 }, { duration: 0.5 });
+  }
+}
 
-    function focusImage(): void {
-      animate(`#aboutPhoto`, { rotate: 0 }, { duration: 0.5 });
-    }
+function focusImage(): void {
+  animate(`#aboutPhoto`, { rotate: 0 }, { duration: 0.5 });
+}
 
-    function loadImage(): void {
-      if (window.innerWidth > 1200) {
-        animate(`#aboutPhoto`, { opacity: 1, rotate: 5 }, { duration: 2 });
-      } else {
-        animate(`#aboutPhoto`, { opacity: 1 }, { duration: 2 });
-      }
-    }
-
-    return {
-      aboutPhotoSrc,
-      blurImage,
-      focusImage,
-      loadImage,
-      t,
-    };
-  },
-});
+function loadImage(): void {
+  if (window.innerWidth > 1200) {
+    animate(`#aboutPhoto`, { opacity: 1, rotate: 5 }, { duration: 2 });
+  } else {
+    animate(`#aboutPhoto`, { opacity: 1 }, { duration: 2 });
+  }
+}
 </script>
 
 <style lang="scss" module>
