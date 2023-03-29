@@ -49,7 +49,8 @@ export default defineConfig({
     },
   },
   build: {
-    sourcemap: !!process.env.VITE_COVERAGE,
+    sourcemap:
+      !!process.env.VITE_COVERAGE || process.env.NODE_ENV === 'development',
   },
   test: {
     exclude: testPathsToExclude,
