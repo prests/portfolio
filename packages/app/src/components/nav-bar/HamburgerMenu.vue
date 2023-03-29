@@ -50,6 +50,7 @@ import HamburgerSVG from '@assets/HamburgerSVG.vue';
 import { useNavAnimations } from '@composables/animations/nav-bar/path-animations';
 import { usePaths } from '@composables/routing/paths-service';
 import { useLanguage } from '@language/language-service';
+import { useWindowResize } from '@composables/window-helpers/resize.js';
 
 const menuOpen = ref(false);
 const navPanelOpen = ref(false);
@@ -59,7 +60,7 @@ const { t } = useLanguage();
 const { changeRoute, openResume, paths } = usePaths();
 const { blurButton, blurRoute, focusButton, focusRoute } = useNavAnimations();
 
-window.addEventListener('resize', () => {
+useWindowResize(() => {
   if (window.innerWidth > 768) {
     menuOpen.value = false;
   }
