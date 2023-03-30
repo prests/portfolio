@@ -1,5 +1,13 @@
 # shayne-portfolio-frontend
 
+## 5.0.0
+
+### Major Changes
+
+- [#101](https://github.com/prests/portfolio/pull/101) [`6f4b2e3`](https://github.com/prests/portfolio/commit/6f4b2e3f527dd938285937e8d644cf4c1c1e73e2) Thanks [@prests](https://github.com/prests)! - build sourcemaps in dev (I have no where to send them in prod 😔)
+
+- [#98](https://github.com/prests/portfolio/pull/98) [`70a8e56`](https://github.com/prests/portfolio/commit/70a8e562455f4777aeeb1e6a62134198d4c3902b) Thanks [@prests](https://github.com/prests)! - remove resize window event on component unmount
+
 ## 4.0.0
 
 ### Major Changes
