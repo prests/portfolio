@@ -1,8 +1,8 @@
 module.exports = {
   '*.{js,ts}': 'eslint --fix',
-  '*.scss': "pnpm stylelint --fix '**/*.scss'",
+  '*.scss': "pnpm -F shayne-portfolio-frontend stylelint --fix '**/*.vue'",
   '*.vue': [
-    "pnpm -F shayne-project-frontend stylelint --fix '**/*.vue'",
+    "pnpm -F shayne-portfolio-frontend stylelint --fix '**/*.vue'",
     'eslint --fix',
   ],
 };

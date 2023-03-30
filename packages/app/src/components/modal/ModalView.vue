@@ -27,36 +27,33 @@ defineEmits<{ (e: 'update:isOpen', value: boolean): void }>();
 
 <style lang="scss">
 .modal-backdrop {
-  background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
+  inset: 0;
   z-index: 15;
+  display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgb(0 0 0 / 30%);
 }
 
 .modal {
-  overflow-x: auto;
   display: inline-flex;
   flex-direction: column;
-  margin: auto;
-  background: #ffffff;
   padding: 10px;
+  margin: auto;
+  overflow-x: auto;
+  background: #fff;
 }
 
 .modal-header {
-  justify-content: space-between;
   display: inline-flex;
+  justify-content: space-between;
 }
 
 .btn-close {
-  border: none;
-  background: transparent;
+  padding: 0;
   cursor: pointer;
-  padding: 0px;
+  background: transparent;
+  border: none;
 }
 </style>

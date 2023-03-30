@@ -28,13 +28,14 @@ export default defineConfig({
   plugins: [
     eslintPlugin(),
     vuePlugin(),
-    process.env.VITE_COVERAGE &&
-      istanbul({
-        include: 'src/*',
-        exclude: ['node_modules', 'coverage'],
-        extension: ['.ts', '.vue'],
-        requireEnv: true,
-      }),
+    process.env.VITE_COVERAGE
+      ? istanbul({
+          include: 'src/*',
+          exclude: ['node_modules', 'coverage'],
+          extension: ['.ts', '.vue'],
+          requireEnv: true,
+        })
+      : undefined,
   ],
   resolve: {
     alias: {
