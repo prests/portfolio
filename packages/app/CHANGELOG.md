@@ -1,5 +1,13 @@
 # shayne-portfolio-frontend
 
+## 6.0.0
+
+### Major Changes
+
+- [#106](https://github.com/prests/portfolio/pull/106) [`f6bebd1`](https://github.com/prests/portfolio/commit/f6bebd179637086fbdc29927a09251a9a06d2490) Thanks [@prests](https://github.com/prests)! - Create language picker component
+
+- [#102](https://github.com/prests/portfolio/pull/102) [`9e23411`](https://github.com/prests/portfolio/commit/9e23411040a30fd51f6c8c5ce51dbb16d4ef610c) Thanks [@prests](https://github.com/prests)! - Create new modal component
+
 ## 5.0.0
 
 ### Major Changes
