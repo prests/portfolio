@@ -4,6 +4,7 @@ import en_US_experience from './experiences/en_US.json';
 import en_US_footer from './footer/en_US.json';
 import en_US_home from './home/en_US.json';
 import en_US_nav from './nav/en_US.json';
+import locales from './locales.json';
 
 const en_US = {
   ...en_US_about,
@@ -12,5 +13,6 @@ const en_US = {
   ...en_US_footer,
   ...en_US_home,
   ...en_US_nav,
+  ...locales,
 } as const;
 export default en_US;

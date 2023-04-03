@@ -1,6 +1,9 @@
 {
   "nav": {
     "links": ["About", "Experience", "Contact"],
-    "resume": "Resume"
+    "resume": "Resume",
+    "languageModal": {
+      "header": "Languages"
+    }
   }
 }
