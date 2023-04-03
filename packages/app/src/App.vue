@@ -1,5 +1,6 @@
 <template>
   <div :class="$style['app-container']">
+    <LanguagePicker />
     <NavBar />
 
     <router-view v-slot="{ Component }">
@@ -17,6 +18,7 @@ import { animate } from 'motion';
 
 import AppFooter from '@components/footer/AppFooter.vue';
 import NavBar from '@components/nav-bar/NavBar.vue';
+import LanguagePicker from '@components/language-picker/LanguagePickerWrapper.vue';
 let isFirstLoad = true;
 
 function routeEnter(el: any, done: any): void {

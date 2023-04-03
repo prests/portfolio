@@ -1,15 +1,8 @@
-@use '~styles/colors';
-
-@mixin link() {
+@mixin link($color) {
   .link {
-    color: colors.$orange-red-crystal;
+    color: $color;
     text-decoration: none;
-    background: none,
-      linear-gradient(
-        to right,
-        colors.$orange-red-crystal,
-        colors.$orange-red-crystal
-      );
+    background: none, linear-gradient(to right, $color, $color);
     background-repeat: no-repeat;
     background-position: 100% 100%, 0 100%;
     background-size: 100% 0.1em, 0 0.1em;

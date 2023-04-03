@@ -33,6 +33,7 @@ const { t } = useLanguage();
 </script>
 
 <style lang="scss" module>
+@use '~styles/colors.scss';
 @use '~styles/links.scss';
-@include links.link;
+@include links.link(colors.$orange-red-crystal);
 </style>
