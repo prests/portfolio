@@ -1,5 +1,11 @@
 # shayne-portfolio-frontend
 
+## 7.0.0
+
+### Major Changes
+
+- [#107](https://github.com/prests/portfolio/pull/107) [`d82bfce`](https://github.com/prests/portfolio/commit/d82bfce715fbd43dbc4d95e2b8bcc418abe4377b) Thanks [@prests](https://github.com/prests)! - Added pirate language
+
 ## 6.0.0
 
 ### Major Changes
