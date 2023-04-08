@@ -1,0 +1,13 @@
+{
+  "home": {
+    "welcome": "Ahoy!",
+    "bio": {
+      "s1": "Me name be",
+      "s2": "'n I build blinky clicky things!"
+    },
+    "contact": {
+      "message": "Wants t' get in touch wit' me? Shoot me an email 'n I'll do me best t' get back t' ye as handsomely as possible!",
+      "button": "Parlay With Me"
+    }
+  }
+}

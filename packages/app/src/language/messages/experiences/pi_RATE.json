@@ -1,0 +1,24 @@
+{
+  "experience": {
+    "draftkings": {
+      "position": "Software Engineer",
+      "duration": "April 2022 - Present",
+      "events": [
+        "Create scaleable applications 'n toolin' fer account management that handles peaks o' 1 million users a day 'n 200 thousand users per hour.",
+        "Setup threat detection, monitorin', 'n loggin'. Ensurin' stability o' Account Platform applications by reducin' false positive errors 'n alertin' developers early o' production issues.",
+        "Design financial toolin' t' integrate 3rd party bounty offerings t' increase deposits t' DraftKings by 10%.",
+        "Implemented a crew-wide internal code coverage tool that gives developers a holistic view o' thar code coverage. This led t' better overall testin' 'n less redundant test cases."
+      ]
+    },
+    "factset": {
+      "position": "Software Engineer III",
+      "duration": "July 2019 - April 2022",
+      "events": [
+        "Created 'n maintained core applications fer FactSet's Research Business Unit. These apps provided real-time news, events, 'n signals t' both Buy Side 'n Sell Side clients.",
+        "Managed an agile crew t' create stable 'n shareable UI components t' improve sustainability across multiple FactSet applications.",
+        "Designed API endpoints t' fetch news 'n events fer internal 'n external clients.",
+        "Migrated legacy code from Angular.js t' Vue.js, increasin' unit test coverage by utilizin' Typescript o'er Javascript, 'n creatin' responsive applications."
+      ]
+    }
+  }
+}

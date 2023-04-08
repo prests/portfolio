@@ -14,10 +14,10 @@ export function setupRouter(i18n: I18n): Router {
   });
 
   router.beforeEach(async (to) => {
-    const paramsLocale = (to.params.locale as string) ?? 'en_US';
+    const paramsLocale = (to.query.locale as string) ?? fallbackLocale;
 
     if (!SUPPORTED_LOCALES.includes(paramsLocale as SupportedLocales)) {
-      return `/${fallbackLocale}`;
+      return '/';
     }
 
     if (!i18n.global.availableLocales.includes(paramsLocale)) {

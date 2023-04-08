@@ -1,7 +1,8 @@
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 export function usePaths() {
+  const route = useRoute();
   const router = useRouter();
   const paths = ref([
     {
@@ -29,7 +30,12 @@ export function usePaths() {
     }
 
     if (path !== router.currentRoute.value.path) {
-      router.push(path);
+      router.push({
+        path,
+        query: {
+          locale: route.query.locale,
+        },
+      });
     }
   }
 
