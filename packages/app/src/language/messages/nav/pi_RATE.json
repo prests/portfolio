@@ -1,0 +1,9 @@
+{
+  "nav": {
+    "links": ["Me Past", "Me Priors", "Parlay"],
+    "resume": "Me Papers",
+    "languageModal": {
+      "header": "Lingo"
+    }
+  }
+}

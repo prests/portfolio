@@ -1,0 +1,25 @@
+{
+  "about": {
+    "title": "About Me Past",
+    "p1": "Ahoy! Me name be Shayne, I be a Software Engineer, 'n I am obsessed wit' the web. Me passion fer web development began in high school where I took an Introduction t' Programmin' crew. Through that crew I learned about HTML 'n CSS. I loved the creativity 'n possibilities that a webpage could bring.",
+    "p2": "Wit' that taste o' programmin' I decided t' pursue a degree in Computer 'n Systems Engineerin' at Rensselaer Polytechnic Institute. I used me time thar t' explore different aspects o' computer engineerin' from computer architecture in classes, t' mobile app development in ",
+    "p3": {
+      "s1": "These days I be workin' on web based applications both on the fore 'n on the backend at ",
+      "s2": ". These apps cater t' thousands o' users daily 'n are a cornerstone t' FactSet's infrastructure."
+    },
+    "p4": "Outside o' engineerin' I 'ave many hobbies. Shanties has always been a big part o' me life, 'n when Covid-19 kept everyone locked indoors, I decided t' teach meself how t' play the guitar. I also love bein' outdoors! In the summer ye can catch me outside campin' or at the beach, 'n in the winter ye'll find me skiin' wit' scallywags 'n family.",
+    "technologies": {
+      "header": "Technologies I be currently workin' wit':",
+      "techList": [
+        "Javascript (ES6+)",
+        "Typescript",
+        "Vue.js 2/3",
+        "React.js 18",
+        "Node.js",
+        "Express.js",
+        "Jest",
+        "Swagger.js"
+      ]
+    }
+  }
+}

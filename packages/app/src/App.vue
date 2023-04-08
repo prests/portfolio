@@ -1,6 +1,6 @@
 <template>
   <div :class="$style['app-container']">
-    <LanguagePicker v-if="false" />
+    <LanguagePicker />
     <NavBar />
 
     <router-view v-slot="{ Component }">

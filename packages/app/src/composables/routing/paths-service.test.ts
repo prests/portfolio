@@ -7,6 +7,7 @@ vi.mock('vue', () => ({
 }));
 
 vi.mock('vue-router', () => ({
+  useRoute: vi.fn(),
   useRouter: vi.fn(),
 }));
 
