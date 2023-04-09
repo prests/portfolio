@@ -75,6 +75,7 @@ button {
   cursor: pointer;
   outline: inherit;
   border-radius: 5px;
+  width: fit-content;
 }
 
 .content,

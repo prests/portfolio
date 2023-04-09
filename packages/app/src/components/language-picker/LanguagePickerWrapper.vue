@@ -39,6 +39,5 @@ const { t, locale } = useLanguage();
 .language-button {
   height: 2em;
   margin: 1rem 1rem 0 auto;
-  width: fit-content;
 }
 </style>
