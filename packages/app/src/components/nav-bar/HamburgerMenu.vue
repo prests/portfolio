@@ -112,13 +112,13 @@ function closePopUp(el: any, done: any) {
   right: -100%;
   display: flex;
   flex-direction: column;
-  padding: 15em 8em;
+  padding: 18em 8em;
   margin-left: auto;
   text-align: center;
   background-color: colors.$light-corol;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, xs)) {
-    padding: 15em 2em;
+    padding: 18em 2em;
   }
 }
 
