@@ -6,4 +6,5 @@ module.exports = {
     'eslint --fix',
   ],
   '**/*.vue?(x)': () => 'pnpm run lint:types',
+  '**/*.ts?(x)': () => 'pnpm run lint:types',
 };
