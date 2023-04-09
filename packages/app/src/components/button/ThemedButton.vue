@@ -25,7 +25,6 @@
 import { animate } from 'motion';
 
 import ThemedText from '@components/text/ThemedText.vue';
-
 import { ref } from 'vue';
 
 const props = withDefaults(defineProps<{ content: string }>(), { content: '' });
