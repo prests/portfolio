@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.31.2",
-    "@types/node": "^18.8.3",
+    "@types/node": "^18.15.11",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vitest/coverage-c8": "^0.29.2",
     "@vitest/ui": "^0.29.2",
