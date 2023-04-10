@@ -73,22 +73,22 @@ body::-webkit-scrollbar-thumb:horizontal:hover {
 body::-webkit-scrollbar-track {
   border: 3px solid colors.$black-corol;
 }
+</style>
 
-#app {
+<style lang="scss" module>
+@use '~styles/responsive';
+
+.app-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   font-size: 1.6rem;
-}
-</style>
 
-<style lang="scss" module>
-.app-container {
-  display: inherit;
-  flex-direction: inherit;
-  width: inherit;
-  height: inherit;
+  @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
+    width: 90%;
+    margin: 2em 1em;
+  }
 }
 
 .view {
