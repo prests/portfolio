@@ -1,5 +1,11 @@
 # shayne-portfolio-frontend
 
+## 8.0.0
+
+### Major Changes
+
+- [#110](https://github.com/prests/portfolio/pull/110) [`28f70c9`](https://github.com/prests/portfolio/commit/28f70c919b421a117121ead5f96c5187cbb071ad) Thanks [@prests](https://github.com/prests)! - fix sizing for language button and app on smaller screens
+
 ## 7.0.0
 
 ### Major Changes
