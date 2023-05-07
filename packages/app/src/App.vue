@@ -73,6 +73,11 @@ body::-webkit-scrollbar-thumb:horizontal:hover {
 body::-webkit-scrollbar-track {
   border: 3px solid colors.$black-corol;
 }
+
+#app {
+  width: 100%;
+  height: 100%;
+}
 </style>
 
 <style lang="scss" module>
