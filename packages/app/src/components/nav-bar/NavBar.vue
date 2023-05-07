@@ -63,7 +63,7 @@ const { focusLogo, blurLogo } = useLogoAnimations();
   flex-wrap: wrap;
   width: 90%;
   height: 10%;
-  margin: 1rem 5rem auto;
+  margin: 1rem 5rem;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
     margin: 1rem auto;
