@@ -64,23 +64,23 @@ $padding: 5px;
 
 button {
   display: inline-flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding: $padding;
-  background: none;
-  color: colors.$orange-red-crystal;
-  fill: colors.$orange-red-crystal;
-  border: none;
   font: inherit;
+  color: colors.$orange-red-crystal;
   cursor: pointer;
-  outline: inherit;
+  background: none;
+  border: none;
   border-radius: 5px;
+  outline: inherit;
+  fill: colors.$orange-red-crystal;
 }
 
 .content,
 .icon {
-  height: 100%;
   width: auto;
+  height: 100%;
 }
 
 .content {

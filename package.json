@@ -13,6 +13,7 @@
   },
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "build": "pnpm -r build",
     "test": "pnpm -r test",
     "test:ci": "pnpm -r test:ci",
@@ -30,7 +31,7 @@
     "npm-check-updates": "^16.3.8",
     "nyc": "^15.1.0",
     "prettier": "^2.7.1",
-    "rimraf": "^4.4.0",
+    "rimraf": "^5.0.1",
     "shayne-prettier-config": "workspace:*"
   }
 }

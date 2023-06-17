@@ -56,7 +56,7 @@ export default defineConfig({
   test: {
     exclude: testPathsToExclude,
     coverage: {
-      provider: 'c8',
+      provider: 'istanbul',
       exclude: [
         ...testPathsToExclude,
         '**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',

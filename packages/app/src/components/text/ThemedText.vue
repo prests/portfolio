@@ -12,10 +12,10 @@ const props = withDefaults(defineProps<{ content: string }>(), {
 
 <style lang="scss" module>
 .text {
-  height: auto;
-  width: auto;
-  color: inherit;
   display: inline-flex;
+  width: auto;
+  height: auto;
   margin: auto 0;
+  color: inherit;
 }
 </style>

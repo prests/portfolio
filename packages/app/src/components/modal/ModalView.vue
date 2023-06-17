@@ -74,13 +74,13 @@ function closeModal() {
 
 <style lang="scss" module>
 .modal-backdrop {
-  font: inherit;
   position: fixed;
   inset: 0;
   z-index: 15;
   display: flex;
   align-items: center;
   justify-content: center;
+  font: inherit;
   background-color: #00000030;
 }
 
@@ -92,9 +92,7 @@ function closeModal() {
   overflow-x: auto;
   background: #fff;
   border-radius: 4px;
-  box-shadow: 2px 9px 26px 6px rgba(27, 27, 27, 0.69);
-  -webkit-box-shadow: 2px 9px 26px 6px rgba(27, 27, 27, 0.69);
-  -moz-box-shadow: 2px 9px 26px 6px rgba(27, 27, 27, 0.69);
+  box-shadow: 2px 9px 26px 6px rgb(27 27 27 / 69%);
 }
 
 .modal-header {

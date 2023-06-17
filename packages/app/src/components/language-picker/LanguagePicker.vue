@@ -35,10 +35,11 @@ function changeLocale(locale: string) {
 
 <style lang="scss" module>
 @use '~styles/responsive.scss';
+
 .language-picker {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin: 1em 0;
 
   @include responsive.responsive(map-get(responsive.$breakpoints, sm)) {
@@ -49,7 +50,7 @@ function changeLocale(locale: string) {
 .language-option {
   display: inline-flex;
   flex: 1;
-  white-space: nowrap;
   margin: 0.5em;
+  white-space: nowrap;
 }
 </style>
