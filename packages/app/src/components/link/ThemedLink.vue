@@ -1,11 +1,12 @@
 <template>
-  <a :class="$style.link" @click="$emit('onClick')">{{ props.content }}</a>
+  <a :class="$style.link" @click="$emit('onClick')">{{ content }}</a>
 </template>
 
 <script setup lang="ts">
-const props = withDefaults(defineProps<{ content: string }>(), {
-  content: '',
-});
+// TODO: Update props destructure once no longer experimental
+// eslint-disable-next-line vue/no-setup-props-destructure
+const { content = '' } = defineProps<{ content: string }>();
+
 defineEmits<{ (e: 'onClick', value: void): void }>();
 </script>
 
