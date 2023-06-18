@@ -3,7 +3,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import eslintPlugin from 'vite-plugin-eslint';
 import { configDefaults } from 'vitest/config';
-import vuePlugin from '@vitejs/plugin-vue';
+import vue from '@vitejs/plugin-vue';
 import istanbul from 'vite-plugin-istanbul';
 
 const testPathsToExclude = [
@@ -27,7 +27,12 @@ export default defineConfig({
   },
   plugins: [
     eslintPlugin(),
-    vuePlugin(),
+    vue({
+      script: {
+        defineModel: true,
+        propsDestructure: true,
+      },
+    }),
     process.env.VITE_COVERAGE
       ? istanbul({
           include: 'src/*',

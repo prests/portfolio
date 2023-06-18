@@ -174,14 +174,14 @@
 <script setup lang="ts">
 import { computed, ref, useCssModule } from 'vue';
 
-const props = withDefaults(defineProps<{ isSplashScreen?: boolean }>(), {
-  isSplashScreen: false,
-});
+// TODO: Update props destructure once no longer experimental
+// eslint-disable-next-line vue/no-setup-props-destructure
+const { isSplashScreen = false } = defineProps<{ isSplashScreen?: boolean }>();
 
 const $style = useCssModule();
 
 const lineOpacity = computed(() =>
-  props.isSplashScreen ? $style['hide-line'] : $style['show-line']
+  isSplashScreen ? $style['hide-line'] : $style['show-line']
 );
 
 const line1 = ref<SVGLineElement>();

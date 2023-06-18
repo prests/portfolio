@@ -1,13 +1,13 @@
 <template>
   <div :class="$style['menu-container']">
     <div
-      v-for="(item, index) in props.items"
+      v-for="(item, index) in items"
       :key="index"
       :class="[
         $style.item,
-        item === props.selected ? $style.selected : $style['not-selected'],
+        item === selected ? $style.selected : $style['not-selected'],
       ]"
-      @click="$emit('update:selected', item)"
+      @click="selected = item"
     >
       {{ item }}
     </div>
@@ -15,13 +15,12 @@
 </template>
 
 <script setup lang="ts">
-const props = withDefaults(
-  defineProps<{ items?: string[]; selected: string }>(),
-  {
-    items: () => [],
-  }
-);
-defineEmits<{ (e: 'update:selected', value: string): void }>();
+// TODO: update eslint when defineModels is added
+// eslint-disable-next-line no-undef
+const selected = defineModel<string>('selected', { default: '' });
+// TODO: Update props destructure once no longer experimental
+// eslint-disable-next-line vue/no-setup-props-destructure
+const { items = [] } = defineProps<{ items: string[] }>();
 </script>
 
 <style lang="scss" module>

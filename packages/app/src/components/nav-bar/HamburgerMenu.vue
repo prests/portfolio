@@ -1,7 +1,7 @@
 <template>
   <div :class="$style['menu-container']">
     <HamburgerSVG
-      v-model="menuOpen"
+      v-model:isOpen="menuOpen"
       :class="$style['hamburger-icon']"
       @click="menuOpen ? closeMenu() : openMenu()"
     />

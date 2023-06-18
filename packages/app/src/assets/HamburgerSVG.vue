@@ -2,9 +2,9 @@
 <template>
   <div :class="$style.container">
     <button
-      :class="{ [$style.menu]: true, [$style.opened]: props.modelValue }"
+      :class="{ [$style.menu]: true, [$style.opened]: isOpen }"
       aria-label="Main Menu"
-      :aria-expanded="props.modelValue"
+      :aria-expanded="isOpen"
     >
       <svg height="100%" viewBox="0 0 100 100">
         <path
@@ -22,11 +22,9 @@
 </template>
 
 <script setup lang="ts">
-const props = withDefaults(defineProps<{ modelValue?: boolean }>(), {
-  modelValue: false,
-});
-
-defineEmits<{ (e: 'update:modelValue', value: boolean): void }>();
+// TODO: update eslint when defineModels is added
+// eslint-disable-next-line no-undef
+const isOpen = defineModel<boolean>('isOpen', { default: false });
 </script>
 
 <style lang="scss" module>

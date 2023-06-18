@@ -2,7 +2,7 @@
   <div
     v-if="isContainerOpen"
     :class="$style['modal-backdrop']"
-    @click="closeModal"
+    @click="isOpen = false"
   >
     <Presence>
       <Motion
@@ -27,7 +27,7 @@
           <button
             type="button"
             :class="$style['btn-close']"
-            @click="closeModal"
+            @click="isOpen = false"
           >
             <CloseIcon />
           </button>
@@ -45,30 +45,27 @@ import { ref, watch } from 'vue';
 import CloseIcon from '@assets/CloseIcon.vue';
 import { Motion, Presence } from 'motion/vue';
 
-const props = defineProps<{ isOpen: boolean }>();
-const $emit = defineEmits<{ (e: 'update:isOpen', value: boolean): void }>();
+// TODO: update eslint when defineModels is added
+// eslint-disable-next-line no-undef
+const isOpen = defineModel<boolean>('isOpen', { default: false });
 
 // This is purely for transitions so we can close the modal content before the backdrop
-const isContainerOpen = ref(props.isOpen);
+const isContainerOpen = ref(isOpen.value);
 
 watch(
-  () => props.isOpen,
+  () => isOpen.value,
   () => {
-    if (props.isOpen) {
-      isContainerOpen.value = props.isOpen;
+    if (isOpen.value) {
+      isContainerOpen.value = isOpen.value;
       return;
     }
   }
 );
 
 function animationCompleted() {
-  if (!props.isOpen) {
+  if (!isOpen.value) {
     isContainerOpen.value = false;
   }
-}
-
-function closeModal() {
-  $emit('update:isOpen', false);
 }
 </script>
 

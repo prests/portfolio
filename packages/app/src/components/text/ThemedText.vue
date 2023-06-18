@@ -1,13 +1,13 @@
 <template>
   <span :class="$style.text">
-    {{ props.content }}
+    {{ content }}
   </span>
 </template>
 
 <script setup lang="ts">
-const props = withDefaults(defineProps<{ content: string }>(), {
-  content: '',
-});
+// TODO: Update props destructure once no longer experimental
+// eslint-disable-next-line vue/no-setup-props-destructure
+const { content = '' } = defineProps<{ content: string }>();
 </script>
 
 <style lang="scss" module>
