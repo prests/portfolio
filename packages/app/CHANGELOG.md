@@ -1,5 +1,11 @@
 # shayne-portfolio-frontend
 
+## 9.0.0
+
+### Major Changes
+
+- [#113](https://github.com/prests/portfolio/pull/113) [`d18da9e`](https://github.com/prests/portfolio/commit/d18da9ed74ed68d8a518c2965fe83285c1373190) Thanks [@prests](https://github.com/prests)! - Upgrade dependencies and support Vue 3.3
+
 ## 8.0.0
 
 ### Major Changes
