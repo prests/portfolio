@@ -51,7 +51,7 @@
     "shayne-tsconfig": "workspace:*",
     "stylelint": "^15.8.0",
     "typescript": "^5.0.2",
-    "vite": "^4.2.1",
+    "vite": "^4.2.3",
     "vite-plugin-eslint": "^1.6.1",
     "vite-plugin-istanbul": "^4.0.1",
     "vitest": "^0.32.2",
