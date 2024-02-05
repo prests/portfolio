@@ -4,7 +4,8 @@
       "position": "Software Engineer",
       "duration": "April 2022 - Present",
       "events": [
-        "Create scaleable applications 'n toolin' fer account management that handles peaks o' 1 million users a day 'n 200 thousand users per hour.",
+        "Create a Quick Deposit microfrontend t' build trust wit' customers by enablin' 'em t' deposit t' thar DraftKings coffer without havin' t' leave thar play session.",
+        "Create scaleable applications 'n toolin' fer account management that handles peaks o' 1 million users a day 'n 300 thousand users per hour.",
         "Setup threat detection, monitorin', 'n loggin'. Ensurin' stability o' Account Platform applications by reducin' false positive errors 'n alertin' developers early o' production issues.",
         "Design financial toolin' t' integrate 3rd party bounty offerings t' increase deposits t' DraftKings by 10%.",
         "Implemented a crew-wide internal code coverage tool that gives developers a holistic view o' thar code coverage. This led t' better overall testin' 'n less redundant test cases."

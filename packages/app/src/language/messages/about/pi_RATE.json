@@ -5,20 +5,19 @@
     "p2": "Wit' that taste o' programmin' I decided t' pursue a degree in Computer 'n Systems Engineerin' at Rensselaer Polytechnic Institute. I used me time thar t' explore different aspects o' computer engineerin' from computer architecture in classes, t' mobile app development in ",
     "p3": {
       "s1": "These days I be workin' on web based applications both on the fore 'n on the backend at ",
-      "s2": ". These apps cater t' thousands o' users daily 'n are a cornerstone t' FactSet's infrastructure."
+      "s2": ". These apps cater t' hundreds of thousands o' users daily 'n are a cornerstone t' Draftkings' financial platform."
     },
     "p4": "Outside o' engineerin' I 'ave many hobbies. Shanties has always been a big part o' me life, 'n when Covid-19 kept everyone locked indoors, I decided t' teach meself how t' play the guitar. I also love bein' outdoors! In the summer ye can catch me outside campin' or at the beach, 'n in the winter ye'll find me skiin' wit' scallywags 'n family.",
     "technologies": {
       "header": "Technologies I be currently workin' wit':",
       "techList": [
-        "Javascript (ES6+)",
-        "Typescript",
-        "Vue.js 2/3",
-        "React.js 18",
+        "Javascript/Typescript",
+        "Vue.js",
+        "React.js",
+        "Remix",
         "Node.js",
         "Express.js",
-        "Jest",
-        "Swagger.js"
+        "Test Driven Development (Jest, Vitest, Playwright)"
       ]
     }
   }
