@@ -17,7 +17,7 @@
 
     <template #content>
       <ul>
-        <li v-for="index in 4" :key="index">
+        <li v-for="index in 5" :key="index">
           {{ t(`experience.draftkings.events[${index - 1}]`) }}
         </li>
       </ul>

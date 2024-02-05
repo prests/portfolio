@@ -19,10 +19,10 @@
           {{ t('about.p3.s1') }}
           <a
             :class="$style.link"
-            href="https://www.factset.com/"
+            href="https://www.draftkings.com/"
             target="_blank"
           >
-            FactSet Research Systems
+            DraftKings
           </a>
           {{ t('about.p3.s2') }}
         </p>
@@ -33,7 +33,7 @@
         <span>{{ t('about.technologies.header') }}</span>
         <div :class="$style.technologies">
           <ul>
-            <li v-for="index in 8" :key="index">
+            <li v-for="index in 7" :key="index">
               {{ t(`about.technologies.techList[${index - 1}]`) }}
             </li>
           </ul>

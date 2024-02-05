@@ -43,7 +43,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import CloseIcon from '@assets/CloseIcon.vue';
-import { Motion, Presence } from 'motion/vue';
+import { Motion, Presence } from '@oku-ui/motion';
 
 // TODO: update eslint when defineModels is added
 // eslint-disable-next-line no-undef
